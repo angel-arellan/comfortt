@@ -68,7 +68,7 @@ describe('Pruebas en dispositivos de escritorio en www.comfrt.com', () => {
       cy.scrollTo('center');
       cy.wait(2000);
       cy.scrollTo('top');
-      cy.wait(2000);
+      cy.wait(3000);
 
       // Vuelve a la página anterior
       cy.go('back'); 
