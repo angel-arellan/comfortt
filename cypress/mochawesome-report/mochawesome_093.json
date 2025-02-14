@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-02-05T17:17:39.716Z",
+    "end": "2025-02-05T17:18:22.733Z",
+    "duration": 43017,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4df7f0cb-4463-4854-8dcb-a7194fd2f9b5",
+      "title": "",
+      "fullFile": "cypress/e2e/COMFRT/NavSweatpantsCatDesktop.cy.js",
+      "file": "cypress/e2e/COMFRT/NavSweatpantsCatDesktop.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ee1346d5-ad17-4b87-9acb-10a64b79546c",
+          "title": "Pruebas en dispositivos de escritorio en www.comfrt.com",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Navega a la categoría Sweatpants y hace scroll",
+              "fullTitle": "Pruebas en dispositivos de escritorio en www.comfrt.com Navega a la categoría Sweatpants y hace scroll",
+              "timedOut": null,
+              "duration": 40980,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.vBg37Hhp > [href=\"/collections/sweatpants\"]', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.url().should('include', '/collections/sweatpants');\ncy.scrollTo('bottom');\ncy.wait(2000);\ncy.scrollTo('top');\ncy.wait(2000);\n// Interactúa con el selector de colores del producto Signature Fit Sweatpants\ncy.get(':nth-child(1) > .VtFAkf4R > .SJQFNexH > .v26a1W51 > :nth-child(1) > .N1cHTXJ7 > .XSvSsyWQ', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.get(':nth-child(1) > .VtFAkf4R > .SJQFNexH > .v26a1W51 > :nth-child(5) > .N1cHTXJ7 > .XSvSsyWQ', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\ncy.get(':nth-child(1) > .VtFAkf4R > .SJQFNexH > .v26a1W51 > :nth-child(8) > .N1cHTXJ7 > .XSvSsyWQ', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\n// Interactúa con los colores del producto Classic Sweatpants\ncy.get('#collections_with_pagination-default-collections-with-pagination_0 > div > div > div:nth-child(3) > div.VtFAkf4R > fieldset > div > label:nth-child(1) > a', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\ncy.get('#collections_with_pagination-default-collections-with-pagination_0 > div > div > div:nth-child(3) > div.VtFAkf4R > fieldset > div > label:nth-child(5) > a > span', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\ncy.get('#collections_with_pagination-default-collections-with-pagination_0 > div > div > div:nth-child(3) > div.VtFAkf4R > fieldset > div > label:nth-child(7) > a', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\n//'Selecciona la última prenda del color elegido', () => {\ncy.wait(2000);\ncy.get('#collections_with_pagination-default-collections-with-pagination_0 > div > div > div:nth-child(3) > a > div.tK5FSRVg > img', {\n  timeout: 10000\n}).click({\n  force: true\n});\n// Verifica que se abrió la página del producto \ncy.url().should('include', 'coordinate-sweatpants?variant=43983688859692');\n// Hacer scroll en la página del producto\ncy.scrollTo('bottom'); // Desplaza hasta el final de la página\ncy.wait(2000);\ncy.scrollTo('top'); // Vuelve al inicio de la página\ncy.wait(2000);\n//'Interactúa con las tallas XS,S, M\ncy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(3) > div.v26a1W51 > label:nth-child(1) > a > span', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\ncy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(3) > div.v26a1W51 > label:nth-child(2) > a > span', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\ncy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(3) > div.v26a1W51 > label:nth-child(3) > a > span', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\ncy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(3) > div.v26a1W51 > label:nth-child(4) > a > span', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\ncy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(3) > div.v26a1W51 > label:nth-child(5) > a > span', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: expected '<span.XSvSsyWQ.MSGuc0os.>' to be 'visible'\n\nThis element `<span.XSvSsyWQ.MSGuc0os.>` is not visible because it has CSS property: `position: fixed` and it's being covered by another element:\n\n`<iframe src=\"https://customer-app.alia-cloudflare.com/popup?shop=comfrtclothing.myshopify.com&amp;width=1280&amp;height=1080&amp;path=%2Fproducts%2Fcoordinate-sweatpants%3Fvariant%3D43983688859692&amp;jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0VXNlcklEIjoyMzMyNzUzMzMsImlhdCI6MTczODc3NTg2NX0.1uxZxjNRzhRxoVQ9x9VVloqoledvF3RE9xok9RaKVhU&amp;flows=true\" allow=\"clipboard-write\" title=\"Alia popup\" style=\"border: none; width: 100%; height: 100%;\"></iframe>`",
+                "estack": "AssertionError: Timed out retrying after 10000ms: expected '<span.XSvSsyWQ.MSGuc0os.>' to be 'visible'\n\nThis element `<span.XSvSsyWQ.MSGuc0os.>` is not visible because it has CSS property: `position: fixed` and it's being covered by another element:\n\n`<iframe src=\"https://customer-app.alia-cloudflare.com/popup?shop=comfrtclothing.myshopify.com&amp;width=1280&amp;height=1080&amp;path=%2Fproducts%2Fcoordinate-sweatpants%3Fvariant%3D43983688859692&amp;jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0VXNlcklEIjoyMzMyNzUzMzMsImlhdCI6MTczODc3NTg2NX0.1uxZxjNRzhRxoVQ9x9VVloqoledvF3RE9xok9RaKVhU&amp;flows=true\" allow=\"clipboard-write\" title=\"Alia popup\" style=\"border: none; width: 100%; height: 100%;\"></iframe>`\n    at Context.eval (webpack://documents/./cypress/e2e/COMFRT/NavSweatpantsCatDesktop.cy.js:67:7)",
+                "diff": null
+              },
+              "uuid": "e77ac75a-4030-4db9-beae-1c08c76ff7fa",
+              "parentUUID": "ee1346d5-ad17-4b87-9acb-10a64b79546c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "e77ac75a-4030-4db9-beae-1c08c76ff7fa"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 40980,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/mochawesome-report",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

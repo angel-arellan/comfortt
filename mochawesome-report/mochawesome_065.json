@@ -1,0 +1,186 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-01-31T14:12:04.422Z",
+    "end": "2025-01-31T14:12:04.887Z",
+    "duration": 465,
+    "testsRegistered": 5,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 4,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "ee9db782-164d-4b1a-a301-ff34f25b943a",
+      "title": "",
+      "fullFile": "cypress/e2e/OthersTests1/Contactanos.cy.js",
+      "file": "cypress/e2e/OthersTests1/Contactanos.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "42bfb294-56cc-4341-904d-fd21c43c0527",
+          "title": "Contactanos",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Devolución de canje",
+              "fullTitle": "Contactanos Devolución de canje",
+              "timedOut": null,
+              "duration": 413,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Contactanos').scrollIntoView();\ncy.contains('Contactanos');\ncy.get('#modalContactanos').should('be.visible').click();\ncy.get('p > a').should('be.visible').click();\ncy.contains('¿Te arrepentiste de tu canje?');\ncy.contains('COMPLETÁ EL SIGUIENTE FORMULARIO PARA INICIAR EL TRÁMITE DE DEVOLUCIÓN.');\ncy.contains('Recordá que el Premio deberá ser devuelto en las mismas condiciones en las que fue entregado.');\ncy.get('#Name').should('be.visible').click().type('Martina Bincovich');\ncy.get('#Phone').should('be.visible').click().type('1165088240');\ncy.get('#Email').should('be.visible').click().type('martubincovich@gmail.com');\ncy.get('#Office').should('be.visible').click().type('Jumbo Juan B justo');\ncy.get('#Doctype').select('DNI');\ncy.get('#Document').should('be.visible').click().type('41708154');\ncy.get('#Message').should('be.visible').click().type('Canje realizado el 03/07/2023. Producto: tapitas');\ncy.get('[style=\"width: 304px; height: 78px;\"] > div > iframe').should('be.visible');\ncy.get('#btnSendForm').should('be.visible');",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://jumbomasbeta.cencosud.com/\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Contactanos`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://jumbomasbeta.cencosud.com/\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Contactanos`\n    at <unknown> (https://www.comfrt.com/__cypress/runner/cypress_runner.js:131634:76)\n    at visitFailedByErr (https://www.comfrt.com/__cypress/runner/cypress_runner.js:131049:12)\n    at <unknown> (https://www.comfrt.com/__cypress/runner/cypress_runner.js:131617:13)\n    at tryCatcher (https://www.comfrt.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://www.comfrt.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://www.comfrt.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://www.comfrt.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://www.comfrt.com/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (https://www.comfrt.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://www.comfrt.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://www.comfrt.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://www.comfrt.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://documents/./cypress/e2e/OthersTests1/Contactanos.cy.js:3:8)",
+                "diff": null
+              },
+              "uuid": "dba86f19-71b9-44a0-83b9-703e4b4cb991",
+              "parentUUID": "42bfb294-56cc-4341-904d-fd21c43c0527",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "¿Necesitas ayuda?",
+              "fullTitle": "Contactanos ¿Necesitas ayuda?",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scrollTo(0, 5000);\ncy.contains('Contactanos').scrollIntoView();\ncy.contains('Contactanos');\ncy.get('#modalContactanos').should('be.visible').click();\ncy.contains('¿Necesitas ayuda?');\ncy.contains('Conocé las respuestas a las preguntas más frecuentes haciendo ');\ncy.contains('Si necesitas información adicional, tenés dudas o problemas con tu cuenta o canje, envianos tus comentarios por alguno de los siguientes medios:');\ncy.get('[style=\"font-size: 16px; margin: 2px 0;\"] > a').should('be.visible').click();\ncy.contains('Resolvemos tus dudas');\ncy.contains('Conocé las respuestas a las preguntas más frecuentes');\ncy.get('.container > .row > .col-xs-12 > div').should('be.visible');",
+              "err": {},
+              "uuid": "5effd267-ae35-4283-8cd5-61f2712ded65",
+              "parentUUID": "42bfb294-56cc-4341-904d-fd21c43c0527",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Formulario de contacto",
+              "fullTitle": "Contactanos Formulario de contacto",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scrollTo(0, 5000);\ncy.contains('Contactanos').scrollIntoView();\ncy.contains('Contactanos');\ncy.get('#modalContactanos').should('be.visible').click();\ncy.contains('Formulario de contacto');\ncy.get('.row > :nth-child(2) > :nth-child(4) > a').should('be.visible').click();\ncy.contains('Formulario de Contacto ');\ncy.get('#FullName').should('be.visible').click().type('Martina Bincovich');\ncy.get('#PhoneArea').should('be.visible').click().type('011');\ncy.get('#PhoneNumber').should('be.visible').click().type('65088240');\ncy.get('#Email').should('be.visible').click().type('martubincovich@gmail.com');\ncy.get('#Sucursal').should('be.visible').click().type('Jumbo Juan B justo');\ncy.get('#CardNumber').should('be.visible').click().type('0987 0987 0987');\ncy.get('#DocumentNumber').should('be.visible').click().type('41.708.154');\ncy.get('#Message').should('be.visible').click().type('Hola quiero contactarme');\ncy.get('[style=\"width: 304px; height: 78px;\"] > div > iframe').should('be.visible');\ncy.get('#btnSendForm').should('be.visible');",
+              "err": {},
+              "uuid": "8450b5ab-7fc3-4e7d-bc4a-4a63a041998a",
+              "parentUUID": "42bfb294-56cc-4341-904d-fd21c43c0527",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Chat on line",
+              "fullTitle": "Contactanos Chat on line",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scrollTo(0, 5000);\ncy.contains('Contactanos').scrollIntoView();\ncy.contains('Contactanos');\ncy.get('#modalContactanos').should('be.visible').click();\ncy.contains('Chat online haciendo');\ncy.get(':nth-child(5) > .btnNeedHelpChat').should('be.visible').click();\ncy.get('#iframeChat2020').should('be.visible');",
+              "err": {},
+              "uuid": "fed57bbd-e2cc-44d7-80e0-d21baca10902",
+              "parentUUID": "42bfb294-56cc-4341-904d-fd21c43c0527",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Teléfono y mail",
+              "fullTitle": "Contactanos Teléfono y mail",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scrollTo(0, 5000);\ncy.contains('Contactanos').scrollIntoView();\ncy.contains('Contactanos');\ncy.get('#modalContactanos').should('be.visible').click();\ncy.contains('Asistencia telefónica');\ncy.contains('JumboMas@cencosud.com.ar');\ncy.get('#contactanosModal > .modal-dialog > .modal-content > .modal-footer > .close').should('be.visible').click();",
+              "err": {},
+              "uuid": "8260a198-0673-4e2c-b285-b7d1f259f0b9",
+              "parentUUID": "42bfb294-56cc-4341-904d-fd21c43c0527",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "dba86f19-71b9-44a0-83b9-703e4b4cb991"
+          ],
+          "pending": [],
+          "skipped": [
+            "5effd267-ae35-4283-8cd5-61f2712ded65",
+            "8450b5ab-7fc3-4e7d-bc4a-4a63a041998a",
+            "fed57bbd-e2cc-44d7-80e0-d21baca10902",
+            "8260a198-0673-4e2c-b285-b7d1f259f0b9"
+          ],
+          "duration": 413,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,259 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 8,
+    "passes": 3,
+    "pending": 0,
+    "failures": 5,
+    "start": "2025-01-31T14:14:52.639Z",
+    "end": "2025-01-31T14:15:50.946Z",
+    "duration": 58307,
+    "testsRegistered": 8,
+    "passPercent": 37.5,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "08ab7ab3-0a2b-45bc-9b5c-d19ffd1901e4",
+      "title": "",
+      "fullFile": "cypress/e2e/othersProd1/FooterCentroAyuda.cy.js",
+      "file": "cypress/e2e/othersProd1/FooterCentroAyuda.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "dccf488f-618c-4377-b30d-65af5c8cf00c",
+          "title": "Footer centro de ayuda",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verificacion sección footer Centro de Ayuda -> Política de privacidad",
+              "fullTitle": "Footer centro de ayuda Verificacion sección footer Centro de Ayuda -> Política de privacidad",
+              "timedOut": null,
+              "duration": 9459,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.centro-ayuda > ul > :nth-child(1) > a').should('be.visible').click();\ncy.contains('POLÍTICA DE PRIVACIDAD DE CENCOSUD S.A.');\ncy.get('.container > .row > .col-xs-12 > div').should('be.visible');\ncy.contains('ÁMBITO DE APLICACIÓN. ¿QUÉ ABARCA ESTA POLÍTICA DE PRIVACIDAD?');\ncy.contains('FINALIDAD DEL TRATAMIENTO DE LOS DATOS PERSONALES. ¿PARA QUÉ USAMOS SUS DATOS?');\ncy.contains('PLAZO DE CONSERVACIÓN DE SUS DATOS PERSONALES');\ncy.contains('SUS DERECHOS COMO TITULAR DE SUS DATOS PERSONALES');\ncy.contains('USO DE COOKIES');\ncy.contains('CESIÓN DE DATOS ¿CON QUIÉN PODEMOS COMPARTIR SUS DATOS?');\ncy.contains('MODIFICACIÓN DE LA POLÍTICA DE PRIVACIDAD');\ncy.contains('LEY Y JURISDICCIÓN APLICABLE');\ncy.contains('CONTACTO');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'POLÍTICA DE PRIVACIDAD DE CENCOSUD S.A.' but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'POLÍTICA DE PRIVACIDAD DE CENCOSUD S.A.' but never did.\n    at Context.eval (webpack://documents/./cypress/e2e/othersProd1/FooterCentroAyuda.cy.js:8:7)",
+                "diff": null
+              },
+              "uuid": "5678aebf-8a3b-4da8-bec6-6a7f1fddaa47",
+              "parentUUID": "dccf488f-618c-4377-b30d-65af5c8cf00c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verificacion sección footer Centro de Ayuda -> Preguntas frecuentes Shell",
+              "fullTitle": "Footer centro de ayuda Verificacion sección footer Centro de Ayuda -> Preguntas frecuentes Shell",
+              "timedOut": null,
+              "duration": 9149,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.centro-ayuda > ul > :nth-child(2) > a').should('be.visible').click();\ncy.contains('PREGUNTAS FRECUENTES | BENEFICIOS JUMBO MÁS - SHELL BOX');\ncy.get('.page-body > .container > .row > .col-xs-12').should('be.visible');\ncy.contains('¿En qué consiste la nueva Alianza Shell Box - Jumbo Más');\ncy.contains('¿Quiénes pueden participar?');\ncy.contains('¿Cómo me registro en los programas de Fidelidad de la Alianza?');\ncy.contains('Beneficios de la Alianza');\ncy.contains('Requisitos para acceder al beneficio en supermercados Jumbo y Disco');\ncy.contains('¿Cómo se aplica el descuento en estaciones adheridas SHELL?');\ncy.contains('¿Todas las estaciones Shell participan de la Alianza?');\ncy.contains('¿Cúales son las estaciones Shell donde se puede realizar el cambio de aceite con descuento?');\ncy.contains('¿Todas las sucursales Jumbo y Disco participan de la Alianza?');\ncy.contains('¿Qué productos integran los beneficios en Supermercados?');\ncy.contains('¿Dónde puedo gestionar una consulta o reclamo?');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'PREGUNTAS FRECUENTES | BENEFICIOS JUMBO MÁS - SHELL BOX' but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'PREGUNTAS FRECUENTES | BENEFICIOS JUMBO MÁS - SHELL BOX' but never did.\n    at Context.eval (webpack://documents/./cypress/e2e/othersProd1/FooterCentroAyuda.cy.js:23:7)",
+                "diff": null
+              },
+              "uuid": "b049c3f5-f3af-480f-a296-7ede7f164fe7",
+              "parentUUID": "dccf488f-618c-4377-b30d-65af5c8cf00c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verificacion sección footer Centro de Ayuda -> Preguntas frecuentes Smiles",
+              "fullTitle": "Footer centro de ayuda Verificacion sección footer Centro de Ayuda -> Preguntas frecuentes Smiles",
+              "timedOut": null,
+              "duration": 9743,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.centro-ayuda > ul > :nth-child(3) > a').should('be.visible').click();\ncy.contains('PREGUNTAS FRECUENTES | BENEFICIOS JUMBO MÁS - SMILES');\ncy.get('.page-body > .container > .row > .col-xs-12').should('be.visible');\ncy.contains('Beneficio Smiles - ¿Cómo puedo sumar millas?');\ncy.contains('Beneficio Smiles - ¿En cuánto tiempo se verán las millas acumuladas en mi cuenta?');\ncy.contains('Beneficio Smiles - Tengo una cuenta Smiles de otro país, ¿puedo sumar millas allí?');\ncy.contains('Beneficio Smiles - ¿Tiene algún límite de canje?');\ncy.contains('Beneficio Smiles - ¿Puedo adquirir millas abonando una diferencia?');\ncy.contains('Beneficio Smiles - ¿Las millas canjeadas pueden ser acreditadas a la cuenta Smiles de otro Socio?');\ncy.contains('Beneficio Smiles - ¿Cuánto duran las millas canjeadas en la cuenta Smiles?');\ncy.contains('Beneficio Smiles – Necesito más información sobre mi cuenta Smiles, ¿dónde puedo consultar?');\ncy.contains('Beneficio Smiles – Terminos y condiciones');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'PREGUNTAS FRECUENTES | BENEFICIOS JUMBO MÁS - SMILES' but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'PREGUNTAS FRECUENTES | BENEFICIOS JUMBO MÁS - SMILES' but never did.\n    at Context.eval (webpack://documents/./cypress/e2e/othersProd1/FooterCentroAyuda.cy.js:40:7)",
+                "diff": null
+              },
+              "uuid": "149b4c9e-d68b-4f9e-ae9c-0314fc1fe7fb",
+              "parentUUID": "dccf488f-618c-4377-b30d-65af5c8cf00c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verificacion sección footer Centro de Ayuda -> Preguntas frecuentes Jumbo más",
+              "fullTitle": "Footer centro de ayuda Verificacion sección footer Centro de Ayuda -> Preguntas frecuentes Jumbo más",
+              "timedOut": null,
+              "duration": 7877,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.centro-ayuda > ul > :nth-child(4) > a').should('be.visible').click();\ncy.contains('Resolvemos tus dudas');\ncy.get('.page-body > .container > .row > .col-xs-12').should('be.visible');\ncy.contains('¿Qué es Jumbo Más?');\ncy.contains('¿Cómo obtengo la tarjeta?');\ncy.contains('¿Cómo se solicita el alta de un adicional para mi cuenta Jumbo Más?');\ncy.contains('¿Cómo registro la tarjeta física que me entregaron en la tienda?');\ncy.contains('¿Cuántos días tengo para registrar mi nueva tarjeta física?');\ncy.contains('¿Dónde puedo consultar el saldo de puntos acumulados?');\ncy.contains('¿Cuándo vencen mis puntos acumulados?');\ncy.contains('¿Cómo puedo saber el número de tarjeta asociado a mi documento?');\ncy.contains('El saldo de mi cuenta disminuyó y no canjeé ningún premio.');\ncy.contains('¿Para qué puedo utilizar mis puntos?');\ncy.contains('¿Se pueden transferir los puntos de una cuenta a otra?');\ncy.contains('¿Cuál es el tope mínimo de puntos necesarios para hacer canjes por mercadería del local?');\ncy.contains('¿Cómo canjeo mis puntos por mercadería del local?');\ncy.contains('¿Cómo realizo un canje desde el Sitio Web o App Jumbo Más?');\ncy.contains('¿Dónde retiro el canje on line realizado?');\ncy.contains('No recibí el comprobante de canje realizado desde el catálogo online. ¿Puedo solicitar una copia?');\ncy.contains('¿Puedo solicitar el envío a domicilio de un canje?');\ncy.contains('¿El servicio de envío a domicilio tiene costo?');\ncy.contains('¿Se puede solicitar el cambio de un beneficio canjeado?');\ncy.contains('¿Puedo cancelar un canje?');\ncy.contains('¿Cuánto tiempo tengo para retirar un canje o utilizar un beneficio canjeado?');\ncy.contains('Al realizar un canje, ¿cambia la fecha de vencimiento de mis puntos?');\ncy.contains('Ya no tengo mi tarjeta plástica, ¿tengo que pedir una reposición?');\ncy.contains('¿Debo denunciar el extravío o robo de mi tarjeta Jumbo Más?');\ncy.contains('¿Cómo puedo acceder a los beneficios del Programa?');\ncy.contains('Membresía JUMBO PRIME bonificada');\ncy.contains('¿Es posible dar de baja a un Socio Adicional?');\ncy.contains('¿Es posible realizar el cambio de titular de una cuenta?');\ncy.contains('¿Puedo autorizar a otra persona para que retire un canje en mi nombre?');\ncy.contains('¿El Socio Adicional de mi cuenta puede hacer canjes?');\ncy.contains('Ya no quiero que mi adicional realice canjes, ¿qué tengo que hacer?');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.page-body > .container > .row > .col-xs-12`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.page-body > .container > .row > .col-xs-12`, but never found it.\n    at Context.eval (webpack://documents/./cypress/e2e/othersProd1/FooterCentroAyuda.cy.js:56:58)",
+                "diff": null
+              },
+              "uuid": "d64d5bda-6ec8-4eb8-9ddd-ff82589c62d3",
+              "parentUUID": "dccf488f-618c-4377-b30d-65af5c8cf00c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verificacion sección footer Centro de Ayuda -> Bases y condiciones del programa",
+              "fullTitle": "Footer centro de ayuda Verificacion sección footer Centro de Ayuda -> Bases y condiciones del programa",
+              "timedOut": null,
+              "duration": 3688,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.centro-ayuda > ul > :nth-child(5) > a').should('be.visible').click();\ncy.contains('REGLAMENTO DEL PROGRAMA JUMBO MÁS');\ncy.get('.page-body > .container > .row > .col-xs-12').should('be.visible');\ncy.contains('1) Quiénes pueden acreditarse como socios participantes.');\ncy.contains('2) Credenciales Jumbo Más.');\ncy.contains('3) Mecanismos para la acumulación de puntos');\ncy.contains('4) Vigencia de la acumulación de puntos');\ncy.contains('5) Escalas de puntos y niveles de regalos');\ncy.contains('6) Período en el que se puede acumular puntos');\ncy.contains('7) Para qué se pueden utilizar los puntos acumulados');\ncy.contains('8) Cómo controlar los puntos acumulados');\ncy.contains('9) Quiénes pueden hacer canjes, retirar y/o hacer uso de Beneficios');\ncy.contains('10) Gestión de autorización para canjes de un Socio Adicional “Jumbo Más”');\ncy.contains('11) Cómo canjear puntos por Beneficios');\ncy.contains('12) Cómo canjear puntos + pesos por Beneficios');\ncy.contains('13) Los Beneficios');\ncy.contains('14) Beneficios con envío a domicilio');\ncy.contains('15) Condiciones para devolución de un Beneficio con envío a domicilio');\ncy.contains('16) Pérdida de la condición de Socio');\ncy.contains('17) Consideraciones Generales');\ncy.contains('18) Trámites especiales');\ncy.contains('19) Los puntos beneficio de renovación de la Tarjeta Cencosud no son válidos para el Programa Jumbo Más');\ncy.contains('20) Políticas de privacidad (tratamiento de datos personales)');\ncy.contains('ANEXO I AL REGLAMENTO DEL PROGRAMA JUMBO MÁS | BENEFICIO JUMBO MÁS - SMILES');\ncy.contains('ANEXO II AL REGLAMENTO DEL PROGRAMA JUMBO MÁS – ÁMBITO DE APLICACIÓN LOCALES DISCO Y JUMBO');",
+              "err": {},
+              "uuid": "aff4b744-6d78-46e0-aba0-3865b371f4fa",
+              "parentUUID": "dccf488f-618c-4377-b30d-65af5c8cf00c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verificacion sección footer Centro de Ayuda -> Mapa del sitio",
+              "fullTitle": "Footer centro de ayuda Verificacion sección footer Centro de Ayuda -> Mapa del sitio",
+              "timedOut": null,
+              "duration": 3976,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.centro-ayuda > ul > :nth-child(6) > a').should('be.visible').click();\ncy.contains('Mapa del sitio');\ncy.get('.page-body').should('be.visible');\ncy.contains('general');\ncy.contains('Categorías');\ncy.contains('Productos');",
+              "err": {},
+              "uuid": "fb25612c-2f77-4b15-906e-b3d56d16cf27",
+              "parentUUID": "dccf488f-618c-4377-b30d-65af5c8cf00c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verificacion sección footer Centro de Ayuda -> Sucursales",
+              "fullTitle": "Footer centro de ayuda Verificacion sección footer Centro de Ayuda -> Sucursales",
+              "timedOut": null,
+              "duration": 3402,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.centro-ayuda > ul > :nth-child(7) > a').should('be.visible').click();\ncy.get('#contenedorModal > .modal-dialog > .modal-content > .modal-body').should('be.visible');\ncy.get('#contenedorModal > .modal-dialog > .modal-content > .modal-footer > .close').should('be.visible').click();",
+              "err": {},
+              "uuid": "20e6a4ae-3350-4fa7-9a3b-3af46fd4f2af",
+              "parentUUID": "dccf488f-618c-4377-b30d-65af5c8cf00c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verificacion sección footer Centro de Ayuda -> Contacto",
+              "fullTitle": "Footer centro de ayuda Verificacion sección footer Centro de Ayuda -> Contacto",
+              "timedOut": null,
+              "duration": 8368,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.centro-ayuda > ul > :nth-child(8) > a').should('be.visible').click();\ncy.contains('¿POR QUÉ');\ncy.contains(' CANALES PUEDO COMUNICARME?');\ncy.get('.page-body > .container').should('be.visible');\ncy.get(':nth-child(1) > [style=\"min-height: 294px;\"]').should('be.visible');\ncy.get(':nth-child(3) > .btnNeedHelpChat').should('be.visible').click();\ncy.get('#iframeChat2020').should('be.visible');\ncy.get('#wrapBtnCerrar > .fa').should('be.visible').click();\ncy.get(':nth-child(4) > a > span').should('be.visible');\ncy.get(':nth-child(1) > [style=\"min-height: 294px;\"] > .irWeb > a').should('be.visible').click();\ncy.contains('Formulario de Contacto');\ncy.get(':nth-child(8) > a').click();\ncy.get(':nth-child(2) > [style=\"min-height: 294px;\"]').should('be.visible');\ncy.contains('0810-999-58626');\ncy.get(':nth-child(2) > [style=\"min-height: 294px;\"] > :nth-child(5) > span > a').should('be.visible');\ncy.get(':nth-child(2) > [style=\"min-height: 294px;\"] > .irWeb > a').should('be.visible').click();\ncy.contains('Formulario de Contacto');\ncy.get(':nth-child(8) > a').click();\ncy.get('.wrapDisco > [style=\"min-height: 294px;\"]').should('be.visible');\ncy.get('[lang=\"PT-BR\"] > a > span').should('be.visible');\ncy.contains('0810-777-8888');\ncy.get('.wrapDisco > [style=\"min-height: 294px;\"] > .irWeb > a').should('be.visible').click();\ncy.contains('Formulario de Contacto');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `:nth-child(3) > .btnNeedHelpChat`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `:nth-child(3) > .btnNeedHelpChat`, but never found it.\n    at Context.eval (webpack://documents/./cypress/e2e/othersProd1/FooterCentroAyuda.cy.js:139:47)",
+                "diff": null
+              },
+              "uuid": "ccd3e5b1-6646-4294-a66b-583f3a0cf4d3",
+              "parentUUID": "dccf488f-618c-4377-b30d-65af5c8cf00c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "aff4b744-6d78-46e0-aba0-3865b371f4fa",
+            "fb25612c-2f77-4b15-906e-b3d56d16cf27",
+            "20e6a4ae-3350-4fa7-9a3b-3af46fd4f2af"
+          ],
+          "failures": [
+            "5678aebf-8a3b-4da8-bec6-6a7f1fddaa47",
+            "b049c3f5-f3af-480f-a296-7ede7f164fe7",
+            "149b4c9e-d68b-4f9e-ae9c-0314fc1fe7fb",
+            "d64d5bda-6ec8-4eb8-9ddd-ff82589c62d3",
+            "ccd3e5b1-6646-4294-a66b-583f3a0cf4d3"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 55662,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

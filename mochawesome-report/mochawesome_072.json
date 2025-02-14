@@ -1,0 +1,148 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-01-31T14:12:19.629Z",
+    "end": "2025-01-31T14:12:20.118Z",
+    "duration": 489,
+    "testsRegistered": 3,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 2,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "7d237a56-0f4e-4dbc-8d0a-04b35a96321a",
+      "title": "",
+      "fullFile": "cypress/e2e/OthersTests1/Prime.cy.js",
+      "file": "cypress/e2e/OthersTests1/Prime.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ed821e68-6cc8-41e1-845c-4c5f9b0600c8",
+          "title": "Prime ",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Botón Prime 15 días gratis",
+              "fullTitle": "Prime  Botón Prime 15 días gratis",
+              "timedOut": null,
+              "duration": 435,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#widgetControlOne > .widget > .container > :nth-child(2) > .col-sm-12 > a').should('be.visible').click();",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://jumbomasbeta.cencosud.com/\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Prime `",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://jumbomasbeta.cencosud.com/\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Prime `\n    at <unknown> (https://www.comfrt.com/__cypress/runner/cypress_runner.js:131634:76)\n    at visitFailedByErr (https://www.comfrt.com/__cypress/runner/cypress_runner.js:131049:12)\n    at <unknown> (https://www.comfrt.com/__cypress/runner/cypress_runner.js:131617:13)\n    at tryCatcher (https://www.comfrt.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://www.comfrt.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://www.comfrt.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://www.comfrt.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://www.comfrt.com/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (https://www.comfrt.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://www.comfrt.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://www.comfrt.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://www.comfrt.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://documents/./cypress/e2e/OthersTests1/Prime.cy.js:3:8)",
+                "diff": null
+              },
+              "uuid": "5ea5dec1-bf1b-441e-9985-cf3a70fed286",
+              "parentUUID": "ed821e68-6cc8-41e1-845c-4c5f9b0600c8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Recuadrdo membresía Prime",
+              "fullTitle": "Prime  Recuadrdo membresía Prime",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(2) > :nth-child(2) > .beneficio > .text').should('be.visible');\ncy.get(':nth-child(2) > :nth-child(2) > .beneficio > .text > .btn-beneficio').should('be.visible').click();",
+              "err": {},
+              "uuid": "7ee972ac-9040-494b-946e-4ae798babdb7",
+              "parentUUID": "ed821e68-6cc8-41e1-845c-4c5f9b0600c8",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "banner Jumbo Prime",
+              "fullTitle": "Prime  banner Jumbo Prime",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.widget > a > .img-responsive').should('be.visible').click();",
+              "err": {},
+              "uuid": "af8a9665-92c2-4c12-906f-78a5c5f862d4",
+              "parentUUID": "ed821e68-6cc8-41e1-845c-4c5f9b0600c8",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "5ea5dec1-bf1b-441e-9985-cf3a70fed286"
+          ],
+          "pending": [],
+          "skipped": [
+            "7ee972ac-9040-494b-946e-4ae798babdb7",
+            "af8a9665-92c2-4c12-906f-78a5c5f862d4"
+          ],
+          "duration": 435,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

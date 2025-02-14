@@ -1,0 +1,262 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-01-31T14:12:17.575Z",
+    "end": "2025-01-31T14:12:18.078Z",
+    "duration": 503,
+    "testsRegistered": 9,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 8,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "f7c03539-d62d-430e-ac1d-92007ca93fd5",
+      "title": "",
+      "fullFile": "cypress/e2e/OthersTests1/MiCuenta.cy.js",
+      "file": "cypress/e2e/OthersTests1/MiCuenta.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4c40ebc6-e328-4c93-8e2b-b3ed509d4f7b",
+          "title": "mi cuenta",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Ingresar a la sección \"mi cuenta\" y verificar elementos",
+              "fullTitle": "mi cuenta Ingresar a la sección \"mi cuenta\" y verificar elementos",
+              "timedOut": null,
+              "duration": 455,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.jm-user-circle').click();\ncy.get('#menuUser > :nth-child(1) > a').click();\ncy.contains('Mi Cuenta - Resumen');\ncy.contains('CUENTA ADICIONAL');\ncy.contains('AUTORIZACIÓN DE CUENTA TITULAR');\ncy.contains('❌ Adicional no autorizado a realizar canjes');\ncy.contains('DNI 41.708.154');\ncy.contains('martubincovich@gmail.com');\ncy.contains('Gavilán 1846');\ncy.contains('Comuna 11 CABA');\ncy.get('.changePassCliente > a').should('be.visible').click();\ncy.contains('Mi cuenta - Cambiar contraseña');\ncy.get('.row > .btn').should('be.visible').click();\ncy.contains('Se requiere la contraseña antigua');\ncy.contains('Se requiere la nueva contraseña.');\ncy.contains('Se requiere la contraseña');\ncy.get('#ChangePasswordModel_OldPassword').should('be.visible').type('martu1234');\ncy.get('#ChangePasswordModel_NewPassword').should('be.visible').type('martina1234');\ncy.get('#ChangePasswordModel_ConfirmNewPassword').should('be.visible').type('marmar1234');\ncy.get('.row > .btn').should('be.visible').click();\ncy.contains('La nueva contraseña no coincide');\ncy.get('.btnVolver > a').should('be.visible').click();\ncy.get('.modDatos').should('be.visible').click();\ncy.contains('MI CUENTA - Datos Personales');\ncy.get('.showdata > .row > :nth-child(1)').should('be.visible');\ncy.get('.showdata > .row > :nth-child(2)').should('be.visible');\ncy.get('.toggle').should('be.visible').click();\ncy.contains('Completá el siguiente campo con tu dirección y seleccioná la sugerencia correcta');\ncy.contains('AL SELECCIONAR, TUS DATOS SE LLENARÁN AUTOMÁTICAMENTE Y DEBERÁS COMPLETAR MANUALMENTE LOS RESTANTES EN CASO DE SER NECESARIO');\ncy.get('.editdata').should('be.visible');\ncy.get('#btnSubmit').should('be.visible');\ncy.get('.btnVolver > a').should('be.visible').click();\ncy.contains('puntos acumulados');\ncy.contains('Agregar mail alternativo de recupero de contraseña');\ncy.get('#AlternativeEmail').should('be.visible');\ncy.contains('Beneficio Anses');\ncy.contains('Al activar este botón prestas tu consentimiento expreso para que realicemos, con tu DNI, la consulta con el Servicio de ANSES, y así confirmar si eres beneficiario de alguna de las prestaciones que brinda el organismo.');\ncy.get('#btnAnses').should('be.visible').click();\ncy.wait(5000);\ncy.contains('EL BENEFICIO DE ANSES NO APLICA PARA TU DNI');\ncy.get('#myModalAnses > .modal-dialog > .modal-content > .modal-footer > .btn').should('be.visible').click();",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://jumbomasbeta.cencosud.com/\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `mi cuenta`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://jumbomasbeta.cencosud.com/\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `mi cuenta`\n    at <unknown> (https://www.comfrt.com/__cypress/runner/cypress_runner.js:131634:76)\n    at visitFailedByErr (https://www.comfrt.com/__cypress/runner/cypress_runner.js:131049:12)\n    at <unknown> (https://www.comfrt.com/__cypress/runner/cypress_runner.js:131617:13)\n    at tryCatcher (https://www.comfrt.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://www.comfrt.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://www.comfrt.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://www.comfrt.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://www.comfrt.com/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (https://www.comfrt.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://www.comfrt.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://www.comfrt.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://www.comfrt.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://documents/./cypress/e2e/OthersTests1/MiCuenta.cy.js:3:8)",
+                "diff": null
+              },
+              "uuid": "f5c00ce3-c014-4558-8e01-f42cc4e1a14d",
+              "parentUUID": "4c40ebc6-e328-4c93-8e2b-b3ed509d4f7b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Domicilios de entrega",
+              "fullTitle": "mi cuenta Domicilios de entrega",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.jm-user-circle').click();\ncy.get('#menuUser > :nth-child(1) > a').click();\ncy.get('.btneraUsuario > :nth-child(3) > a').should('be.visible').click();\ncy.contains('Domicilios de Entrega');\ncy.get('.panel-body').should('be.visible');\ncy.get('.active > a').should('be.visible');\ncy.get('.content > .nav > :nth-child(2) > a').should('be.visible');\ncy.get('#domicilios > [style=\"display: flex; justify-content: flex-end; margin: 10px 0;\"] > .btn').should('be.visible').click();\ncy.get('#addressModal > .modal-dialog > .modal-content > .modal-body').should('be.visible');\ncy.get('#btnAddAddress').should('be.visible');\ncy.get('#addressModal > .modal-dialog > .modal-content > .modal-footer > .close').should('be.visible').click();\ncy.get('button > .fa').should('be.visible').click();\ncy.get('.nota-entrega > strong').should('be.visible');\ncy.get('.btnVolver > a').should('be.visible').click();",
+              "err": {},
+              "uuid": "5e8163f3-bfed-49af-9213-52bbc4887dbb",
+              "parentUUID": "4c40ebc6-e328-4c93-8e2b-b3ed509d4f7b",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Códigos de descuento",
+              "fullTitle": "mi cuenta Códigos de descuento",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.jm-user-circle').click();\ncy.get('#menuUser > :nth-child(1) > a').click();\ncy.get('.btneraUsuario > :nth-child(5) > a').should('be.visible').click();\ncy.contains('Códigos de descuento');\ncy.get('.active > a').should('be.visible');\ncy.get('.divNoResults').should('be.visible');\ncy.get('.content > .nav > :nth-child(2) > a').should('be.visible').click();\ncy.get('.btnVolver > a').should('be.visible').click();",
+              "err": {},
+              "uuid": "ed5c322e-cb70-4867-9e73-060772a2780d",
+              "parentUUID": "4c40ebc6-e328-4c93-8e2b-b3ed509d4f7b",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Cuponera de descuento",
+              "fullTitle": "mi cuenta Cuponera de descuento",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.jm-user-circle').click();\ncy.get('#menuUser > :nth-child(1) > a').click();\ncy.get('.btneraUsuario > :nth-child(7) > a').should('be.visible').click();\ncy.contains('Cupones de descuento');",
+              "err": {},
+              "uuid": "699dbc6b-1502-4e4a-a1af-f801e9baa481",
+              "parentUUID": "4c40ebc6-e328-4c93-8e2b-b3ed509d4f7b",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Ofertas personalizadas",
+              "fullTitle": "mi cuenta Ofertas personalizadas",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.jm-user-circle').click();\ncy.get('#menuUser > :nth-child(1) > a').click();\ncy.get(':nth-child(9) > a').should('be.visible').click();\ncy.contains('MIS OFERTAS');\ncy.get('.wrap-no-ofertas > h2').should('be.visible');\ncy.get('.wrap-no-ofertas > p').should('be.visible');\ncy.get('.btnVolver > a').should('be.visible').click();",
+              "err": {},
+              "uuid": "7dbab4ea-8bad-4208-a7b1-0d76389472a5",
+              "parentUUID": "4c40ebc6-e328-4c93-8e2b-b3ed509d4f7b",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Mis tarjetas",
+              "fullTitle": "mi cuenta Mis tarjetas",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.jm-user-circle').click();\ncy.get('#menuUser > :nth-child(1) > a').click();\ncy.get(':nth-child(11) > a').should('be.visible').click();\ncy.contains('Mis tarjetas');\ncy.get('.inhabilitar').should('be.visible');\ncy.get('#desk-topright-options > .plus').should('be.visible').click();\ncy.get('.virtualCardMessage').should('be.visible');\ncy.get('.wrapTarjeta').should('be.visible');\ncy.get('.btnImprimirTarjeta').should('be.visible');\ncy.get('.page-body > .alert').should('be.visible');\ncy.get('.wrapTarjeta').should('be.visible');\ncy.get('#myModal1 > .modal-dialog > .modal-content > .modal-header > .modal-title').should('be.visible');\ncy.get('.form-group > label').should('be.visible');\ncy.get('#CustomerCardsModel_NewCard').should('be.visible');\ncy.get('#myModal1 > .modal-dialog > .modal-content > .modal-footer > .btn').should('be.visible');\ncy.get('#myModal1 > .modal-dialog > .modal-content > .modal-header > .close').should('be.visible').click();\ncy.get('.btnVolver > a').should('be.visible').click();",
+              "err": {},
+              "uuid": "79c075e0-5691-4846-9e48-e3f4efb3bc8c",
+              "parentUUID": "4c40ebc6-e328-4c93-8e2b-b3ed509d4f7b",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Mis notificaciones",
+              "fullTitle": "mi cuenta Mis notificaciones",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.jm-user-circle').click();\ncy.get('#menuUser > :nth-child(1) > a').click();\ncy.get(':nth-child(13) > a').should('be.visible').click();\ncy.contains('Mis notificaciones');\ncy.get('.headerNotif').should('be.visible');\ncy.get('.wrapNotificaciones').should('be.visible');\ncy.get('.btnVolver > a').should('be.visible').click();",
+              "err": {},
+              "uuid": "8d8355c6-8e35-4402-9a2b-50dd3dc191ad",
+              "parentUUID": "4c40ebc6-e328-4c93-8e2b-b3ed509d4f7b",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Mis calificaciones",
+              "fullTitle": "mi cuenta Mis calificaciones",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.jm-user-circle').click();\ncy.get('#menuUser > :nth-child(1) > a').click();\ncy.get(':nth-child(15) > a').should('be.visible').click();\ncy.contains('Mis calificaciones');\ncy.get('.no-data').should('be.visible');\ncy.get('.btnVolver > a').should('be.visible').click();",
+              "err": {},
+              "uuid": "d37f9af1-d17c-47ff-87ca-b3f10ac5000d",
+              "parentUUID": "4c40ebc6-e328-4c93-8e2b-b3ed509d4f7b",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Modificar datos",
+              "fullTitle": "mi cuenta Modificar datos",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.jm-user-circle').click();\ncy.get('#menuUser > :nth-child(1) > a').click();\ncy.get('.btneraAdicional > .col-md-12 > a').should('be.visible').click();\ncy.contains('MI CUENTA - Datos Personales');\ncy.get('.page').should('be.visible');\ncy.get('.btnVolver > a').should('be.visible').click();",
+              "err": {},
+              "uuid": "e0615780-90e7-495f-b3b3-df25ca367a75",
+              "parentUUID": "4c40ebc6-e328-4c93-8e2b-b3ed509d4f7b",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "f5c00ce3-c014-4558-8e01-f42cc4e1a14d"
+          ],
+          "pending": [],
+          "skipped": [
+            "5e8163f3-bfed-49af-9213-52bbc4887dbb",
+            "ed5c322e-cb70-4867-9e73-060772a2780d",
+            "699dbc6b-1502-4e4a-a1af-f801e9baa481",
+            "7dbab4ea-8bad-4208-a7b1-0d76389472a5",
+            "79c075e0-5691-4846-9e48-e3f4efb3bc8c",
+            "8d8355c6-8e35-4402-9a2b-50dd3dc191ad",
+            "d37f9af1-d17c-47ff-87ca-b3f10ac5000d",
+            "e0615780-90e7-495f-b3b3-df25ca367a75"
+          ],
+          "duration": 455,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

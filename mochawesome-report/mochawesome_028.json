@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-31T13:59:02.717Z",
+    "end": "2025-01-31T13:59:22.338Z",
+    "duration": 19621,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "11a4b321-9739-44bd-9a0b-923643092c28",
+      "title": "",
+      "fullFile": "cypress/e2e/MiracleBrand Blue/Try.TestCtaKSP.cy.js",
+      "file": "cypress/e2e/MiracleBrand Blue/Try.TestCtaKSP.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2312b970-f8f9-4de8-b560-95850fb5b75c",
+          "title": "home de https://try.miraclebrand.co/sheets/ksp/?__orly_origin=qa-bento-blue",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verificacion Elementos existentes y visibles",
+              "fullTitle": "home de https://try.miraclebrand.co/sheets/ksp/?__orly_origin=qa-bento-blue Verificacion Elementos existentes y visibles",
+              "timedOut": null,
+              "duration": 10105,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(2) > .lPQNsTue').should('exist');\ncy.wait(4000);",
+              "err": {},
+              "uuid": "f229681c-44f3-4e84-8fed-8ec5134228b1",
+              "parentUUID": "2312b970-f8f9-4de8-b560-95850fb5b75c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Navegar Home y verificación de botón CTA",
+              "fullTitle": "home de https://try.miraclebrand.co/sheets/ksp/?__orly_origin=qa-bento-blue Navegar Home y verificación de botón CTA",
+              "timedOut": null,
+              "duration": 7835,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.scrollTo(0, 1000);\ncy.wait(1000);\ncy.scrollTo(0, 1000);\ncy.wait(1000);\ncy.scrollTo(0, 1000);\ncy.wait(1000);\ncy.scrollTo(0, 1000);\ncy.wait(1000);\ncy.get('.dLt6dMOY').click();",
+              "err": {},
+              "uuid": "fd1154f2-36cd-4313-a9c6-108b857a1506",
+              "parentUUID": "2312b970-f8f9-4de8-b560-95850fb5b75c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f229681c-44f3-4e84-8fed-8ec5134228b1",
+            "fd1154f2-36cd-4313-a9c6-108b857a1506"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 17940,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
