@@ -30,15 +30,17 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-cypress-
 
-      # Instalación del binario de Cypress si no se encuentra en caché
-      - name: Instalar Cypress binary
+      # Instalar Cypress si no está instalado
+      - name: Instalar Cypress
         run: npx cypress install
 
+      # Ejecutar las pruebas de Cypress
       - name: Ejecutar pruebas Cypress
         run: npx cypress run --record
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 
+      # Enviar notificación por correo
       - name: Enviar notificación por correo
         uses: dawidd6/action-send-mail@v3
         with:
@@ -51,5 +53,4 @@ jobs:
           subject: "Resultados de Cypress"
           body: "Las pruebas de Cypress han finalizado. Revisa los resultados en GitHub Actions."
 
-
-
+          
