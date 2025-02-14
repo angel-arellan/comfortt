@@ -2,8 +2,8 @@ name: Ejecutar Cypress cada 30 minutos
 
 on:
   schedule:
-    - cron: "*/30 * * * *"  # Ejecuta cada 30 minutos
-  workflow_dispatch:  # Permite ejecución manual
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
 
 jobs:
   cypress-run:
@@ -22,5 +22,17 @@ jobs:
         run: npm install
 
       - name: Ejecutar pruebas Cypress
-        run: npx cypress run --record --key ${{ secrets.CYPRESS_KEY }}
+        run: npx cypress run
+
+      - name: Enviar notificación por correo
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_HOST }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USER }}
+          password: ${{ secrets.SMTP_PASS }}
+          from: "Cypress Tests <${{ secrets.SMTP_USER }}>"
+          to: "angel.arellan@latechfactory.com"
+          subject: "Resultados de Cypress"
+          body: "Las pruebas de Cypress han finalizado. Revisa los resultados en GitHub Actions."
 
