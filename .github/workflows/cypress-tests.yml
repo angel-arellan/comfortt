@@ -21,7 +21,7 @@ jobs:
       - name: Instalar dependencias
         run: npm install
 
-      # Cache de Cypress para evitar descargar el binario cada vez
+      # Paso para almacenar en caché el binario de Cypress
       - name: Cache Cypress binary
         uses: actions/cache@v3
         with:
@@ -30,10 +30,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-cypress-
 
+      # Instalación del binario de Cypress si no se encuentra en caché
+      - name: Instalar Cypress binary
+        run: npx cypress install
+
       - name: Ejecutar pruebas Cypress
         run: npx cypress run --record
         env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }} # Asegúrate de tener este secreto configurado en GitHub
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 
       - name: Enviar notificación por correo
         uses: dawidd6/action-send-mail@v3
@@ -46,5 +50,6 @@ jobs:
           to: "angel.arellan@latechfactory.com"
           subject: "Resultados de Cypress"
           body: "Las pruebas de Cypress han finalizado. Revisa los resultados en GitHub Actions."
+
 
 
