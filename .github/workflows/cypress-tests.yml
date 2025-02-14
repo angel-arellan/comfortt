@@ -1,0 +1,26 @@
+name: Ejecutar Cypress cada 30 minutos
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"  # Ejecuta cada 30 minutos
+  workflow_dispatch:  # Permite ejecución manual
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v3
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Ejecutar pruebas Cypress
+        run: npx cypress run --record --key ${{ secrets.CYPRESS_KEY }}
+
