@@ -423,7 +423,7 @@ describe('Prueba en dispositivos móviles en www.comfrt.com', () => {
         cy.scrollTo('bottom');
         cy.wait(2000);                              
         cy.scrollTo('center');
-        cy.wait(3000);
+        cy.wait(2000);
         cy.scrollTo('top');
         cy.wait(2000);
 
