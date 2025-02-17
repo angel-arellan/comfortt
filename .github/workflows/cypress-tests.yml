@@ -1,4 +1,4 @@
-name: Ejecutar Cypress cada 60 minutos
+name: Ejecutar Cypress cada 60 minutos (Sin Dashboard)
 
 on:
   schedule:
@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Clonar el repositorio
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Instalar Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
@@ -34,11 +34,16 @@ jobs:
       - name: Instalar Cypress
         run: npx cypress install
 
-      # Ejecutar las pruebas de Cypress
-      - name: Ejecutar pruebas Cypress
-        run: npx cypress run --record
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+      # Ejecutar las pruebas de Cypress (Sin Dashboard)
+      - name: Ejecutar pruebas Cypress (Local)
+        run: npx cypress run
+
+      # Guardar reportes de Cypress en GitHub Actions
+      - name: Guardar reportes de pruebas
+        uses: actions/upload-artifact@v3
+        with:
+          name: reporte-cypress
+          path: cypress/reports
 
       # Enviar notificación por correo
       - name: Enviar notificación por correo
@@ -51,6 +56,7 @@ jobs:
           from: "Cypress Tests <${{ secrets.SMTP_USER }}>"
           to: "angel.arellan@latechfactory.com"
           subject: "Resultados de Cypress"
-          body: "Las pruebas de Cypress han finalizado y se han realizado con éxito. Para Revisar los detalles de los resultados ir a GitHub Actions."
+          body: "Las pruebas de Cypress han finalizado y se han realizado con éxito. Para revisar los detalles de los resultados, revisa los artefactos en GitHub Actions."
+
 
           
