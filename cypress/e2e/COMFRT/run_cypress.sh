@@ -8,3 +8,6 @@ cd /Users/angelarellan/Documents/cypress/e2e/COMFRT
 
 # Ejecuta Cypress
 npx cypress run >> /Users/angelarellan/Documents/cypress/e2e/COMFRT/cypress.log 2>&1
+
+
+#//no borrar//
