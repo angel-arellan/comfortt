@@ -175,7 +175,7 @@ cy.get('.JaPNtHML')
 cy.get('#checkout_button-checkout_button_1 > form > .e1yuB0Es')
 //.should('be.visible')
 .click({ force: true });
-cy.wait(2000);
+cy.wait(2500);
 
 //  Verificar que la URL incluye el dominio y una parte común
 //cy.url().should('include', 'https://comfrt.com/checkouts/');
@@ -189,7 +189,7 @@ cy.wait(2000);
 
 
 
-// Regresar a la página anterior////prueba de cambios
+// Regresar a la página anterior//
 //cy.go('back');
 //cy.reload();
 });
