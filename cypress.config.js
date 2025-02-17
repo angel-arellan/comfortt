@@ -13,7 +13,7 @@ module.exports = defineConfig({
     reporter: "mochawesome",  // Reporter de mochawesome
     reporterOptions: {
       reportDir: 'cypress/mochawesome-report',  // Carpeta donde se guardan los reportes
-      overwrite: false,
+      overwrite: true,
       html: true,
       json: true
     }
