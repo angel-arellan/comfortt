@@ -45,7 +45,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: reporte-cypress
-          path: cypress/mochawesome-report
+          path: mochawesome-report
 
       # Enviar notificación por correo
       - name: Enviar notificación por correo
