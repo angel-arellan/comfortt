@@ -23,7 +23,7 @@ jobs:
 
       # Paso para almacenar en caché el binario de Cypress
       - name: Cache Cypress binary
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.cache/Cypress
           key: ${{ runner.os }}-cypress-${{ hashFiles('**/package-lock.json') }}
@@ -47,7 +47,7 @@ jobs:
 
       # Enviar notificación por correo
       - name: Enviar notificación por correo
-        uses: dawidd6/action-send-mail@v3
+        uses: dawidd6/action-send-mail@v4
         with:
           server_address: ${{ secrets.SMTP_HOST }}
           server_port: ${{ secrets.SMTP_PORT }}
