@@ -1,8 +1,8 @@
-name: Ejecutar Cypress cada 30 minutos
+name: Ejecutar Cypress cada 60 minutos
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "*/59 * * * *"
   workflow_dispatch:
 
 jobs:
@@ -51,6 +51,6 @@ jobs:
           from: "Cypress Tests <${{ secrets.SMTP_USER }}>"
           to: "angel.arellan@latechfactory.com"
           subject: "Resultados de Cypress"
-          body: "Las pruebas de Cypress han finalizado. Revisa los resultados en GitHub Actions."
+          body: "Las pruebas de Cypress han finalizado y se han realizado con éxito. Para Revisar los detalles de los resultados ir a GitHub Actions."
 
           
