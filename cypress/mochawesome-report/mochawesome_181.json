@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-02-14T15:16:56.400Z",
+    "end": "2025-02-14T15:17:59.357Z",
+    "duration": 62957,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ef7c0f20-c034-403f-aa56-48259b2ee2f4",
+      "title": "",
+      "fullFile": "cypress/e2e/COMFRT/NavCateClic+ElemenVisiblesMobile.cy.js",
+      "file": "cypress/e2e/COMFRT/NavCateClic+ElemenVisiblesMobile.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "be05d4c9-76e6-407c-914f-d678eab9068a",
+          "title": "Interacción con el Menú Hamburguesa en dispositivos móviles",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Debería abrir el menú hamburguesa y navegar en iPhone 15 Pro Max",
+              "fullTitle": "Interacción con el Menú Hamburguesa en dispositivos móviles Debería abrir el menú hamburguesa y navegar en iPhone 15 Pro Max",
+              "timedOut": null,
+              "duration": 60825,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Configura la emulación para el dispositivo actual\ncy.viewport(device.width, device.height);\ncy.visit('https://www.comfrt.com');\n// Espera a que el ícono del menú hamburguesa sea visible y haz clic en él\ncy.get('#default_header-default-header_0 > header > label.hamburger > svg', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\n// Haz clic en la categoría \"Shop All\"\ncy.get('[href=\"https://comfrt.com/collections/all-products\"]', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\n// Verifica que la página de \"Shop All\" se haya cargado correctamente\ncy.url().should('include', '/collections/all-products');\n//Verificar que todos los elementos sean visibles\ncy.get('#collections_with_pagination-default-collections-with-pagination_0').should('be.visible');\ncy.wait(2000);\n// Desplázate y espera\ncy.scrollTo('bottom');\ncy.wait(2000);\ncy.scrollTo('top');\n// Reabre el menú hamburguesa\ncy.get('#default_header-default-header_0 > header > label.hamburger > svg', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\n// Haz clic en la categoría \"Hoodies\"\ncy.get(':nth-child(2) > .menuLabel > :nth-child(1)', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\n// Haz clic en la subcategoría \"All Hoodies\"\ncy.get('[href=\"https://comfrt.com/collections/hoodies\"]', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\n// Verifica la carga de \"All Hoodies\"\ncy.url().should('include', '/collections/hoodies');\n//Verificar que todos los elementos sean visibles\ncy.get('#collections_with_pagination-default-collections-with-pagination_0').should('be.visible');\ncy.wait(2000);\n// Desplázate y espera\ncy.scrollTo('bottom');\ncy.wait(2000);\ncy.scrollTo('top');\n// Reabre el menú hamburguesa\ncy.get('#default_header-default-header_0 > header > label.hamburger > svg', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\n// Haz clic en la categoría \"Sweatpants\"\ncy.get(':nth-child(3) > .menuLabel > :nth-child(1)', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\n// Haz clic en la subcategoría \"All Sweatpants\"\ncy.get('[href=\"https://comfrt.com/collections/sweatpants\"]', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\n// Verifica la carga de \"All Sweatpants\"\ncy.url().should('include', '/collections/sweatpants');\n//Verificar que todos los elementos sean visibles\ncy.get('#collections_with_pagination-default-collections-with-pagination_0').should('be.visible');\ncy.wait(2000);\n// Desplázate y espera\ncy.scrollTo('bottom');\ncy.wait(2000);\ncy.scrollTo('top');\n// Reabre el menú hamburguesa\ncy.get('#default_header-default-header_0 > header > label.hamburger > svg', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\n// Haz clic en la categoría \"Kids\"\ncy.get('[href=\"https://comfrt.com/content/kids\"]', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\n// Verifica la carga de \"Kids\"\ncy.url().should('include', '/content/kids');\n//Verificar que todos los elementos sean visibles\ncy.get('#home_hero-kids-hero-draft_0 > div > img').should('be.visible');\ncy.wait(2000);\n//Verificar que todos los elementos sean visibles\ncy.get('#featured_products_section-shop-kids-section-draft_2 > div').should('be.visible');\ncy.wait(2000);\n//Verificar que todos los elementos sean visibles\ncy.get('#featured_products_section-shop-kids-sweatpants_3 > div').should('be.visible');\ncy.wait(2000);\n//Verificar que todos los elementos sean visibles\ncy.get('#image_centered_text-kids-sub-section-draft_4 > section > div').should('be.visible');\ncy.wait(2000);\n//Verificar que todos los elementos sean visibles\ncy.get('#home_featured_section-kids-featured-draft_6 > section > div:nth-child(1) > div.dlYCmTsm > img').should('be.visible');\ncy.wait(2000);\n//Verificar que todos los elementos sean visibles\ncy.get('#home_featured_section-kids-featured-draft_6 > section > div:nth-child(2) > div.dlYCmTsm > img').should('be.visible');\ncy.wait(2000);\n// Desplázate y espera\ncy.scrollTo('bottom');\ncy.wait(2000);\ncy.scrollTo('top');\n// Reabre el menú hamburguesa\ncy.get('#default_header-default-header_0 > header > label.hamburger > svg', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\n// Haz clic en la categoría \"Loungewear\"\ncy.get('[href=\"https://comfrt.com/collections/loungewear\"]', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\n// Verifica la carga de \"Loungewear\"\ncy.url().should('include', '/collections/loungewear');\n//Verificar que todos los elementos sean visibles\ncy.get('#collections_with_pagination-default-collections-with-pagination_0').should('be.visible');\ncy.wait(2000);\n// Desplázate y espera\ncy.scrollTo('bottom');\ncy.wait(2000);\ncy.scrollTo('top');\n// Reabre el menú hamburguesa\ncy.get('#default_header-default-header_0 > header > label.hamburger > svg', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\n// Haz clic en la categoría \"Blankets\"\ncy.get('[href=\"https://comfrt.com/content/blankets\"]', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\n// Verifica la carga de \"Blankets\"\ncy.url().should('include', '/content/blankets');\n//Verificar que todos los elementos sean visibles\ncy.get('#home_hero-weighted-blanket-landing-page-hero_0 > div > img').should('be.visible');\ncy.wait(2000);\n//Verificar que todos los elementos sean visibles\ncy.get('#featured_products_section-shop-blankets_2 > div > div.zZYXATlU > div').should('be.visible');\ncy.wait(2000);\n//Verificar que todos los elementos sean visibles\ncy.get('#image_centered_text-banner-blankets-draft_3 > section > div').should('be.visible');\ncy.wait(2000);\n//Verificar que todos los elementos sean visibles\ncy.get('#home_featured_section-blankets-featured-section-draft_5 > section > div:nth-child(1) > div.dlYCmTsm > img').should('be.visible');\ncy.wait(2000);\n//Verificar que todos los elementos sean visibles\ncy.get('#home_featured_section-blankets-featured-section-draft_5 > section > div:nth-child(2) > div.dlYCmTsm > img').should('be.visible');\ncy.wait(2000);\n// Desplázate y espera\ncy.scrollTo('bottom');\ncy.wait(2000);\ncy.scrollTo('top');\n// Reabre el menú hamburguesa\ncy.get('#default_header-default-header_0 > header > label.hamburger > svg', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\n// Haz clic en la categoría \"Accessories\"\ncy.get(':nth-child(7) > .menuLabel > :nth-child(1)', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\n// Haz clic en la subcategoría \"Collections ALL Accessories\"\ncy.get('[href=\"https://comfrt.com/collections/accessories\"]', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\n// Verifica la carga de \"All Accessories\"\ncy.url().should('include', '/collections/accessories');\n// Desplázate y espera\ncy.scrollTo('bottom');\ncy.wait(2000);\ncy.scrollTo('top');\n// Reabre el menú hamburguesa\ncy.get('#default_header-default-header_0 > header > label.hamburger > svg', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\n// Haz clic en la categoría \"Pets\"\ncy.get('[href=\"https://comfrt.com/content/pets\"]', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\n// Verifica la carga de \"Pets\"\ncy.url().should('include', '/content/pets');\n// Desplázate y espera\ncy.scrollTo('bottom');\ncy.wait(2000);\ncy.scrollTo('top');\n// Reabre el menú hamburguesa\ncy.get('#default_header-default-header_0 > header > label.hamburger > svg', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\n/*// Espera a que el enlace de \"Ambassador Program\" esté disponible y visible\ncy.get('a[href=\"/pages/ambassador\"]', { timeout: 10000 })\n  \n  .then(($link) => {\n    // Verifica si el enlace tiene el atributo href correctamente definido\n    const href = $link.attr('href');\n    if (href) {\n      cy.wrap($link).click({ force: true });\n    } else {\n      throw new Error(\"El enlace 'Ambassador Program' no tiene un href definido.\");\n    }\n  });\n\n  cy.wait(2000);\n\n// Verifica que la página cargó correctamente\ncy.url().should('include', '/pages/ambassador');\n\n// Desplázate y espera\ncy.scrollTo('bottom');\ncy.wait(2000);\ncy.scrollTo('top');\n\n// Reabre el menú hamburguesa\ncy.get('#default_header-default-header_0 > header > label.hamburger > svg', { timeout: 10000 })\n  .should('be.visible')\n  .click({ force: true }); \n\n// Espera a que el ícono del menú hamburguesa se cierre\ncy.get('#default_header-default-header_0 > header > label.close > svg', { timeout: 10000 })\n.should('be.visible')\n.click({ force: true });*/",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: expected '<svg.uQuvDfx9.>' to be 'visible'\n\nThis element `<svg.uQuvDfx9.>` is not visible because it has CSS property: `position: fixed` and it's being covered by another element:\n\n`<iframe src=\"https://customer-app.alia-cloudflare.com/popup?shop=comfrtclothing.myshopify.com&amp;width=430&amp;width=430&amp;height=932&amp;path=%2Fcontent%2Fkids&amp;jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0VXNlcklEIjoyNTIzNzEyMDksImlhdCI6MTczOTU0NjIyMn0.PKHa4fVE6oIAGrtA4f8-TeGm6QcWmOysWss0UuUYH1k\" allow=\"clipboard-write\" title=\"Alia popup\" style=\"border: none; width: 100%; height: 100%;\"></iframe>`",
+                "estack": "AssertionError: Timed out retrying after 10000ms: expected '<svg.uQuvDfx9.>' to be 'visible'\n\nThis element `<svg.uQuvDfx9.>` is not visible because it has CSS property: `position: fixed` and it's being covered by another element:\n\n`<iframe src=\"https://customer-app.alia-cloudflare.com/popup?shop=comfrtclothing.myshopify.com&amp;width=430&amp;width=430&amp;height=932&amp;path=%2Fcontent%2Fkids&amp;jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0VXNlcklEIjoyNTIzNzEyMDksImlhdCI6MTczOTU0NjIyMn0.PKHa4fVE6oIAGrtA4f8-TeGm6QcWmOysWss0UuUYH1k\" allow=\"clipboard-write\" title=\"Alia popup\" style=\"border: none; width: 100%; height: 100%;\"></iframe>`\n    at Context.eval (webpack://documents/./cypress/e2e/COMFRT/NavCateClic+ElemenVisiblesMobile.cy.js:162:7)",
+                "diff": null
+              },
+              "uuid": "54ad6449-23de-43b8-9ab6-b83cd82dd271",
+              "parentUUID": "be05d4c9-76e6-407c-914f-d678eab9068a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "54ad6449-23de-43b8-9ab6-b83cd82dd271"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 60825,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/mochawesome-report",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 0,
+    "pending": 0,
+    "failures": 2,
+    "start": "2025-01-31T13:57:17.924Z",
+    "end": "2025-01-31T13:57:41.483Z",
+    "duration": 23559,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a6d59009-b40e-4c54-8873-d46d412590db",
+      "title": "",
+      "fullFile": "cypress/e2e/MiracleBrand Blue/ShopTestCTAComforter.cy.js",
+      "file": "cypress/e2e/MiracleBrand Blue/ShopTestCTAComforter.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "de2fb1c8-c583-43f5-96c0-0f3c47a1131d",
+          "title": "home de www.shopmiraclebrand.co/comforter/ksp-bento/?__orly_origin=qa-bento-blue",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verificacion Elementos existentes y visibles",
+              "fullTitle": "home de www.shopmiraclebrand.co/comforter/ksp-bento/?__orly_origin=qa-bento-blue Verificacion Elementos existentes y visibles",
+              "timedOut": null,
+              "duration": 10982,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(1) > .WPv3QHU8').should('be.visible');\ncy.get(':nth-child(1) > .WPv3QHU8').should('exist');\ncy.wait(4000);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `:nth-child(1) > .WPv3QHU8`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `:nth-child(1) > .WPv3QHU8`, but never found it.\n    at Context.eval (webpack://documents/./cypress/e2e/MiracleBrand Blue/ShopTestCTAComforter.cy.js:16:38)",
+                "diff": null
+              },
+              "uuid": "ba6e4fc1-b3dc-419b-a226-ff44e800d0cc",
+              "parentUUID": "de2fb1c8-c583-43f5-96c0-0f3c47a1131d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Navegar Home y verificación de botón CTA",
+              "fullTitle": "home de www.shopmiraclebrand.co/comforter/ksp-bento/?__orly_origin=qa-bento-blue Navegar Home y verificación de botón CTA",
+              "timedOut": null,
+              "duration": 11154,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.scrollTo(0, 1000);\ncy.wait(1000);\ncy.scrollTo(0, 1000);\ncy.wait(1000);\ncy.scrollTo(0, 1000);\ncy.wait(1000);\ncy.scrollTo(0, 1000);\ncy.wait(1000);\ncy.get('.u05GBI5R').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.u05GBI5R`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.u05GBI5R`, but never found it.\n    at Context.eval (webpack://documents/./cypress/e2e/MiracleBrand Blue/ShopTestCTAComforter.cy.js:33:7)",
+                "diff": null
+              },
+              "uuid": "3c0a1f86-a37c-4995-a4f2-b9cb046d9fc3",
+              "parentUUID": "de2fb1c8-c583-43f5-96c0-0f3c47a1131d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "ba6e4fc1-b3dc-419b-a226-ff44e800d0cc",
+            "3c0a1f86-a37c-4995-a4f2-b9cb046d9fc3"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 22136,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

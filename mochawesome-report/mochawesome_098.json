@@ -1,0 +1,244 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 1,
+    "pending": 0,
+    "failures": 6,
+    "start": "2025-01-31T14:19:04.606Z",
+    "end": "2025-01-31T14:19:40.411Z",
+    "duration": 35805,
+    "testsRegistered": 7,
+    "passPercent": 14.285714285714285,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4e8d5e10-18e0-43b9-af21-bfb17a142c7f",
+      "title": "",
+      "fullFile": "cypress/e2e/othersProd1/Registro.cy.js",
+      "file": "cypress/e2e/othersProd1/Registro.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f7ec021f-252a-4519-a514-0983ca2104e1",
+          "title": "registro",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Probar registro exitoso",
+              "fullTitle": "registro Probar registro exitoso",
+              "timedOut": null,
+              "duration": 5247,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.registerLink').should('be.visible');\ncy.get('.registerLink').click();\ncy.contains('Crear cuenta');\ncy.contains('Crea tu usuario Jumbo');\ncy.get('#StepOne > .container-fluid > :nth-child(1) > .hidden-xs > img').should('be.visible');\ncy.get('#StepOne > .container-fluid > :nth-child(1) > .hidden-xs > .textosImage > .text-center').should('be.visible');\ncy.get('#StepOne > .container-fluid > :nth-child(1) > .col-md-6 > .innerWrapForm').should('be.visible');\ncy.get('#Email').click().type('natufco@gmail.com');\ncy.get('#Password').click().type('natijumbo');\ncy.get('#ConfirmPassword').click().type('natijumbo');\ncy.get('#terminos').check();\ncy.get('.col-md-6 > .col-sm-offset-1').should('be.visible');\ncy.get('#ToStepTwo').click();\ncy.get('#StepTwo > .container-fluid > :nth-child(1) > .wrapForm').should('be.visible');\ncy.get('#StepTwo > .container-fluid > :nth-child(1) > .hidden-xs > img').should('be.visible');\ncy.get('#StepTwo > .container-fluid > :nth-child(1) > .hidden-xs > .textosImage > .text-center').should('be.visible');\ncy.get('#FirstName').click().type('Natalia');\ncy.get('#LastName').click().type('Bincovich');\ncy.get('#DocumentType').select('DNI');\ncy.get('#DocumentNumber').click().type('39882120');\ncy.get('.col-sm-5 > label > input').check();\ncy.get('.tenesTarjeta > .needIt').should('be.visible');\ncy.get('.tenes-hijos').should('be.visible');\ncy.get('.tenes-hijos > .btn').should('be.visible').click();\ncy.get('#FamilyModal > .modal-dialog > .modal-content').should('be.visible');\ncy.get('.familyForm-nameContainer > :nth-child(1) > input').should('be.visible').type('Francisco');\ncy.get('.familyForm-nameContainer > :nth-child(2) > input').should('be.visible').type('pepis');\ncy.get('.familyForm-dataContainer > :nth-child(1) > :nth-child(3)').should('be.visible').click();\ncy.get('.familyForm-dataContainer > :nth-child(1) > :nth-child(2)').should('be.visible').click();\ncy.get('.familyForm-dataContainer > :nth-child(1) > :nth-child(3)').should('be.visible').click();\ncy.get('.familyForm-dataContainer > :nth-child(2) > input').should('be.visible').click();\ncy.get('#confirmFormBtn').should('be.visible');\ncy.get('#cancelFormBtn').should('be.visible').click();\ncy.get('#dateOfBirth').click().type('18/10/1996');\ncy.get('#btnBackStep2').should('be.visible');\ncy.get('#ToStepNormalize').click();\ncy.get('#StepNormalize > .row > .col-sm-offset-1 > h3').should('be.visible');\ncy.get('#StepNormalize > .row > .col-sm-offset-1 > p').should('be.visible');\ncy.get('.tableNormForm').should('be.visible');\ncy.get('#CustomerNormalizeCancel').should('be.visible');\ncy.get('#btnBackNormalize').should('be.visible');\ncy.get('#CustomerNormalizeContinue').should('be.visible');",
+              "err": {
+                "message": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > Cannot read properties of null (reading 'message')\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
+                "estack": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > Cannot read properties of null (reading 'message')\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n    at Object.<anonymous> (https://www.jumbomas.com.ar/Content/bootstrap335/js/bootstrapValidator.min.js:10:14236)\n    at j (https://www.jumbomas.com.ar/Scripts/jquery.min.js?version=2.0.53:2:26911)\n    at Object.add [as done] (https://www.jumbomas.com.ar/Scripts/jquery.min.js?version=2.0.53:2:27220)\n    at b.validateField (https://www.jumbomas.com.ar/Content/bootstrap335/js/bootstrapValidator.min.js:10:14162)\n    at HTMLInputElement.<anonymous> (https://www.jumbomas.com.ar/Content/bootstrap335/js/bootstrapValidator.min.js:10:8425)\n    at HTMLInputElement.dispatch (https://www.jumbomas.com.ar/Scripts/jquery.min.js?version=2.0.53:3:6444)\n    at r.handle (https://www.jumbomas.com.ar/Scripts/jquery.min.js?version=2.0.53:3:3219)",
+                "diff": null
+              },
+              "uuid": "edf67bc2-67c0-4dcc-9605-10cc7534b2f4",
+              "parentUUID": "f7ec021f-252a-4519-a514-0983ca2104e1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Probar registro NO exitoso: no seleccionar el checkbox",
+              "fullTitle": "registro Probar registro NO exitoso: no seleccionar el checkbox",
+              "timedOut": null,
+              "duration": 5069,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.registerLink').should('be.visible');\ncy.get('.registerLink').click();\ncy.get('#Email').click().type('natufco@gmail.com');\ncy.get('#Password').click().type('natijumbo');\ncy.get('#ConfirmPassword').click().type('natijumbo');\ncy.get('#ToStepTwo').click();\ncy.get('#terminos-one-validation-group > .help-block').should('be.visible');",
+              "err": {
+                "message": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > Cannot read properties of null (reading 'message')\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
+                "estack": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > Cannot read properties of null (reading 'message')\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n    at Object.<anonymous> (https://www.jumbomas.com.ar/Content/bootstrap335/js/bootstrapValidator.min.js:10:14236)\n    at j (https://www.jumbomas.com.ar/Scripts/jquery.min.js?version=2.0.53:2:26911)\n    at Object.add [as done] (https://www.jumbomas.com.ar/Scripts/jquery.min.js?version=2.0.53:2:27220)\n    at b.validateField (https://www.jumbomas.com.ar/Content/bootstrap335/js/bootstrapValidator.min.js:10:14162)\n    at HTMLInputElement.<anonymous> (https://www.jumbomas.com.ar/Content/bootstrap335/js/bootstrapValidator.min.js:10:8425)\n    at HTMLInputElement.dispatch (https://www.jumbomas.com.ar/Scripts/jquery.min.js?version=2.0.53:3:6444)\n    at r.handle (https://www.jumbomas.com.ar/Scripts/jquery.min.js?version=2.0.53:3:3219)",
+                "diff": null
+              },
+              "uuid": "5e417f21-246d-4b3f-aeea-7fbb65f2897e",
+              "parentUUID": "f7ec021f-252a-4519-a514-0983ca2104e1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Probar registro NO exitoso: las contraseñas no coinciden",
+              "fullTitle": "registro Probar registro NO exitoso: las contraseñas no coinciden",
+              "timedOut": null,
+              "duration": 4998,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.registerLink').should('be.visible');\ncy.get('.registerLink').click();\ncy.get('#Email').click().type('natufco@gmail.com');\ncy.get('#Password').click().type('natijumbo');\ncy.get('#ConfirmPassword').click().type('natijumbo123');\ncy.get('#terminos').check();\ncy.get('#ToStepTwo').click();\ncy.get('#password-two-validation-group > [data-bv-validator=\"identical\"]').should('be.visible');",
+              "err": {
+                "message": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > Cannot read properties of null (reading 'message')\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
+                "estack": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > Cannot read properties of null (reading 'message')\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n    at Object.<anonymous> (https://www.jumbomas.com.ar/Content/bootstrap335/js/bootstrapValidator.min.js:10:14236)\n    at j (https://www.jumbomas.com.ar/Scripts/jquery.min.js?version=2.0.53:2:26911)\n    at Object.add [as done] (https://www.jumbomas.com.ar/Scripts/jquery.min.js?version=2.0.53:2:27220)\n    at b.validateField (https://www.jumbomas.com.ar/Content/bootstrap335/js/bootstrapValidator.min.js:10:14162)\n    at HTMLInputElement.<anonymous> (https://www.jumbomas.com.ar/Content/bootstrap335/js/bootstrapValidator.min.js:10:8425)\n    at HTMLInputElement.dispatch (https://www.jumbomas.com.ar/Scripts/jquery.min.js?version=2.0.53:3:6444)\n    at r.handle (https://www.jumbomas.com.ar/Scripts/jquery.min.js?version=2.0.53:3:3219)",
+                "diff": null
+              },
+              "uuid": "4c990bd9-cdf3-417a-acff-8d3c3b6ea3b0",
+              "parentUUID": "f7ec021f-252a-4519-a514-0983ca2104e1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Probar registro NO exitoso: mail invalido",
+              "fullTitle": "registro Probar registro NO exitoso: mail invalido",
+              "timedOut": null,
+              "duration": 4730,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.registerLink').should('be.visible');\ncy.get('.registerLink').click();\ncy.get('#Email').click().type('natufco@@gmail.com');\ncy.get('#email-validation-group > [data-bv-validator=\"regexp\"]').should('be.visible');",
+              "err": {},
+              "uuid": "619a4539-ae2e-4182-8761-93ae592f6dc5",
+              "parentUUID": "f7ec021f-252a-4519-a514-0983ca2104e1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Probar registro NO exitoso: DNI invalido",
+              "fullTitle": "registro Probar registro NO exitoso: DNI invalido",
+              "timedOut": null,
+              "duration": 3282,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.registerLink').click();\ncy.contains('Crear cuenta');\ncy.contains('Crea tu usuario Jumbo');\ncy.get('#StepOne > .container-fluid > :nth-child(1) > .hidden-xs > img').should('be.visible');\ncy.get('#StepOne > .container-fluid > :nth-child(1) > .hidden-xs > .textosImage > .text-center').should('be.visible');\ncy.get('#StepOne > .container-fluid > :nth-child(1) > .col-md-6 > .innerWrapForm').should('be.visible');\ncy.get('#Email').click().type('natufco@gmail.com');\ncy.get('#Password').click().type('natijumbo');\ncy.get('#ConfirmPassword').click().type('natijumbo');\ncy.get('#terminos').check();\ncy.get('#ToStepTwo').click();\ncy.get('#FirstName').click().type('Natalia');\ncy.get('#LastName').click().type('Bincovich');\ncy.get('#DocumentType').select('DNI');\ncy.get('#DocumentNumber').click().type('3988212000');\ncy.get('#dateOfBirth').click().type('18/10/1996');\ncy.get('#ToStepNormalize').click();\ncy.get('#Service-Error > .modal-dialog > .modal-content > .modal-body').should('be.visible');",
+              "err": {
+                "message": "Error: The following error originated from your application code, not from Cypress.\n\n  > Script error.\n\nCypress detected that an uncaught error was thrown from a cross origin script.\n\nWe cannot provide you the stack trace, line number, or file where this error occurred.\n\nCheck your Developer Tools Console for the actual error - it should be printed there.\n\nIt's possible to enable debugging these scripts by adding the `crossorigin` attribute and setting a CORS header.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nhttps://on.cypress.io/cross-origin-script-error",
+                "estack": "Error: The following error originated from your application code, not from Cypress.\n\n  > Script error.\n\nCypress detected that an uncaught error was thrown from a cross origin script.\n\nWe cannot provide you the stack trace, line number, or file where this error occurred.\n\nCheck your Developer Tools Console for the actual error - it should be printed there.\n\nIt's possible to enable debugging these scripts by adding the `crossorigin` attribute and setting a CORS header.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nhttps://on.cypress.io/cross-origin-script-error",
+                "diff": null
+              },
+              "uuid": "d977573a-e174-447c-9ca5-fa5ef5af0b49",
+              "parentUUID": "f7ec021f-252a-4519-a514-0983ca2104e1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Probar registro NO exitoso: DNI no coincide con el apellido",
+              "fullTitle": "registro Probar registro NO exitoso: DNI no coincide con el apellido",
+              "timedOut": null,
+              "duration": 4637,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.registerLink').click();\ncy.contains('Crear cuenta');\ncy.contains('Crea tu usuario Jumbo');\ncy.get('#StepOne > .container-fluid > :nth-child(1) > .hidden-xs > img').should('be.visible');\ncy.get('#StepOne > .container-fluid > :nth-child(1) > .hidden-xs > .textosImage > .text-center').should('be.visible');\ncy.get('#StepOne > .container-fluid > :nth-child(1) > .col-md-6 > .innerWrapForm').should('be.visible');\ncy.get('#Email').click().type('natufco@gmail.com');\ncy.get('#Password').click().type('natijumbo');\ncy.get('#ConfirmPassword').click().type('natijumbo');\ncy.get('#terminos').check();\ncy.get('#ToStepTwo').click();\ncy.get('#FirstName').click().type('Natalia');\ncy.get('#LastName').click().type('Perez');\ncy.get('#DocumentType').select('DNI');\ncy.get('#DocumentNumber').click().type('39882120');\ncy.get('#dateOfBirth').click().type('18/10/1996');\ncy.get('#ToStepNormalize').click();\ncy.get('#Service-Error > .modal-dialog > .modal-content > .modal-body > #message-error').should('be.visible');",
+              "err": {
+                "message": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > Cannot read properties of null (reading 'message')\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
+                "estack": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > Cannot read properties of null (reading 'message')\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n    at Object.<anonymous> (https://www.jumbomas.com.ar/Content/bootstrap335/js/bootstrapValidator.min.js:10:14236)\n    at j (https://www.jumbomas.com.ar/Scripts/jquery.min.js?version=2.0.53:2:26911)\n    at Object.add [as done] (https://www.jumbomas.com.ar/Scripts/jquery.min.js?version=2.0.53:2:27220)\n    at b.validateField (https://www.jumbomas.com.ar/Content/bootstrap335/js/bootstrapValidator.min.js:10:14162)\n    at HTMLInputElement.<anonymous> (https://www.jumbomas.com.ar/Content/bootstrap335/js/bootstrapValidator.min.js:10:8425)\n    at HTMLInputElement.dispatch (https://www.jumbomas.com.ar/Scripts/jquery.min.js?version=2.0.53:3:6444)\n    at r.handle (https://www.jumbomas.com.ar/Scripts/jquery.min.js?version=2.0.53:3:3219)",
+                "diff": null
+              },
+              "uuid": "d9b136ad-2b5d-4096-8ce4-90ddf796f159",
+              "parentUUID": "f7ec021f-252a-4519-a514-0983ca2104e1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Probar registro de hijo NO exitoso: dejar campos vaacíos",
+              "fullTitle": "registro Probar registro de hijo NO exitoso: dejar campos vaacíos",
+              "timedOut": null,
+              "duration": 4901,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.registerLink').should('be.visible');\ncy.get('.registerLink').click();\ncy.contains('Crear cuenta');\ncy.contains('Crea tu usuario Jumbo');\ncy.get('#StepOne > .container-fluid > :nth-child(1) > .hidden-xs > img').should('be.visible');\ncy.get('#StepOne > .container-fluid > :nth-child(1) > .hidden-xs > .textosImage > .text-center').should('be.visible');\ncy.get('#StepOne > .container-fluid > :nth-child(1) > .col-md-6 > .innerWrapForm').should('be.visible');\ncy.get('#Email').click().type('natufco@gmail.com');\ncy.get('#Password').click().type('natijumbo');\ncy.get('#ConfirmPassword').click().type('natijumbo');\ncy.get('#terminos').check();\ncy.get('.col-md-6 > .col-sm-offset-1').should('be.visible');\ncy.get('#ToStepTwo').click();\ncy.get('#StepTwo > .container-fluid > :nth-child(1) > .wrapForm').should('be.visible');\ncy.get('#StepTwo > .container-fluid > :nth-child(1) > .hidden-xs > img').should('be.visible');\ncy.get('#StepTwo > .container-fluid > :nth-child(1) > .hidden-xs > .textosImage > .text-center').should('be.visible');\ncy.get('#FirstName').click().type('Natalia');\ncy.get('#LastName').click().type('Bincovich');\ncy.get('#DocumentType').select('DNI');\ncy.get('#DocumentNumber').click().type('39882120');\ncy.get('.col-sm-5 > label > input').check();\ncy.get('.tenesTarjeta > .needIt').should('be.visible');\ncy.get('.tenes-hijos').should('be.visible');\ncy.get('.tenes-hijos > .btn').should('be.visible').click();\ncy.get('#confirmFormBtn').should('be.disabled');",
+              "err": {
+                "message": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > Cannot read properties of null (reading 'message')\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
+                "estack": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > Cannot read properties of null (reading 'message')\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n    at Object.<anonymous> (https://www.jumbomas.com.ar/Content/bootstrap335/js/bootstrapValidator.min.js:10:14236)\n    at j (https://www.jumbomas.com.ar/Scripts/jquery.min.js?version=2.0.53:2:26911)\n    at Object.add [as done] (https://www.jumbomas.com.ar/Scripts/jquery.min.js?version=2.0.53:2:27220)\n    at b.validateField (https://www.jumbomas.com.ar/Content/bootstrap335/js/bootstrapValidator.min.js:10:14162)\n    at HTMLInputElement.<anonymous> (https://www.jumbomas.com.ar/Content/bootstrap335/js/bootstrapValidator.min.js:10:8425)\n    at HTMLInputElement.dispatch (https://www.jumbomas.com.ar/Scripts/jquery.min.js?version=2.0.53:3:6444)\n    at r.handle (https://www.jumbomas.com.ar/Scripts/jquery.min.js?version=2.0.53:3:3219)",
+                "diff": null
+              },
+              "uuid": "8d7ed9dc-aea3-4d9c-8c60-1797779fdd87",
+              "parentUUID": "f7ec021f-252a-4519-a514-0983ca2104e1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "619a4539-ae2e-4182-8761-93ae592f6dc5"
+          ],
+          "failures": [
+            "edf67bc2-67c0-4dcc-9605-10cc7534b2f4",
+            "5e417f21-246d-4b3f-aeea-7fbb65f2897e",
+            "4c990bd9-cdf3-417a-acff-8d3c3b6ea3b0",
+            "d977573a-e174-447c-9ca5-fa5ef5af0b49",
+            "d9b136ad-2b5d-4096-8ce4-90ddf796f159",
+            "8d7ed9dc-aea3-4d9c-8c60-1797779fdd87"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 32864,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

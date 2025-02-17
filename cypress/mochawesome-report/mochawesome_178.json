@@ -1,0 +1,162 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-02-14T15:13:20.445Z",
+    "end": "2025-02-14T15:13:49.486Z",
+    "duration": 29041,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "67e70970-7396-4819-b685-887ff89ad08c",
+      "title": "",
+      "fullFile": "cypress/e2e/COMFRT/CTAsHome.cy.js",
+      "file": "cypress/e2e/COMFRT/CTAsHome.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8267cc92-87e9-4ead-9606-bc3cf561136d",
+          "title": "Flujo de navegación en la Home",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "dbad0589-0259-4938-b577-444297700efd",
+              "title": "Pruebas en MacBook Pro 16\"",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Debe hacer clic en 'Shop Your Hoodie' y volver a la Home",
+                  "fullTitle": "Flujo de navegación en la Home Pruebas en MacBook Pro 16\" Debe hacer clic en 'Shop Your Hoodie' y volver a la Home",
+                  "timedOut": null,
+                  "duration": 7014,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('#home_hero-shop-your-hoodie_0 > div > div > a > button').click({\n  force: true\n});\ncy.url().should('include', 'collections/hoodies');\ncy.go(\"back\"); // Volver a la Home\ncy.url().should('include', 'https://comfrt.com/');",
+                  "err": {},
+                  "uuid": "e356da43-39a1-461f-87e1-96fddde454b9",
+                  "parentUUID": "dbad0589-0259-4938-b577-444297700efd",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Debe hacer scroll hasta la sección y hacer clic en el CTA View All",
+                  "fullTitle": "Flujo de navegación en la Home Pruebas en MacBook Pro 16\" Debe hacer scroll hasta la sección y hacer clic en el CTA View All",
+                  "timedOut": null,
+                  "duration": 8000,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.contains('Shop Best Sellers', {\n  timeout: 10000\n}) // Busca el texto en la página\n.scrollIntoView() // Hace scroll hasta ese texto\n.should('be.visible'); // Verifica que es visible\ncy.wait(2000);\n//\"Debe hacer clic en 'View All' en la sección de Shop Best Seller y volver a la Home\", () => {\ncy.get('#featured_products_section-alternative-home-featured-products_2 > div > div.vMPtAMR0 > a > button').click({\n  force: true\n});\ncy.url().should('include', '/collections');\ncy.go(\"back\"); // Volver a la Home\ncy.url().should('include', 'https://comfrt.com/');",
+                  "err": {},
+                  "uuid": "fda3f3bd-52b6-412e-8026-d5a90d06ff2c",
+                  "parentUUID": "dbad0589-0259-4938-b577-444297700efd",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Debe hacer scroll hasta la sección y hacer clic en el CTA Shop All Items",
+                  "fullTitle": "Flujo de navegación en la Home Pruebas en MacBook Pro 16\" Debe hacer scroll hasta la sección y hacer clic en el CTA Shop All Items",
+                  "timedOut": null,
+                  "duration": 11853,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.contains('View Our Hoodies', {\n  timeout: 10000\n}) // Busca el texto en la página\n.scrollIntoView() // Hace scroll hasta ese texto\n.should('be.visible'); // Verifica que es visible\ncy.wait(2000);\n//\"Debe scrollear hasta 'Shop All Items', hacer clic y validar la navegación\",\ncy.get('#full_with_image_section-view-our-hoodies-1_7 > div > div > a > button').click({\n  force: true\n});\ncy.url().should('include', '/all-products');\n// Vuelve a la página anterior\ncy.go('back');\ncy.url().should('include', 'https://comfrt.com/'); // Verifica que regresó correctamente",
+                  "err": {},
+                  "uuid": "34c8f753-2977-424e-88e8-0853c7be1174",
+                  "parentUUID": "dbad0589-0259-4938-b577-444297700efd",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "e356da43-39a1-461f-87e1-96fddde454b9",
+                "fda3f3bd-52b6-412e-8026-d5a90d06ff2c",
+                "34c8f753-2977-424e-88e8-0853c7be1174"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 26867,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/mochawesome-report",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

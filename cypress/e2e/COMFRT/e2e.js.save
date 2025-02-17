@@ -1,0 +1,11 @@
+// cypress/support/e2e.js
+
+// Importar comandos personalizados si los tienes
+import './commands';
+
+// Hook global para ejecutar antes de cada prueba
+beforeEach(() => {
+  cy.log('Iniciando una prueba...');
+});
+
+

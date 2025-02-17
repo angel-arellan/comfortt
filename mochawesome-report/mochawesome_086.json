@@ -1,0 +1,190 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 3,
+    "pending": 0,
+    "failures": 2,
+    "start": "2025-01-31T14:13:14.263Z",
+    "end": "2025-01-31T14:14:28.283Z",
+    "duration": 74020,
+    "testsRegistered": 5,
+    "passPercent": 60,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5d4a0b01-c0d3-4791-8541-fb57d9a7ce3c",
+      "title": "",
+      "fullFile": "cypress/e2e/othersProd1/Contactanos.cy.js",
+      "file": "cypress/e2e/othersProd1/Contactanos.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "87a7ffc4-bc4c-437a-84c8-e6a3c507d558",
+          "title": "Contactanos",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Devolución de canje",
+              "fullTitle": "Contactanos Devolución de canje",
+              "timedOut": null,
+              "duration": 19067,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Contactanos');\ncy.get('#modalContactanos').should('be.visible').click();\ncy.get('p > a').should('be.visible').click();\ncy.contains('¿Te arrepentiste de tu canje?');\ncy.contains('COMPLETÁ EL SIGUIENTE FORMULARIO PARA INICIAR EL TRÁMITE DE DEVOLUCIÓN.');\ncy.contains('Recordá que el Premio deberá ser devuelto en las mismas condiciones en las que fue entregado.');\ncy.get('#Name').should('be.visible').click().type('Martina Bincovich');\ncy.get('#Phone').should('be.visible').click().type('1165088240');\ncy.get('#Email').should('be.visible').click().type('martubincovich@gmail.com');\ncy.get('#Office').should('be.visible').click().type('Jumbo Juan B justo');\ncy.get('#Doctype').select('DNI');\ncy.get('#Document').should('be.visible').click().type('41708154');\ncy.get('#Message').should('be.visible').click().type('Canje realizado el 03/07/2023. Producto: tapitas');\ncy.get('[style=\"width: 304px; height: 78px;\"] > div > iframe').should('be.visible');\ncy.get('#btnSendForm').should('be.visible');",
+              "err": {},
+              "uuid": "115df44e-22b9-4cac-80c8-a31c6f376cdc",
+              "parentUUID": "87a7ffc4-bc4c-437a-84c8-e6a3c507d558",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "¿Necesitas ayuda?",
+              "fullTitle": "Contactanos ¿Necesitas ayuda?",
+              "timedOut": null,
+              "duration": 16972,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Contactanos');\ncy.get('#modalContactanos').should('be.visible').click();\ncy.contains('¿Necesitas ayuda?');\ncy.contains('Conocé las respuestas a las preguntas más frecuentes haciendo ');\ncy.contains('Si necesitas información adicional, tenés dudas o problemas con tu cuenta o canje, envianos tus comentarios por alguno de los siguientes medios:');\ncy.get('[style=\"font-size: 16px; margin: 2px 0;\"] > a').should('be.visible').click();\ncy.contains('Resolvemos tus dudas');\ncy.contains('Conocé las respuestas a las preguntas más frecuentes');\ncy.get('.container > .row > .col-xs-12 > div').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.container > .row > .col-xs-12 > div`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.container > .row > .col-xs-12 > div`, but never found it.\n    at Context.eval (webpack://documents/./cypress/e2e/othersProd1/Contactanos.cy.js:39:51)",
+                "diff": null
+              },
+              "uuid": "1cf6d19f-6e2d-4b83-bc3b-fc817dc4ab7f",
+              "parentUUID": "87a7ffc4-bc4c-437a-84c8-e6a3c507d558",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Formulario de contacto",
+              "fullTitle": "Contactanos Formulario de contacto",
+              "timedOut": null,
+              "duration": 17780,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Contactanos');\ncy.get('#modalContactanos').should('be.visible').click();\ncy.contains('Formulario de contacto');\ncy.get('.row > :nth-child(2) > :nth-child(4) > a').should('be.visible').click();\ncy.contains('Formulario de Contacto ');\ncy.get('#FullName').should('be.visible').click().type('Martina Bincovich');\ncy.get('#PhoneArea').should('be.visible').click().type('011');\ncy.get('#PhoneNumber').should('be.visible').click().type('65088240');\ncy.get('#Email').should('be.visible').click().type('martubincovich@gmail.com');\ncy.get('#Sucursal').should('be.visible').click().type('Jumbo Juan B justo');\ncy.get('#CardNumber').should('be.visible').click().type('0987 0987 0987');\ncy.get('#DocumentNumber').should('be.visible').click().type('41.708.154');\ncy.get('#Message').should('be.visible').click().type('Hola quiero contactarme');\ncy.get('[style=\"width: 304px; height: 78px;\"] > div > iframe').should('be.visible');\ncy.get('#btnSendForm').should('be.visible');",
+              "err": {},
+              "uuid": "2a8931b3-d35e-45cf-8057-936be07cd00c",
+              "parentUUID": "87a7ffc4-bc4c-437a-84c8-e6a3c507d558",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Chat on line",
+              "fullTitle": "Contactanos Chat on line",
+              "timedOut": null,
+              "duration": 11885,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Contactanos');\ncy.get('#modalContactanos').should('be.visible').click();\ncy.contains('Chat online haciendo');\ncy.get(':nth-child(5) > .btnNeedHelpChat').should('be.visible').click();\ncy.get('#iframeChat2020').should('be.visible');",
+              "err": {},
+              "uuid": "b6371038-e149-4291-8dba-4f526815dd32",
+              "parentUUID": "87a7ffc4-bc4c-437a-84c8-e6a3c507d558",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Teléfono y mail",
+              "fullTitle": "Contactanos Teléfono y mail",
+              "timedOut": null,
+              "duration": 6351,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Contactanos');\ncy.get('#modalContactanos').should('be.visible').click();\ncy.contains('Asistencia telefónica');\ncy.contains('JumboMas@cencosud.com.ar');\ncy.get('#contactanosModal > .modal-dialog > .modal-content > .modal-footer > .close').should('be.visible').click();",
+              "err": {
+                "message": "Error: The following error originated from your application code, not from Cypress.\n\n  > Script error.\n\nCypress detected that an uncaught error was thrown from a cross origin script.\n\nWe cannot provide you the stack trace, line number, or file where this error occurred.\n\nCheck your Developer Tools Console for the actual error - it should be printed there.\n\nIt's possible to enable debugging these scripts by adding the `crossorigin` attribute and setting a CORS header.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nhttps://on.cypress.io/cross-origin-script-error\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Contactanos`",
+                "estack": "Error: The following error originated from your application code, not from Cypress.\n\n  > Script error.\n\nCypress detected that an uncaught error was thrown from a cross origin script.\n\nWe cannot provide you the stack trace, line number, or file where this error occurred.\n\nCheck your Developer Tools Console for the actual error - it should be printed there.\n\nIt's possible to enable debugging these scripts by adding the `crossorigin` attribute and setting a CORS header.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nhttps://on.cypress.io/cross-origin-script-error\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Contactanos`",
+                "diff": null
+              },
+              "uuid": "9a65c471-484c-4855-adea-d366efa37dc6",
+              "parentUUID": "87a7ffc4-bc4c-437a-84c8-e6a3c507d558",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "115df44e-22b9-4cac-80c8-a31c6f376cdc",
+            "2a8931b3-d35e-45cf-8057-936be07cd00c",
+            "b6371038-e149-4291-8dba-4f526815dd32"
+          ],
+          "failures": [
+            "1cf6d19f-6e2d-4b83-bc3b-fc817dc4ab7f",
+            "9a65c471-484c-4855-adea-d366efa37dc6"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 72055,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

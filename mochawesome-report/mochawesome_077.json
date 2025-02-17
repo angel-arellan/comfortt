@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-01-31T14:12:31.343Z",
+    "end": "2025-01-31T14:12:31.811Z",
+    "duration": 468,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d994e950-c041-441d-8d34-4600f8402a1d",
+      "title": "",
+      "fullFile": "cypress/e2e/OthersTests1/UssPrime.cy.js",
+      "file": "cypress/e2e/OthersTests1/UssPrime.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "88a812bb-c751-4598-a3a1-50bbd21178e6",
+          "title": "Usuario Prime",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Iniciar sesión con usuario prime y verificar elementos prime",
+              "fullTitle": "Usuario Prime Iniciar sesión con usuario prime y verificar elementos prime",
+              "timedOut": null,
+              "duration": 440,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.ingresarLink').click();\ncy.get('#Email').type('leonardo.antonione@gmail.com');\ncy.get('#Password').type('sweden');\ncy.get('#submitloginform').click();\ncy.get('#Prime').should('be.visible').click();\ncy.get('.container-fluid.top-banner').should('be.visible');\ncy.get('.container-fluid.top-banner img').should('be.visible');\ncy.contains('¡Ya sos Jumbo Prime!');\ncy.contains('Disfrutá de todos los beneficios que tenemos para vos');\ncy.contains('Conocé los nuevos beneficios:');\ncy.get('.envios-gratis').should('be.visible');\ncy.contains('//*[@id=\"ph-topic\"]/div/div/div[4]/div/div[1]/ul/li[6]').scrollIntoView();\ncy.xpath('//*[@id=\"ph-topic\"]/div/div/div[4]/div/div[1]/ul/li[2]/img').should('be.visible');\ncy.xpath(' //*[@id=\"ph-topic\"]/div/div/div[4]/div/div[1]/ul/li[3]').should('be.visible');\ncy.xpath('//*[@id=\"ph-topic\"]/div/div/div[4]/div/div[1]/ul/li[4]').should('be.visible');\ncy.xpath('//*[@id=\"ph-topic\"]/div/div/div[4]/div/div[1]/ul/li[5]').should('be.visible');\ncy.xpath('//*[@id=\"ph-topic\"]/div/div/div[4]/div/div[1]/ul/li[6]').should('be.visible');\ncy.xpath('//*[@id=\"ph-topic\"]/div/div/div[4]/div/div[1]/ul/li[7]').should('be.visible');\ncy.contains('¡Y mucho más!');\ncy.get('.dto-todos-dias').should('be.visible');\ncy.contains('Ir a Jumbo Prime');\ncy.get('a[href=\"https://www.jumboprime.com.ar\"]').should('be.visible').click();\ncy.get('.img-responsive').click();\ncy.wait(1000);\ncy.contains('Ir a Jumbo Prime').scrollIntoView();\ncy.wait(1000);\ncy.xpath('//*[@id=\"widgetControlThree\"]/section/div/div[2]/div[2]/div/div/a').should('be.visible').click();\ncy.get('#widgetControlFive').should('be.visible').click();",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://jumbomasbeta.cencosud.com/\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Usuario Prime`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://jumbomasbeta.cencosud.com/\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Usuario Prime`\n    at <unknown> (https://www.comfrt.com/__cypress/runner/cypress_runner.js:131634:76)\n    at visitFailedByErr (https://www.comfrt.com/__cypress/runner/cypress_runner.js:131049:12)\n    at <unknown> (https://www.comfrt.com/__cypress/runner/cypress_runner.js:131617:13)\n    at tryCatcher (https://www.comfrt.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://www.comfrt.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://www.comfrt.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://www.comfrt.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://www.comfrt.com/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (https://www.comfrt.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://www.comfrt.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://www.comfrt.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://www.comfrt.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://documents/./cypress/e2e/OthersTests1/UssPrime.cy.js:3:8)",
+                "diff": null
+              },
+              "uuid": "f256050f-b775-4458-9707-130e9be5e28f",
+              "parentUUID": "88a812bb-c751-4598-a3a1-50bbd21178e6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "f256050f-b775-4458-9707-130e9be5e28f"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 440,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
