@@ -57,7 +57,3 @@ jobs:
           to: "angel.arellan@latechfactory.com"
           subject: "Resultados de Cypress"
           body: "Las pruebas de Cypress han finalizado y se han realizado con éxito. Para revisar los detalles de los resultados, revisa los artefactos en GitHub Actions."
-
-    #/////pruebas///
-
-          
