@@ -189,7 +189,7 @@ cy.wait(2000);
 
 
 
-// Regresar a la página anterior
+// Regresar a la página anterior////prueba de cambios
 //cy.go('back');
 //cy.reload();
 });
