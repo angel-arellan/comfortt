@@ -40,7 +40,7 @@ jobs:
 
       # Guardar reportes de Cypress en GitHub Actions
       - name: Guardar reportes de pruebas
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: reporte-cypress
           path: cypress/reports
@@ -57,6 +57,8 @@ jobs:
           to: "angel.arellan@latechfactory.com"
           subject: "Resultados de Cypress"
           body: "Las pruebas de Cypress han finalizado y se han realizado con éxito. Para revisar los detalles de los resultados, revisa los artefactos en GitHub Actions."
+
+    #/////pruebas///
 
 
           
