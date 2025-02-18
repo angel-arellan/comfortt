@@ -80,4 +80,4 @@ describe('Prueba de scroll en vista móvil y desktop - Comfrt', () => {
     });
   });
   
-  //no borrar//
+  
