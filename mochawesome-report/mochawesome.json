@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 1,
-    "passes": 1,
+    "passes": 0,
     "pending": 0,
-    "failures": 0,
-    "start": "2025-02-18T15:40:17.500Z",
-    "end": "2025-02-18T15:41:25.705Z",
-    "duration": 68205,
+    "failures": 1,
+    "start": "2025-02-18T16:04:46.345Z",
+    "end": "2025-02-18T16:05:37.418Z",
+    "duration": 51073,
     "testsRegistered": 1,
-    "passPercent": 100,
+    "passPercent": 0,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,17 +18,17 @@
   },
   "results": [
     {
-      "uuid": "b817e28b-8b34-4a4e-a3ba-d9767c6a7651",
+      "uuid": "ce08ced5-c21c-456e-827f-57cc082a1208",
       "title": "",
-      "fullFile": "cypress/e2e/COMFRT/NavCateClic+ElemenVisiblesMobile.cy.js",
-      "file": "cypress/e2e/COMFRT/NavCateClic+ElemenVisiblesMobile.cy.js",
+      "fullFile": "cypress/e2e/COMFRT/NavKIDSCatMobile.cy.js",
+      "file": "cypress/e2e/COMFRT/NavKIDSCatMobile.cy.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "a7c202e3-df09-42d9-9e97-13124b203283",
-          "title": "Interacción con el Menú Hamburguesa en dispositivos móviles",
+          "uuid": "67da4231-107a-45c0-a39e-0e84c12d3f22",
+          "title": "Prueba en dispositivos móviles en www.comfrt.com",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
@@ -36,31 +36,35 @@
           "tests": [
             {
               "title": "Debería abrir el menú hamburguesa y navegar en iPhone 15 Pro Max",
-              "fullTitle": "Interacción con el Menú Hamburguesa en dispositivos móviles Debería abrir el menú hamburguesa y navegar en iPhone 15 Pro Max",
+              "fullTitle": "Prueba en dispositivos móviles en www.comfrt.com Debería abrir el menú hamburguesa y navegar en iPhone 15 Pro Max",
               "timedOut": null,
-              "duration": 66280,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
-              "fail": false,
+              "duration": 48488,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
               "pending": false,
               "context": null,
-              "code": "// Configura la emulación para el dispositivo actual\ncy.viewport(device.width, device.height);\ncy.visit('https://www.comfrt.com');\n// Espera a que el ícono del menú hamburguesa sea visible y haz clic en él\ncy.get('#default_header-default-header_0 > header > label.hamburger > svg', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\n// Haz clic en la categoría \"Shop All\"\ncy.get('[href=\"https://comfrt.com/collections/all-products\"]', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\n// Verifica que la página de \"Shop All\" se haya cargado correctamente\ncy.url().should('include', '/collections/all-products');\ncy.wait(2000);\n// Reabre el menú hamburguesa\ncy.get('#default_header-default-header_0 > header > label.hamburger > svg', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\n// Haz clic en la categoría \"Hoodies\"\ncy.get(':nth-child(2) > .menuLabel > :nth-child(1)', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\n// Haz clic en la subcategoría \"All Hoodies\"\ncy.get('[href=\"https://comfrt.com/collections/hoodies\"]', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\n// Verifica la carga de \"All Hoodies\"\ncy.url().should('include', '/collections/hoodies');\ncy.wait(2000);\n// Reabre el menú hamburguesa\ncy.get('#default_header-default-header_0 > header > label.hamburger > svg', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\n// Haz clic en la categoría \"Sweatpants\"\ncy.get(':nth-child(3) > .menuLabel > :nth-child(1)', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\n// Haz clic en la subcategoría \"All Sweatpants\"\ncy.get('[href=\"https://comfrt.com/collections/sweatpants\"]', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\n// Verifica la carga de \"All Sweatpants\"\ncy.url().should('include', '/collections/sweatpants');\ncy.wait(2000);\n// Reabre el menú hamburguesa\ncy.get('#default_header-default-header_0 > header > label.hamburger > svg', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\n// Haz clic en la categoría \"Kids\"\ncy.get('[href=\"https://comfrt.com/content/kids\"]', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\n// Verifica la carga de \"Kids\"\ncy.url().should('include', '/content/kids');\ncy.wait(2000);\n// Reabre el menú hamburguesa\ncy.get('#default_header-default-header_0 > header > label.hamburger > svg', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\n// Haz clic en la categoría \"Loungewear\"\ncy.get('[href=\"https://comfrt.com/collections/loungewear\"]', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\n// Verifica la carga de \"Loungewear\"\ncy.url().should('include', '/collections/loungewear');\ncy.wait(2000);\n// Reabre el menú hamburguesa\ncy.get('#default_header-default-header_0 > header > label.hamburger > svg', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\n// Haz clic en la categoría \"Blankets\"\ncy.get('#menu-default > a:nth-child(6)', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\n// Verifica la carga de \"Blankets\"\ncy.url().should('include', '/content/blankets');\ncy.wait(2000);\n// Reabre el menú hamburguesa\ncy.get('#default_header-default-header_0 > header > label.hamburger > svg', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\n// Haz clic en la categoría \"Accessories\"\ncy.get('#menu-default > div:nth-child(7) > label', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.get('#menu-default > div:nth-child(7) > div > a:nth-child(2)', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\n// Verifica la carga de \"All Accessories\"\ncy.url().should('include', '/collections/accessories');\ncy.wait(2000);\n// Reabre el menú hamburguesa\ncy.get('#default_header-default-header_0 > header > label.hamburger > svg', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\n// Haz clic en la categoría \"Pets\"\ncy.get('[href=\"https://comfrt.com/content/pets\"]', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\n// Verifica la carga de \"Pets\"\ncy.url().should('include', '/content/pets');\ncy.wait(2000);\n// Desplázate y espera\ncy.scrollTo('bottom');\ncy.wait(2000);\ncy.scrollTo('top');\n// Reabre el menú hamburguesa\ncy.get('#default_header-default-header_0 > header > label.hamburger > svg', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\n/*// Espera a que el enlace de \"Ambassador Program\" esté disponible y visible\ncy.get('a[href=\"/pages/ambassador\"]', { timeout: 10000 })\n.then(($link) => {\n// Verifica si el enlace tiene el atributo href correctamente definido\nconst href = $link.attr('href');\nif (href) {\ncy.wrap($link).click({ force: true });\n} else {\nthrow new Error(\"El enlace 'Ambassador Program' no tiene un href definido.\");\n}\n});\ncy.wait(2000);\n// Verifica que la página cargó correctamente\ncy.url().should('include', '/pages/ambassador');\n// Desplázate y espera\ncy.scrollTo('bottom');\ncy.wait(2000);\ncy.scrollTo('top');\n// Reabre el menú hamburguesa\ncy.get('#default_header-default-header_0 > header > label.hamburger > svg', { timeout: 10000 })\n.should('be.visible')\n.click({ force: true }); \n// Espera a que el ícono del menú hamburguesa se cierre*/",
-              "err": {},
-              "uuid": "29dff1a0-7eef-4f89-9024-037c8240f67c",
-              "parentUUID": "a7c202e3-df09-42d9-9e97-13124b203283",
+              "code": "// Configura la emulación para el dispositivo actual\ncy.viewport(device.width, device.height);\ncy.visit('https://www.comfrt.com');\n// Espera a que el ícono del menú hamburguesa sea visible y haz clic en él\ncy.get('#default_header-default-header_0 > header > label.hamburger > svg', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\n// Haz clic en la categoría \"Kids\"\ncy.get('#menu-default > a:nth-child(4)', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\n// Verifica que la página de \"Kids\" se haya cargado correctamente\ncy.url().should('include', 'content/kids');\n// Desplázate y espera\ncy.scrollTo('bottom');\ncy.wait(2000);\ncy.scrollTo('center');\ncy.wait(2000);\ncy.scrollTo('top');\ncy.wait(2000);\ncy.contains('Shop Kids Hoodies', {\n  timeout: 10000\n}) // Busca el texto en la página\n.scrollIntoView() // Hace scroll hasta ese texto\n.should('be.visible'); // Verifica que es visible\ncy.wait(2000);\n// Interactúa con el selector de colores del producto Signature kids Hoodie\ncy.get('#featured_products_section-shop-kids-section-draft_2 > div > div.zZYXATlU > div > div:nth-child(1) > div.VtFAkf4R > fieldset > div > label:nth-child(1) > a', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\ncy.get('#featured_products_section-shop-kids-section-draft_2 > div > div.zZYXATlU > div > div:nth-child(1) > div.VtFAkf4R > fieldset > div > label:nth-child(2) > a', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\ncy.get('#featured_products_section-shop-kids-section-draft_2 > div > div.zZYXATlU > div > div:nth-child(1) > div.VtFAkf4R > fieldset > div > label:nth-child(3) > a', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\n//'Selecciona la última prenda del color elegido', () => {\ncy.wait(2000);\ncy.get('#featured_products_section-shop-kids-section-draft_2 > div > div.zZYXATlU > div > div:nth-child(1) > a > div.tK5FSRVg > img', {\n  timeout: 10000\n}).click({\n  force: true\n});\n// Verifica que se abrió la página del producto \n//  cy.url().should('include', 'products/signature-kids-hoodie?variant=43891268747308');\n// Hacer scroll en la página del producto\ncy.scrollTo('bottom'); // Desplaza hasta el final de la página\ncy.wait(2000);\ncy.scrollTo('top'); // Vuelve al inicio de la página\ncy.wait(2000);\n//'Interactúa con las tallas XS,S, M, L, XL\ncy.get('.O9IcGWrR > :nth-child(2) > .v26a1W51 > :nth-child(1) > .N1cHTXJ7 > .XSvSsyWQ', {\n  timeout: 10000\n})\n//     .should('be.visible')\n.click({\n  force: true\n});\ncy.wait(2000);\ncy.get('.O9IcGWrR > :nth-child(2) > .v26a1W51 > :nth-child(2) > .N1cHTXJ7 > .XSvSsyWQ', {\n  timeout: 10000\n})\n// .should('be.visible')\n.click({\n  force: true\n});\ncy.wait(2000);\ncy.get('.O9IcGWrR > :nth-child(2) > .v26a1W51 > :nth-child(3) > .N1cHTXJ7 > .XSvSsyWQ', {\n  timeout: 10000\n})\n//   .should('be.visible')\n.click({\n  force: true\n});\ncy.wait(2000);\ncy.get('.O9IcGWrR > :nth-child(2) > .v26a1W51 > :nth-child(4) > .N1cHTXJ7 > .XSvSsyWQ', {\n  timeout: 10000\n})\n// .should('be.visible')\n.click({\n  force: true\n});\ncy.wait(2000);\ncy.get('.O9IcGWrR > :nth-child(2) > .v26a1W51 > :nth-child(5) > .N1cHTXJ7 > .XSvSsyWQ', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\n//Hace clic en la Size Guide \ncy.get('.maXcOloV', {\n  timeout: 10000\n}).click({\n  force: true\n});\ncy.wait(2000);\n//Cierra el Size Guide \ncy.get('.LeKie3P2', {\n  timeout: 10000\n}).click({\n  force: true\n});\ncy.wait(2000);\n// Selecciona el botón de add to cart o pre-order según disponibilidad\ncy.get('[action=\"/cart/add?return_to=%2Fproducts%2Fsignature-kids-hoodie%3Fvariant%3D43891268812844%26viewcart%3Dtrue\"] > .YUeVwYml').then($btn => {\n  if ($btn.is(':enabled')) {\n    // Si el botón está habilitado, realiza una acción, como hacer clic\n    cy.wrap($btn).click();\n  } else {\n    // Si el botón está deshabilitado, realiza una acción alternativa\n    cy.log('El botón está deshabilitado. Realizando acción alternativa.');\n    // Acción alternativa\n    cy.get('[action=\"/cart/add?return_to=%2Fproducts%2Fsignature-kids-hoodie%3Fvariant%3D44015573205036%26viewcart%3Dtrue\"] > .YUeVwYml', {\n      timeout: 1000\n    }).should('be.enabled').click({\n      force: true\n    });\n    // //Hacer clic en el botón checkout', () => {\n    //   cy.get('#checkout_button-checkout_button_1 > form > button', { timeout: 10000 })\n    //   .click({ force: true });\n    //   cy.wait(2000)\n    //   // Vuelve a la página anterior\n    //   cy.go('back'); \n    //   cy.url().should('include', 'products/signature-kids-hoodie?variant=43891268747308'); // Verifica que regresó correctamente\n  }\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: expected '<span.XSvSsyWQ.MSGuc0os.>' to be 'visible'\n\nThis element `<span.XSvSsyWQ.MSGuc0os.>` is not visible because it has CSS property: `position: fixed` and it's being covered by another element:\n\n`<iframe src=\"https://customer-app.alia-cloudflare.com/popup?shop=comfrtclothing.myshopify.com&amp;width=430&amp;width=430&amp;height=932&amp;path=%2Fproducts%2Fsignature-kids-hoodie&amp;jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0VXNlcklEIjoyNjEyMTUyOTAsImlhdCI6MTczOTg5NDY5Mn0.Vn11SfEdEvMv1EMXb-tohGXVT-AaB03vZEOKSSTW5E0\" allow=\"clipboard-write\" title=\"Alia popup\" style=\"border: none; width: 100%; height: 100%;\"></iframe>`",
+                "estack": "AssertionError: Timed out retrying after 10000ms: expected '<span.XSvSsyWQ.MSGuc0os.>' to be 'visible'\n\nThis element `<span.XSvSsyWQ.MSGuc0os.>` is not visible because it has CSS property: `position: fixed` and it's being covered by another element:\n\n`<iframe src=\"https://customer-app.alia-cloudflare.com/popup?shop=comfrtclothing.myshopify.com&amp;width=430&amp;width=430&amp;height=932&amp;path=%2Fproducts%2Fsignature-kids-hoodie&amp;jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXN0VXNlcklEIjoyNjEyMTUyOTAsImlhdCI6MTczOTg5NDY5Mn0.Vn11SfEdEvMv1EMXb-tohGXVT-AaB03vZEOKSSTW5E0\" allow=\"clipboard-write\" title=\"Alia popup\" style=\"border: none; width: 100%; height: 100%;\"></iframe>`\n    at Context.eval (webpack://documents/./cypress/e2e/COMFRT/NavKIDSCatMobile.cy.js:94:6)",
+                "diff": null
+              },
+              "uuid": "a1b9834e-47b1-4dcb-abc9-a30c33313031",
+              "parentUUID": "67da4231-107a-45c0-a39e-0e84c12d3f22",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [
-            "29dff1a0-7eef-4f89-9024-037c8240f67c"
+          "passes": [],
+          "failures": [
+            "a1b9834e-47b1-4dcb-abc9-a30c33313031"
           ],
-          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 66280,
+          "duration": 48488,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
