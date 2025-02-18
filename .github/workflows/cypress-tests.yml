@@ -1,6 +1,6 @@
 
 
-name: Ejecutar Cypress cada 60 minutos (Sin Dashboard)
+name: Ejecutar Cypress cada 60 minutos 
 
 on:
   schedule:
@@ -36,8 +36,8 @@ jobs:
       - name: Instalar Cypress
         run: npx cypress install
 
-      # Ejecutar las pruebas de Cypress (Sin Dashboard)
-      - name: Ejecutar pruebas Cypress (Local)
+      # Ejecutar las pruebas de Cypress
+      - name: Ejecutar pruebas Cypress 
         run: npx cypress run
 
       # Guardar reportes de Cypress en GitHub Actions
@@ -61,4 +61,4 @@ jobs:
           body: "Las pruebas de Cypress han finalizado y se han realizado con éxito. Para revisar los detalles de los resultados, revisa los artefactos en GitHub Actions."
 
 
-          ####
+          #
