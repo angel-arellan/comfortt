@@ -47,6 +47,18 @@ jobs:
           name: reporte-cypress
           path: mochawesome-report
 
+
+
+       # Guardar videos de Cypress en GitHub Actions
+      - name: Guardar videos de pruebas
+        uses: actions/upload-artifact@v4
+        if: always()  # Asegura que los videos se guarden incluso si las pruebas fallan
+        with:
+          name: cypress-videos
+          path: cypress/videos
+
+
+
       # Enviar notificación por correo
       - name: Enviar notificación por correo
         uses: dawidd6/action-send-mail@v4
