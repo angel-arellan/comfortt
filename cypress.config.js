@@ -17,7 +17,12 @@ module.exports = defineConfig({
       html: true,
       json: true
     }
-  }
+  },
+
+  // Configuración de grabación de video
+  video: true, // Asegura que la grabación de video esté habilitada
+  videosFolder: "cypress/videos" // Ruta donde se guardan los videos
 });
+
 
 
