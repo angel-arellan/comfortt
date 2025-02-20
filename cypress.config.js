@@ -16,13 +16,16 @@ module.exports = defineConfig({
       overwrite: true,
       html: true,
       json: true
-    }
+    },
+
+    experimentalSessionAndOrigin: true,
+
+    chromeWebSecurity: false // Deshabilita la seguridad web en Chrome
   },
 
   // Configuración de grabación de video
   video: true, // Asegura que la grabación de video esté habilitada
   videosFolder: "cypress/videos" // Ruta donde se guardan los videos
 });
-
 
 

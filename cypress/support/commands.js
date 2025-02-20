@@ -1,25 +1,24 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('closePopupOnAppearance', () => {
+  cy.window().then((win) => {
+    const closeButtonSelector = '#alia-eraqt2a5vgcxqcu2 > div > svg'; // Selector del botón de cierre
+
+    const closePopup = () => {
+      const closeButton = win.document.querySelector(closeButtonSelector);
+      if (closeButton) {
+        cy.wrap(closeButton).click({ force: true }).then(() => {
+          cy.log('Popup detectado y cerrado.');
+        });
+      }
+    };
+
+    // Revisar cada 500ms durante 40 segundos si el pop-up aparece
+    let attempts = 0;
+    const intervalId = setInterval(() => {
+      closePopup();
+      attempts += 1;
+      if (attempts >= 80) { // 40 segundos (80 intentos de 500ms)
+        clearInterval(intervalId);
+      }
+    }, 500);
+  });
+});
