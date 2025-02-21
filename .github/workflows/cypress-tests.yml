@@ -4,7 +4,9 @@ name: Ejecutar Cypress cada 60 minutos
 
 on:
   schedule:
-    - cron: "*/59 * * * *"
+    # - cron: "*/59 * * * *"
+    - cron: "0 */4 * * *"
+
   workflow_dispatch:
 
 jobs:
