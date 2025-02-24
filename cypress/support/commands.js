@@ -36,11 +36,11 @@
 // });
 
 
-Cypress.Commands.add('blockPopupRequests', () => {
-    // Bloquear todas las solicitudes de eventos relacionados con el popup
-    cy.intercept('POST', '**/user/events*metric=POPUP*', { statusCode: 200 }).as('blockedPopupPOST');
-    cy.intercept('GET', '**/user/events*metric=POPUP*', { statusCode: 200 }).as('blockedPopupGET');
-});
+// Cypress.Commands.add('blockPopupRequests', () => {
+//     // Bloquear todas las solicitudes de eventos relacionados con el popup
+//     cy.intercept('POST', '**/user/events*metric=POPUP*', { statusCode: 200 }).as('blockedPopupPOST');
+//     cy.intercept('GET', '**/user/events*metric=POPUP*', { statusCode: 200 }).as('blockedPopupGET');
+// });
 
 
 
@@ -109,3 +109,76 @@ Cypress.Commands.add('blockPopupRequests', () => {
 //         }, 1000); // Revisar cada 1 segundo
 //     });
 // });
+
+// Cypress.Commands.add('cerrarPopupSiAparece', () => {
+//     // Interceptar el evento del popup
+//     cy.intercept('POST', '**/user/events?shop=comfrtclothing.myshopify.com&metric=POPUP*').as('popupEvent');
+
+//     // Aumentar la espera para capturar el popup
+//     cy.wait('@popupEvent', { timeout: 60000 }).then(() => {
+//         cy.log('⚠️ Popup detectado, intentando cerrarlo...');
+
+//         // Buscar el popup y cerrarlo si está presente
+//         cy.get('body').then(($body) => {
+//             if ($body.find('#alia-eraqt2a5vgcxqcu2 > div > svg').length > 0) {
+//                 cy.log('🔍 Se encontró la "X" del popup');
+//                 cy.get('#alia-eraqt2a5vgcxqcu2 > div > svg')
+//                     .should('be.visible')
+//                     .click({ force: true })
+//                     .then(() => cy.log('✅ Popup cerrado con la "X"'));
+//             } else if ($body.find('#alia-5rle13a5zp5nzjal').length > 0) {
+//                 cy.log('🔍 Se encontró el botón "No Thanks"');
+//                 cy.get('#alia-5rle13a5zp5nzjal')
+//                     .should('be.visible')
+//                     .click({ force: true })
+//                     .then(() => cy.log('✅ Popup cerrado con "No Thanks"'));
+//             } else {
+//                 cy.log('⚠️ El popup no se encontró en el DOM.');
+//             }
+//         });
+//     });
+// });
+
+
+// Cypress.Commands.add('disablePopupLogs', () => {
+//     // Interceptar la solicitud del popup y deshabilitar los logs
+//     cy.intercept('POST', '**/user/events?shop=comfrtclothing.myshopify.com&metric=POPUP*', (req) => {
+//         req.continue((res) => {
+//             // Aquí puedes omitir cualquier log relacionado con la solicitud
+//             res.send(); // Continuar la solicitud sin bloquearla, pero sin mostrarla
+//         });
+//     }).as('popupEvent');
+
+//     // Esperar que se realice la solicitud (esto asegura que se detecte el popup)
+//     cy.wait('@popupEvent', { timeout: 30000 }).then(() => {
+//         cy.log('🚫 Popup interceptado y bloqueado');
+//     });
+// });
+
+
+Cypress.Commands.add('borrarDatos', () => {
+    cy.clearCookies();
+    cy.clearLocalStorage();
+});
+
+
+Cypress.Commands.add('bloquearPopup', () => {
+    cy.intercept('POST', '**/user/events?shop=comfrtclothing.myshopify.com&metric=POPUP*', {
+        statusCode: 204, // Respuesta vacía
+        body: {} // Sin datos
+    }).as('popupEvent');
+});
+
+Cypress.Commands.add('cerrarPopupSiAparece', () => {
+    cy.get('body').then(($body) => {
+        if ($body.find('#alia-eraqt2a5vgcxqcu2 > div > svg').length > 0) {
+            cy.get('#alia-eraqt2a5vgcxqcu2 > div > svg').click({ force: true });
+            cy.log('✅ Popup cerrado con la "X"');
+        } else if ($body.find('#alia-5rle13a5zp5nzjal').length > 0) {
+            cy.get('#alia-5rle13a5zp5nzjal').click({ force: true });
+            cy.log('✅ Popup cerrado con "No Thanks"');
+        } else {
+            cy.log('⚠️ No se encontró el popup.');
+        }
+    });
+});
