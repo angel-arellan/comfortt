@@ -44,7 +44,7 @@
 
 
 
-/////
+// ///
 
 //    // Intentamos cerrar el popup repetidamente durante el test
 //    for (let i = 0; i < 20; i++) {
@@ -80,7 +80,7 @@
 
 
 
-////////
+// //////
 
 // Cypress.Commands.add('blockRedirects', () => {
 //     // Bloqueamos todas las solicitudes de redirección de página
@@ -110,34 +110,34 @@
 //     });
 // });
 
-// Cypress.Commands.add('cerrarPopupSiAparece', () => {
-//     // Interceptar el evento del popup
-//     cy.intercept('POST', '**/user/events?shop=comfrtclothing.myshopify.com&metric=POPUP*').as('popupEvent');
+Cypress.Commands.add('cerrarPopupSiAparece', () => {
+    // Interceptar el evento del popup
+    cy.intercept('POST', '**/user/events?shop=comfrtclothing.myshopify.com&metric=POPUP*').as('popupEvent');
 
-//     // Aumentar la espera para capturar el popup
-//     cy.wait('@popupEvent', { timeout: 60000 }).then(() => {
-//         cy.log('⚠️ Popup detectado, intentando cerrarlo...');
+    // Aumentar la espera para capturar el popup
+    cy.wait('@popupEvent', { timeout: 60000 }).then(() => {
+        cy.log('⚠️ Popup detectado, intentando cerrarlo...');
 
-//         // Buscar el popup y cerrarlo si está presente
-//         cy.get('body').then(($body) => {
-//             if ($body.find('#alia-eraqt2a5vgcxqcu2 > div > svg').length > 0) {
-//                 cy.log('🔍 Se encontró la "X" del popup');
-//                 cy.get('#alia-eraqt2a5vgcxqcu2 > div > svg')
-//                     .should('be.visible')
-//                     .click({ force: true })
-//                     .then(() => cy.log('✅ Popup cerrado con la "X"'));
-//             } else if ($body.find('#alia-5rle13a5zp5nzjal').length > 0) {
-//                 cy.log('🔍 Se encontró el botón "No Thanks"');
-//                 cy.get('#alia-5rle13a5zp5nzjal')
-//                     .should('be.visible')
-//                     .click({ force: true })
-//                     .then(() => cy.log('✅ Popup cerrado con "No Thanks"'));
-//             } else {
-//                 cy.log('⚠️ El popup no se encontró en el DOM.');
-//             }
-//         });
-//     });
-// });
+        // Buscar el popup y cerrarlo si está presente
+        cy.get('body').then(($body) => {
+            if ($body.find('#alia-eraqt2a5vgcxqcu2 > div > svg').length > 0) {
+                cy.log('🔍 Se encontró la "X" del popup');
+                cy.get('#alia-eraqt2a5vgcxqcu2 > div > svg')
+                    .should('be.visible')
+                    .click({ force: true })
+                    .then(() => cy.log('✅ Popup cerrado con la "X"'));
+            } else if ($body.find('#alia-5rle13a5zp5nzjal').length > 0) {
+                cy.log('🔍 Se encontró el botón "No Thanks"');
+                cy.get('#alia-5rle13a5zp5nzjal')
+                    .should('be.visible')
+                    .click({ force: true })
+                    .then(() => cy.log('✅ Popup cerrado con "No Thanks"'));
+            } else {
+                cy.log('⚠️ El popup no se encontró en el DOM.');
+            }
+        });
+    });
+});
 
 
 // Cypress.Commands.add('disablePopupLogs', () => {
@@ -169,16 +169,78 @@ Cypress.Commands.add('bloquearPopup', () => {
     }).as('popupEvent');
 });
 
-Cypress.Commands.add('cerrarPopupSiAparece', () => {
-    cy.get('body').then(($body) => {
-        if ($body.find('#alia-eraqt2a5vgcxqcu2 > div > svg').length > 0) {
-            cy.get('#alia-eraqt2a5vgcxqcu2 > div > svg').click({ force: true });
-            cy.log('✅ Popup cerrado con la "X"');
-        } else if ($body.find('#alia-5rle13a5zp5nzjal').length > 0) {
-            cy.get('#alia-5rle13a5zp5nzjal').click({ force: true });
-            cy.log('✅ Popup cerrado con "No Thanks"');
-        } else {
-            cy.log('⚠️ No se encontró el popup.');
-        }
+// Cypress.Commands.add('cerrarPopupSiAparece', () => {
+//     cy.get('body').then(($body) => {
+//         if ($body.find('#alia-eraqt2a5vgcxqcu2 > div > svg').length > 0) {
+//             cy.get('#alia-eraqt2a5vgcxqcu2 > div > svg').click({ force: true });
+//             cy.log('✅ Popup cerrado con la "X"');
+//         } else if ($body.find('#alia-5rle13a5zp5nzjal').length > 0) {
+//             cy.get('#alia-5rle13a5zp5nzjal').click({ force: true });
+//             cy.log('✅ Popup cerrado con "No Thanks"');
+//         } else {
+//             cy.log('⚠️ No se encontró el popup.');
+//         }
+//     });
+// });
+
+
+Cypress.Commands.add('cerrarPopupConEventos', () => {
+    cy.on('window:load', () => {
+        cy.log('🌐 Página cargada, monitoreando el popup...');
     });
+
+    cy.on('window:alert', (str) => {
+        cy.log(`🚨 Se detectó una alerta: ${str}`);
+    });
+
+    // Monitorear cuando se agregan elementos nuevos al DOM (como el popup)
+    cy.document().then((doc) => {
+        const observer = new MutationObserver(() => {
+            cy.get('body').then(($body) => {
+                if ($body.find('#alia-eraqt2a5vgcxqcu2 > div > svg').length > 0) {
+                    cy.log('🔍 Se detectó la "X" del popup, cerrándolo...');
+                    cy.get('#alia-eraqt2a5vgcxqcu2 > div > svg').click({ force: true });
+                } else if ($body.find('#alia-5rle13a5zp5nzjal').length > 0) {
+                    cy.log('🔍 Se detectó el botón "No Thanks", cerrándolo...');
+                    cy.get('#alia-5rle13a5zp5nzjal').click({ force: true });
+                }
+            });
+        });
+
+        observer.observe(doc.body, { childList: true, subtree: true });
+    });
+});
+
+
+
+//Para seleccionar color y talla disponible en el bunddle
+Cypress.Commands.add('seleccionarOpcionDisponible', () => {
+    cy.get('#product_hero_complete_the_look-default-product-hero-complete-the-look_12_rc > div > div.qvNyIJ2f > div:nth-child(2) > div > div > form > button')
+        .then(($btn) => {
+            if ($btn.text().includes('Sold Out') || !$btn.is(':enabled')) {
+                cy.log('Producto agotado. Intentando otra combinación.');
+
+                // Cambiar color aleatorio
+                cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(1) > div.v26a1W51 > label a')
+                    .then(($colores) => {
+                        let colorIndex = Cypress._.random(0, $colores.length - 1);
+                        cy.wrap($colores.eq(colorIndex)).click({ force: true });
+                    });
+
+                cy.wait(1000); // Esperar antes de cambiar la talla
+
+                // Cambiar talla aleatoria
+                cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(2) > div.v26a1W51 > label a span')
+                    .then(($tallas) => {
+                        let tallaIndex = Cypress._.random(0, $tallas.length - 1);
+                        cy.wrap($tallas.eq(tallaIndex)).click({ force: true });
+                    });
+
+                cy.wait(2000);
+                cy.seleccionarOpcionDisponible(); // Volver a verificar después del cambio
+            } else {
+                cy.log('Producto disponible. Agregando al carrito.');
+                cy.wrap($btn).click();
+            }
+        });
 });

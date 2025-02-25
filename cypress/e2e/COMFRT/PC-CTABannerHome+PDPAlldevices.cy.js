@@ -111,7 +111,7 @@ describe('Prueba en dispositivos móviles y desktop en www.comfrt.com', () => {
         cy.wait(2000);
 
         cy.cerrarPopupSiAparece()
-        
+
             cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(3) > div.v26a1W51 > label:nth-child(7) > a > span', { timeout: 5000 })
                 .click({ force: true });
             cy.wait(2000);

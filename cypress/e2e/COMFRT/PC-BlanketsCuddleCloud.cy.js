@@ -13,8 +13,9 @@ describe('Pruebas en dispositivos de escritorio y móviles en www.comfrt.com', (
   
         cy.viewport(device.width, device.height);
         cy.visit('https://comfrt.com/products/cuddlecloud-weighted-blanket');  
-        
-        
+    
+
+
         // Verificación de window.gtag para evitar el error
         cy.window().then((win) => {
             try {
