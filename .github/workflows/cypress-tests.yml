@@ -48,7 +48,7 @@ jobs:
         with:
           name: reporte-cypress
           path: mochawesome-report
-          retention-days: 30  # Borra los videos después de 30 días
+          
 
 
 
@@ -59,7 +59,7 @@ jobs:
         with:
           name: cypress-videos
           path: videos
-
+          retention-days: 30  # Borra los videos después de 30 días
 
 
       # Enviar notificación por correo
