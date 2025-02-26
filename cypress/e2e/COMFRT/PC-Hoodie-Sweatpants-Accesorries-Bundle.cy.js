@@ -1,7 +1,7 @@
 // describe('Pruebas en dispositivos de escritorio y móviles en www.comfrt.com', () => {
 //     const devices = [
-//       //{ name: 'Desktop 1920x1080', width: 1920, height: 1080 },
-//      { name: 'iPhone 15 Pro Max', width: 430, height: 932 }
+//       { name: 'Desktop 1920x1080', width: 1920, height: 1080 },
+//       //{ name: 'iPhone 15 Pro Max', width: 430, height: 932 }
 //     ];
   
 //     devices.forEach((device) => {
@@ -12,7 +12,7 @@
 //         }).as('mockPrivateAccessToken');
   
 //         cy.viewport(device.width, device.height);
-//         cy.visit('https://comfrt.com/products/french-terry-oversized-tee');  
+//         cy.visit('https://comfrt.com/products/minimalist-hoodie');  
         
 //         // Verificación de window.gtag para evitar el error
 //         cy.window().then((win) => {
@@ -39,26 +39,26 @@
 //         });
 
 //         // Interactúa con los colores
-//         cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(1) > div.v26a1W51 > label:nth-child(2) > a', { timeout: 10000 })
+//         cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(1) > div.v26a1W51 > label:nth-child(3) > a', { timeout: 10000 })
 //           .should('be.visible')
 //           .click({ force: true });
 
 //         cy.wait(2000);
 
-//         cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(1) > div.v26a1W51 > label:nth-child(5) > a', { timeout: 10000 })
+//         cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(2) > div.v26a1W51 > label:nth-child(1) > a', { timeout: 10000 })
 //           .should('be.visible')
 //           .click({ force: true });
 
 //         cy.wait(2000);
 
 //         // Interactúa con las tallas
-//         cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(2) > div.v26a1W51 > label:nth-child(1) > a > span', { timeout: 10000 })
+//         cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(3) > div.v26a1W51 > label:nth-child(4) > a > span', { timeout: 10000 })
 //           .should('be.visible')
 //           .click({ force: true });
 
 //         cy.wait(2000);
 
-//         cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(2) > div.v26a1W51 > label:nth-child(4) > a > span', { timeout: 10000 })
+//         cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(3) > div.v26a1W51 > label:nth-child(6) > a > span', { timeout: 10000 })
 //           .should('be.visible')
 //           .click({ force: true });
 
@@ -95,16 +95,6 @@
 //               .invoke('val')
 //               .should('eq', String(cantidadInicial + 1)); // Corrección en la comparación
 
-//             // Hacer clic en el botón de disminuir cantidad
-//             cy.get('@botonesCantidad').eq(0)
-//               .should('be.visible')
-//               .click();
-
-//             cy.get('@cantidad')
-//               .invoke('val')
-//               .should('eq', String(cantidadInicial)); // Corrección en la comparación
-
-//             cy.wait(2000);
 //         });
 
 //         // Cerrar el carrito
@@ -114,18 +104,24 @@
 
 //         cy.wait(2000);
 
+
+//         //Hace scroll hasta el bunddle
+//         cy.contains('Complete The Look', { timeout: 10000 }) // Busca el texto en la página
+//         .scrollIntoView() // Hace scroll hasta ese texto
+//         .should('be.visible'); // Verifica que es visible
+//         cy.wait(2000) 
+
+
+//         //Hace clic en el add to cart del bunddle, agregando una talla y color disponible
+//         cy.seleccionarOpcionDisponible();
+//         cy.wait(4000);
+
 //         // Ir a otro producto después de cerrar el carrito
-//         cy.visit('https://comfrt.com/products/the-camo-paw-hoodie');  
+//         cy.visit('https://comfrt.com/products/classic-two-tone-beanie');  
 //         cy.wait(2000);
 
-//         // Interactuar con colores y tallas
-//         cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(1) > div.v26a1W51 > label:nth-child(2) > a', { timeout: 10000 })
-//           .should('be.visible')
-//           .click({ force: true });
-
-//         cy.wait(2000);
-
-//         cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(2) > div.v26a1W51 > label:nth-child(1) > a > span', { timeout: 10000 })
+//         // Interactuar con colores 
+//         cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset > div.v26a1W51 > label:nth-child(2) > a', { timeout: 10000 })
 //           .should('be.visible')
 //           .click({ force: true });
 
@@ -143,6 +139,10 @@
 //                 cy.get('#cart', { timeout: 1000 }).should('be.visible');
 //             }
 //         });
+
+//         // Verificar que el carrito se ha desplegado
+//         cy.get('#cart', { timeout: 10000 }).should('be.visible');
+
 
 //         // Cerrar y abrir el carrito
 //         cy.get('#cart > div > div.zUHyhS7e > div.mhTDcJGU > label > svg', { timeout: 10000 })
@@ -174,6 +174,3 @@
 //       });
 //     });
 // });
-
-
-// //funciona todo Ok, hay q cerrar el popup mannualmente y rápido porque sino da error. 
