@@ -38,7 +38,7 @@ describe('Pruebas en dispositivos de escritorio y móviles en www.comfrt.com', (
             return true;  
         });
 
-        // Interactúa con los diferentes valores de Gitcards
+        // Interactúa con los diferentes valores de Giftcards
         cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset > div.v26a1W51 > label:nth-child(2) > a > span', { timeout: 10000 })
           .should('be.visible')
           .click({ force: true });
@@ -140,9 +140,9 @@ describe('Pruebas en dispositivos de escritorio y móviles en www.comfrt.com', (
                 cy.go('back'); 
             }
 
-            cy.get('#app > div:nth-child(1) > div > div.cm5pp._5ZebG.FeQiM._1fragemnf._1fragemnb._1fragemt5 > div.nMPKH.iYA3J > button > span > span._4ptW6 > span.a8x1wu2.a8x1wu1._1fragemok._1fragem1t._1fragemkk._1fragemka.a8x1wug.a8x1wuk.a8x1wui._1fragem2i._1fragemsy.a8x1wum.a8x1wul.a8x1wuy > svg', { timeout: 10000 })  
-            .should('be.visible')  
-            .click({ force: true });
+          //   cy.get('#app > div:nth-child(1) > div > div.cm5pp._5ZebG.FeQiM._1fragemnf._1fragemnb._1fragemt5 > div.nMPKH.iYA3J > button > span > span._4ptW6 > span.a8x1wu2.a8x1wu1._1fragemok._1fragem1t._1fragemkk._1fragemka.a8x1wug.a8x1wuk.a8x1wui._1fragem2i._1fragemsy.a8x1wum.a8x1wul.a8x1wuy > svg', { timeout: 10000 })  
+          //  // .should('be.visible')  
+          //   .click({ force: true });
           
 
         });

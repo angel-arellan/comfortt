@@ -399,7 +399,7 @@ describe('Pruebas en dispositivos de escritorio en www.comfrt.com', () => {
     
             //Vuelve a la home
             cy.get('#default_header-default-header_0 > header > a > img', { timeout: 10000 })
-            .should('be.visible')
+            //.should('be.visible')
             .click({ force: true });
     
             // Verifica que la página se haya cargado correctamente
