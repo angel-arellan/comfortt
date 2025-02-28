@@ -1,6 +1,6 @@
 
 
-name: Ejecutar Cypress cada 60 minutos 
+name: Ejecutar Cypress cada 4 hrs 
 
 on:
   schedule:
