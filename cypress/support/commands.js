@@ -110,34 +110,34 @@
 //     });
 // });
 
-Cypress.Commands.add('cerrarPopupSiAparece', () => {
-    // Interceptar el evento del popup
-    cy.intercept('POST', '**/user/events?shop=comfrtclothing.myshopify.com&metric=POPUP*').as('popupEvent');
+// Cypress.Commands.add('cerrarPopupSiAparece', () => {
+//     // Interceptar el evento del popup
+//     cy.intercept('POST', '**/user/events?shop=comfrtclothing.myshopify.com&metric=POPUP*').as('popupEvent');
 
-    // Aumentar la espera para capturar el popup
-    cy.wait('@popupEvent', { timeout: 60000 }).then(() => {
-        cy.log('⚠️ Popup detectado, intentando cerrarlo...');
+//     // Aumentar la espera para capturar el popup
+//     cy.wait('@popupEvent', { timeout: 60000 }).then(() => {
+//         cy.log('⚠️ Popup detectado, intentando cerrarlo...');
 
-        // Buscar el popup y cerrarlo si está presente
-        cy.get('body').then(($body) => {
-            if ($body.find('#alia-eraqt2a5vgcxqcu2 > div > svg').length > 0) {
-                cy.log('🔍 Se encontró la "X" del popup');
-                cy.get('#alia-eraqt2a5vgcxqcu2 > div > svg')
-                    .should('be.visible')
-                    .click({ force: true })
-                    .then(() => cy.log('✅ Popup cerrado con la "X"'));
-            } else if ($body.find('#alia-5rle13a5zp5nzjal').length > 0) {
-                cy.log('🔍 Se encontró el botón "No Thanks"');
-                cy.get('#alia-5rle13a5zp5nzjal')
-                    .should('be.visible')
-                    .click({ force: true })
-                    .then(() => cy.log('✅ Popup cerrado con "No Thanks"'));
-            } else {
-                cy.log('⚠️ El popup no se encontró en el DOM.');
-            }
-        });
-    });
-});
+//         // Buscar el popup y cerrarlo si está presente
+//         cy.get('body').then(($body) => {
+//             if ($body.find('#alia-eraqt2a5vgcxqcu2 > div > svg').length > 0) {
+//                 cy.log('🔍 Se encontró la "X" del popup');
+//                 cy.get('#alia-eraqt2a5vgcxqcu2 > div > svg')
+//                     .should('be.visible')
+//                     .click({ force: true })
+//                     .then(() => cy.log('✅ Popup cerrado con la "X"'));
+//             } else if ($body.find('#alia-5rle13a5zp5nzjal').length > 0) {
+//                 cy.log('🔍 Se encontró el botón "No Thanks"');
+//                 cy.get('#alia-5rle13a5zp5nzjal')
+//                     .should('be.visible')
+//                     .click({ force: true })
+//                     .then(() => cy.log('✅ Popup cerrado con "No Thanks"'));
+//             } else {
+//                 cy.log('⚠️ El popup no se encontró en el DOM.');
+//             }
+//         });
+//     });
+// });
 
 
 // Cypress.Commands.add('disablePopupLogs', () => {
@@ -156,18 +156,18 @@ Cypress.Commands.add('cerrarPopupSiAparece', () => {
 // });
 
 
-Cypress.Commands.add('borrarDatos', () => {
-    cy.clearCookies();
-    cy.clearLocalStorage();
-});
+// Cypress.Commands.add('borrarDatos', () => {
+//     cy.clearCookies();
+//     cy.clearLocalStorage();
+// });
 
 
-Cypress.Commands.add('bloquearPopup', () => {
-    cy.intercept('POST', '**/user/events?shop=comfrtclothing.myshopify.com&metric=POPUP*', {
-        statusCode: 204, // Respuesta vacía
-        body: {} // Sin datos
-    }).as('popupEvent');
-});
+// Cypress.Commands.add('bloquearPopup', () => {
+//     cy.intercept('POST', '**/user/events?shop=comfrtclothing.myshopify.com&metric=POPUP*', {
+//         statusCode: 204, // Respuesta vacía
+//         body: {} // Sin datos
+//     }).as('popupEvent');
+// });
 
 // Cypress.Commands.add('cerrarPopupSiAparece', () => {
 //     cy.get('body').then(($body) => {
@@ -184,32 +184,32 @@ Cypress.Commands.add('bloquearPopup', () => {
 // });
 
 
-Cypress.Commands.add('cerrarPopupConEventos', () => {
-    cy.on('window:load', () => {
-        cy.log('🌐 Página cargada, monitoreando el popup...');
-    });
+// Cypress.Commands.add('cerrarPopupConEventos', () => {
+//     cy.on('window:load', () => {
+//         cy.log('🌐 Página cargada, monitoreando el popup...');
+//     });
 
-    cy.on('window:alert', (str) => {
-        cy.log(`🚨 Se detectó una alerta: ${str}`);
-    });
+//     cy.on('window:alert', (str) => {
+//         cy.log(`🚨 Se detectó una alerta: ${str}`);
+//     });
 
-    // Monitorear cuando se agregan elementos nuevos al DOM (como el popup)
-    cy.document().then((doc) => {
-        const observer = new MutationObserver(() => {
-            cy.get('body').then(($body) => {
-                if ($body.find('#alia-eraqt2a5vgcxqcu2 > div > svg').length > 0) {
-                    cy.log('🔍 Se detectó la "X" del popup, cerrándolo...');
-                    cy.get('#alia-eraqt2a5vgcxqcu2 > div > svg').click({ force: true });
-                } else if ($body.find('#alia-5rle13a5zp5nzjal').length > 0) {
-                    cy.log('🔍 Se detectó el botón "No Thanks", cerrándolo...');
-                    cy.get('#alia-5rle13a5zp5nzjal').click({ force: true });
-                }
-            });
-        });
+//     // Monitorear cuando se agregan elementos nuevos al DOM (como el popup)
+//     cy.document().then((doc) => {
+//         const observer = new MutationObserver(() => {
+//             cy.get('body').then(($body) => {
+//                 if ($body.find('#alia-eraqt2a5vgcxqcu2 > div > svg').length > 0) {
+//                     cy.log('🔍 Se detectó la "X" del popup, cerrándolo...');
+//                     cy.get('#alia-eraqt2a5vgcxqcu2 > div > svg').click({ force: true });
+//                 } else if ($body.find('#alia-5rle13a5zp5nzjal').length > 0) {
+//                     cy.log('🔍 Se detectó el botón "No Thanks", cerrándolo...');
+//                     cy.get('#alia-5rle13a5zp5nzjal').click({ force: true });
+//                 }
+//             });
+//         });
 
-        observer.observe(doc.body, { childList: true, subtree: true });
-    });
-});
+//         observer.observe(doc.body, { childList: true, subtree: true });
+//     });
+// });
 
 
 
@@ -244,3 +244,47 @@ Cypress.Commands.add('seleccionarOpcionDisponible', () => {
             }
         });
 });
+
+
+
+
+
+
+// Cypress.Commands.add('monitorAndClosePopup', () => {
+//     cy.document().then((doc) => {
+//       const observer = new MutationObserver(() => {
+//         cy.get('iframe[src*="customer-app.alia-cloudflare.com/popup"]', { timeout: 5000 })
+//           .then(($iframe) => {
+//             if ($iframe.length > 0 && $iframe.is(':visible')) {
+//               cy.log('🟢 Se detectó el pop-up, intentando cerrarlo...');
+              
+//               cy.wrap($iframe).then(($loadedIframe) => {
+//                 const iframeBody = $loadedIframe.contents().find('body');
+                
+//                 if (iframeBody.length > 0) {
+//                   cy.wrap(iframeBody).within(() => {
+//                     cy.get('#alia-eraqt2a5vgcxqcu2 > div > svg', { timeout: 3000 }) // Ajusta este selector si el botón de cierre es diferente
+//                       .should('be.visible')
+//                       .click({ force: true });
+  
+//                     cy.log('✅ Pop-up cerrado exitosamente');
+//                   });
+//                 }
+//               });
+//             }
+//           });
+//       });
+  
+//       // Inicia la observación de cambios en el DOM
+//       observer.observe(doc.body, { childList: true, subtree: true });
+  
+//       // Detener la observación después de 60 segundos
+//       setTimeout(() => {
+//         observer.disconnect();
+//         cy.log('🛑 Finalizó el monitoreo del pop-up.');
+//       }, 60000);
+//     });
+//   });
+  
+  
+  

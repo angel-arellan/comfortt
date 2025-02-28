@@ -16,12 +16,10 @@
 //             // Establecer el viewport antes de visitar la página
 //             cy.viewport(device.width, device.height);
 
-
 //             cy.visit('https://www.comfrt.com');
 
-//             cy.borrarDatos(); // Borra datos previos
-//             cy.bloquearPopup(); // Bloquea la solicitud del popup
-        
+
+
 
 //             // Verificación de window.gtag para evitar el error
 //             cy.window().then((win) => {
@@ -104,21 +102,15 @@
 //             cy.wait(2000);
 
 
-//             cy.cerrarPopupSiAparece()
-
 //             cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(3) > div.v26a1W51 > label:nth-child(6) > a > span', { timeout: 5000 })
 //             .click({ force: true });
 //         cy.wait(2000);
 
-//         cy.cerrarPopupSiAparece()
 
 //             cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(3) > div.v26a1W51 > label:nth-child(7) > a > span', { timeout: 5000 })
 //                 .click({ force: true });
 //             cy.wait(2000);
 
-
-//             cy.cerrarPopupSiAparece()
-        
 
 //             // Selecciona el botón de add to cart o pre-order según disponibilidad
 //             cy.get('#product_hero_add_to_cart_button-default-product-hero-add-to-cart-button_5_rc > form:nth-child(1) > button').then(($btn) => {
@@ -178,6 +170,7 @@
 //         });
 //     });
 // });
+
 
 
 // //está ok todo, ,falta remover popup 
