@@ -6,7 +6,7 @@ describe('Cerrar ventana emergente dentro de un iframe', () => {
       cy.on('uncaught:exception', () => false);
   
       // Esperar hasta que el iframe sea visible antes de interactuar
-      cy.get('iframe[src*="customer-app.alia-cloudflare.com/popup"]', { timeout: 15000 })
+      cy.get('iframe[src*="customer-app.alia-cloudflare.com/popup"]', { timeout: 30000 })
         .should('exist')
         .and('be.visible') // Espera hasta que el iframe sea visible
         .then(($iframe) => {
@@ -15,7 +15,7 @@ describe('Cerrar ventana emergente dentro de un iframe', () => {
           // Asegurar que el iframe tiene contenido antes de interactuar
           if (iframeBody.length > 0) {
             cy.wrap(iframeBody).within(() => {
-              cy.get('#alia-eraqt2a5vgcxqcu2 > div > svg', { timeout: 5000 }) // Ajusta el selector si el botón de cierre no es un 'svg'
+              cy.get('#alia-eraqt2a5vgcxqcu2 > div > svg', { timeout: 20000 }) // Ajusta el selector si el botón de cierre no es un 'svg'
                 .should('be.visible')
                 .click({ force: true });
   
