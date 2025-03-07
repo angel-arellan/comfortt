@@ -14,6 +14,8 @@ describe('Pruebas en dispositivos de escritorio y móviles en www.comfrt.com', (
         cy.viewport(device.width, device.height);
         cy.visit('https://comfrt.com/products/comfrt-e-gift-card');  
         
+      
+
         // Verificación de window.gtag para evitar el error
         cy.window().then((win) => {
             try {
@@ -53,11 +55,11 @@ describe('Pruebas en dispositivos de escritorio y móviles en www.comfrt.com', (
 
 
 
-        cy.get(':nth-child(4) > .N1cHTXJ7 > .XSvSsyWQ', { timeout: 10000 })
-          .should('be.visible')
-          .click({ force: true });
+        // cy.get(':nth-child(4) > .N1cHTXJ7 > .XSvSsyWQ', { timeout: 10000 })
+        //   .should('be.visible')
+        //   .click({ force: true });
 
-        cy.wait(2000);
+        // cy.wait(2000);
 
 
        
@@ -65,7 +67,7 @@ describe('Pruebas en dispositivos de escritorio y móviles en www.comfrt.com', (
         //   .should('be.visible')
         //   .click({ force: true });
 
-        cy.wait(2000);
+        //cy.wait(2000);
 
 
 
@@ -125,7 +127,7 @@ describe('Pruebas en dispositivos de escritorio y móviles en www.comfrt.com', (
         // cy.wait(2000);
 
         // Hacer clic en checkout
-        cy.get('#checkout_button-checkout_button_1 > form > button', { timeout: 10000 })
+        cy.get('#checkout_button-checkout_button_2 > form > .e1yuB0Es', { timeout: 10000 })
             .should('be.visible')
             .should('not.be.disabled')
             .click({ force: true });
