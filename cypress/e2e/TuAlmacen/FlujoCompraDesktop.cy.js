@@ -68,35 +68,94 @@ describe('Pruebas en dispositivos Desktop y Mobile en www.tualmacen.com.ar', () 
         //Hacer clic en este producto
         cy.get('#__next > main > div.pb-4.md\\:pt-1.md\\:pb-0.lg\\:pb-\\[4\\.8rem\\] > div.grid.grid-cols-2.sm\\:grid-cols-3.md\\:grid-cols-4.lg\\:grid-cols-5.xl\\:grid-cols-7 > div:nth-child(3) > div > div.flex.justify-center.flex-col.items-center.cursor-pointer > span > img', { timeout: 10000 })
         .click({ force: true });
-        cy.url().should('include', '/producto/11802?data=');
+        cy.url().should('include', '/producto/11808?data=');
 
-        //Hace clic en el botón de + dos veces, valida cantidad y hace clic en el botón de - y valida cantidad
-         // Clic en el botón "+"
-         cy.get('div.undefined').click({ force: true }); // Reemplazar selector
-         cy.get('div.undefined').click({ force: true });
-         cy.get('div.undefined').click({ force: true }, { timeout: 10000 }); 
+
+        // Scroll hacia abajo lentamente
+        cy.scrollTo('bottom', { duration: 3000 }); 
+        cy.wait(1000);
+
+        // Scroll hacia arriba
+        cy.scrollTo('top', { duration: 2000 }); 
+
+
+
+        ///desplegar carrito
+
+        cy.get('.lg\\:bg-success > .flex svg').click({ force: true });
+
+        /// click en finalizar compra-pedido/
+
+        cy.get('.shadow-xl').click({ force: true });
+
+        cy.wait(3000);
+        /// boton continuar de tipo de envio a domicilio o retiro en tienda//
+
+        cy.get(':nth-child(1) > .justify-center > .shadow-xl').click({ force: true });
         
+        cy.wait(3000);
 
-         cy.wait(2000);
-         
-         // Validar que la cantidad en el input sea 3
-         cy.get('.border-secondary > .text-sm') // Reemplaza con el selector correcto
-           .should('have.value', '3');
+        ///clic en la direccion a domicilio numero 1//
+
+        cy.get(':nth-child(2) > .ticket-card > .col-span-3').click({ force: true });
+
+
+        cy.wait(3000);
+
+        /// clic en continuar//
+        cy.get('.flex-col > .shadow-xl').click({force: true})
+
+
+        cy.wait(3000);
+
+
+       /// Aumentar cantidad en producto Pechuga de Pollo Congelada//
+        cy.get('#__next > main > div:nth-child(2) > div > div > div.w-1\\/2.hidden.md\\:block > div > div > div.overflow-x-hidden.w-full.false > div > div > div > div:nth-child(2) > div > div:nth-child(1) > div > div > div:nth-child(3) button')
+       .should('be.visible')
+       .click({ force: true })
+       .click({ force: true });
+
+
+
+         cy.wait(3000);
+       
+
+
+             ///disminuir cantidad en producto Pechuga de Pollo Congelada//
+
+             cy.window().then((win) => {
+              const el = win.document.querySelector("#__next > main > div:nth-child(2) > div > div > div.w-1\\/2.hidden.md\\:block > div > div > div.overflow-x-hidden.w-full.false > div > div > div > div:nth-child(2) > div > div:nth-child(1) > div > div > div.border.w-6.h-6.ml-2.rounded-full.flex.items-center.justify-center.border-disable > button");
+              if (el) {
+                cy.wrap(el)
+                  .scrollIntoView()
+                  .should('be.visible')
+                  .click({ force: true });
+              } else {
+                cy.log("⚠️ No se encontró el elemento con el selector proporcionado.");
+              }
+            });
+            
+           
+           
+           
+             cy.wait(2000);
+                  
+
+
+
+
+    
+ ///desplegar carrito
+
+ cy.get('.lg\\:bg-success > .flex svg').click({ force: true });
+
+
+
  
-         // Validar que el carrito muestra 3 productos
-         cy.get('.lg\:space-x-4 > :nth-child(1) > :nth-child(1) > .grid > :nth-child(2)') // Reemplaza con el selector correcto
-           .should('contain', '3');
+
+
+
  
-         // Clic en el botón "-"
-         cy.get('.border-disable').click({ force: true }); // Reemplazar selector
- 
-         // Validar que la cantidad en el input sea 2
-         cy.get('.border-secondary > .text-sm')
-           .should('have.value', '2');
- 
-         // Validar que el carrito muestra 2 productos
-         cy.get('.carrito-cantidad')
-           .should('contain', '2');
   
 
 

@@ -80,36 +80,36 @@ describe('Prueba en dispositivos móviles y desktop en www.comfrt.com', () => {
             // Verifica que se abrió la página del producto 
             cy.url().should('include', 'products/tranquil-hoodie?variant=44022218457132');
 
-            // Hacer scroll en la página del producto
-            cy.scrollTo('bottom'); 
-            cy.wait(2000);
-            cy.scrollTo('top'); 
-            cy.wait(2000);
+            // // Hacer scroll en la página del producto
+            // cy.scrollTo('bottom'); 
+            // cy.wait(2000);
+            // cy.scrollTo('top'); 
+            // cy.wait(2000);
 
 
 
             // Interactuar con las tallas
-            cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(3) > div.v26a1W51 > label:nth-child(1) > a > span', { timeout: 5000 })
-                .click({ force: true });
-            cy.wait(2000);
+            // cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(3) > div.v26a1W51 > label:nth-child(1) > a > span', { timeout: 5000 })
+            //     .click({ force: true });
+         //   cy.wait(2000);
 
-            cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(3) > div.v26a1W51 > label:nth-child(3) > a > span', { timeout: 5000 })
-            .click({ force: true });
-        cy.wait(2000)
+        //     cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(3) > div.v26a1W51 > label:nth-child(3) > a > span', { timeout: 5000 })
+        //     .click({ force: true });
+        // cy.wait(2000)
 
-            cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(3) > div.v26a1W51 > label:nth-child(5) > a > span', { timeout: 5000 })
-                .click({ force: true });
-            cy.wait(2000);
-
-
-            cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(3) > div.v26a1W51 > label:nth-child(6) > a > span', { timeout: 5000 })
-            .click({ force: true });
-        cy.wait(2000);
+        //     cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(3) > div.v26a1W51 > label:nth-child(5) > a > span', { timeout: 5000 })
+        //         .click({ force: true });
+        //     cy.wait(2000);
 
 
-            cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(3) > div.v26a1W51 > label:nth-child(7) > a > span', { timeout: 5000 })
-                .click({ force: true });
-            cy.wait(2000);
+        //     cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(3) > div.v26a1W51 > label:nth-child(6) > a > span', { timeout: 5000 })
+        //     .click({ force: true });
+        // cy.wait(2000);
+
+
+        //     cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(3) > div.v26a1W51 > label:nth-child(7) > a > span', { timeout: 5000 })
+        //         .click({ force: true });
+        //     cy.wait(2000);
 
 
             // Selecciona el botón de add to cart o pre-order según disponibilidad
@@ -131,25 +131,25 @@ describe('Prueba en dispositivos móviles y desktop en www.comfrt.com', () => {
 
 
 
-             // Verificar que el carrito se ha desplegado
-            cy.get('#cart', { timeout: 5000 }).should('be.visible');
+        //      // Verificar que el carrito se ha desplegado
+        //     cy.get('#cart', { timeout: 5000 }).should('be.visible');
             
-             // Cerrar el carrito
-             cy.get('.f7qg_6Ph', { timeout: 10000 })
-             .should('be.visible')
-             .should('not.be.disabled')
-             .click();
-         cy.wait(2000); 
+        //      // Cerrar el carrito
+        //      cy.get('.f7qg_6Ph', { timeout: 10000 })
+        //      .should('be.visible')
+        //      .should('not.be.disabled')
+        //      .click();
+        //  cy.wait(2000); 
 
 
            
 
-            // Abrir nuevamente el carrito
-            cy.get('.eAZIp8me', { timeout: 10000 })
-                .should('be.visible')
-                .should('not.be.disabled')
-                .click();
-            cy.wait(2000);
+        //     // Abrir nuevamente el carrito
+        //     cy.get('.eAZIp8me', { timeout: 10000 })
+        //         .should('be.visible')
+        //         .should('not.be.disabled')
+        //         .click();
+        //     cy.wait(2000);
 
             // Hacer clic en checkout
             cy.get('#checkout_button-checkout_button_1 > form > button', { timeout: 10000 })

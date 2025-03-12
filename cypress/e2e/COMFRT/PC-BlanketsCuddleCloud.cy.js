@@ -101,6 +101,8 @@ describe('Pruebas en dispositivos de escritorio y móviles en www.comfrt.com', (
                 cy.log('Redirección o solicitud de checkout falló. Redirigiendo al carrito.');
                 cy.go('back'); // Regresar al carrito si algo falla
             }
+
+            cy.wait(1000);
         });
       });
     });

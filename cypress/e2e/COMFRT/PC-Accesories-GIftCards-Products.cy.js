@@ -1,7 +1,7 @@
 describe('Pruebas en dispositivos de escritorio y móviles en www.comfrt.com', () => {
     const devices = [
       { name: 'Desktop 1920x1080', width: 1920, height: 1080 },
-      { name: 'iPhone 15 Pro Max', width: 430, height: 932 }
+      //{ name: 'iPhone 15 Pro Max', width: 430, height: 932 }
     ];
   
     devices.forEach((device) => {

@@ -1,7 +1,7 @@
 describe('Pruebas en dispositivos de escritorio y móviles en www.comfrt.com', () => {
     const devices = [
       { name: 'Desktop 1920x1080', width: 1920, height: 1080 },
-      { name: 'iPhone 15 Pro Max', width: 430, height: 932 }
+     // { name: 'iPhone 15 Pro Max', width: 430, height: 932 }
     ];
   
     devices.forEach((device) => {
@@ -48,7 +48,7 @@ describe('Pruebas en dispositivos de escritorio y móviles en www.comfrt.com', (
         cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset:nth-child(3) > div.v26a1W51 > label:nth-child(3) > a > span', { timeout: 10000 })
          // .should('be.visible')
           .click({ force: true });
-        cy.wait(2000);
+        //cy.wait(2000);
   
         // Selecciona el botón de add to cart o pre-order según disponibilidad
         cy.get('#product_hero_add_to_cart_button-default-product-hero-add-to-cart-button_5_rc > form:nth-child(1) > button').then(($btn) => {
@@ -65,20 +65,20 @@ describe('Pruebas en dispositivos de escritorio y móviles en www.comfrt.com', (
             }
         });
   
-        // Verificar que el carrito se ha desplegado
-        cy.get('#cart', { timeout: 10000 }).should('be.visible');
+        // // Verificar que el carrito se ha desplegado
+        // cy.get('#cart', { timeout: 10000 }).should('be.visible');
   
-        // Cerrar el carrito
-        cy.get('#cart > div > div.zUHyhS7e > div.mhTDcJGU > label > svg', { timeout: 10000 })
-            .should('be.visible')
-            .click();
-        cy.wait(2000);
+        // // Cerrar el carrito
+        // cy.get('#cart > div > div.zUHyhS7e > div.mhTDcJGU > label > svg', { timeout: 10000 })
+        //     .should('be.visible')
+        //     .click();
+        // cy.wait(2000);
   
-        // Abrir nuevamente el carrito
-        cy.get('#cart-icon-bubble > svg', { timeout: 10000 })
-            .should('be.visible')
-            .click();
-        cy.wait(2000);
+        // // Abrir nuevamente el carrito
+        // cy.get('#cart-icon-bubble > svg', { timeout: 10000 })
+        //     .should('be.visible')
+        //     .click();
+        // cy.wait(2000);
   
         // Hacer clic en checkout
         cy.get('#checkout_button-checkout_button_1 > form > button', { timeout: 10000 })

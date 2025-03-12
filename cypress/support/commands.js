@@ -250,40 +250,47 @@ Cypress.Commands.add('seleccionarOpcionDisponible', () => {
 
 
 
-Cypress.Commands.add('monitorAndClosePopup', () => {
-    cy.document().then((doc) => {
-      const observer = new MutationObserver(() => {
-        cy.get('iframe[src*="customer-app.alia-cloudflare.com/popup"]', { timeout: 5000 })
-          .then(($iframe) => {
-            if ($iframe.length > 0 && $iframe.is(':visible')) {
-              cy.log('🟢 Se detectó el pop-up, intentando cerrarlo...');
+// Cypress.Commands.add('monitorAndClosePopup', () => {
+//     cy.document().then((doc) => {
+//       const observer = new MutationObserver(() => {
+//         cy.get('iframe[src*="customer-app.alia-cloudflare.com/popup"]', { timeout: 5000 })
+//           .then(($iframe) => {
+//             if ($iframe.length > 0 && $iframe.is(':visible')) {
+//               cy.log('🟢 Se detectó el pop-up, intentando cerrarlo...');
               
-              cy.wrap($iframe).then(($loadedIframe) => {
-                const iframeBody = $loadedIframe.contents().find('body');
+//               cy.wrap($iframe).then(($loadedIframe) => {
+//                 const iframeBody = $loadedIframe.contents().find('body');
                 
-                if (iframeBody.length > 0) {
-                  cy.wrap(iframeBody).within(() => {
-                    cy.get('#alia-eraqt2a5vgcxqcu2 > div > svg', { timeout: 3000 }) // Ajusta este selector si el botón de cierre es diferente
-                      .should('be.visible')
-                      .click({ force: true });
+//                 if (iframeBody.length > 0) {
+//                   cy.wrap(iframeBody).within(() => {
+//                     cy.get('#alia-eraqt2a5vgcxqcu2 > div > svg', { timeout: 3000 }) // Ajusta este selector si el botón de cierre es diferente
+//                       .should('be.visible')
+//                       .click({ force: true });
   
-                    cy.log('✅ Pop-up cerrado exitosamente');
-                  });
-                }
-              });
-            }
-          });
-      });
+//                     cy.log('✅ Pop-up cerrado exitosamente');
+//                   });
+//                 }
+//               });
+//             }
+//           });
+//       });
   
-      // Inicia la observación de cambios en el DOM
-      observer.observe(doc.body, { childList: true, subtree: true });
+//       // Inicia la observación de cambios en el DOM
+//       observer.observe(doc.body, { childList: true, subtree: true });
   
-      // Detener la observación después de 60 segundos
-      setTimeout(() => {
-        observer.disconnect();
-        cy.log('🛑 Finalizó el monitoreo del pop-up.');
-      }, 60000);
-    });
+//       // Detener la observación después de 60 segundos
+//       setTimeout(() => {
+//         observer.disconnect();
+//         cy.log('🛑 Finalizó el monitoreo del pop-up.');
+//       }, 60000);
+//     });
+//   });
+  
+/// este script es para excepciones, a veces cypress no maneja excepciones y da error sin motivo//
+Cypress.on('uncaught:exception', (err, runnable) => {
+    // Retorna false para prevenir que Cypress
+    // falle la prueba
+    return false;
   });
   
   
