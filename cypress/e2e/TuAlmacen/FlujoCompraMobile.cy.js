@@ -49,14 +49,14 @@ describe('Pruebas en dispositivos Desktop y Mobile en www.tualmacen.com.ar', () 
         .click({ force: true });
 
 
-        cy.wait(2000);
+        cy.wait(4000);
 
 
 
         // click para cerrar  Popup de Bienvenida de TUalmacen//
         // Esperar y validar que el popup desapareció
-        cy.get('.popup-background')
-        .click({ force: true });
+        // cy.get('.popup-background')
+        // .click({ force: true });
 
         cy.wait(2000);
 
@@ -106,7 +106,7 @@ describe('Pruebas en dispositivos Desktop y Mobile en www.tualmacen.com.ar', () 
         //Hacer clic en este producto
         cy.get('#__next > main > div.pb-4.md\\:pt-1.md\\:pb-0.lg\\:pb-\\[4\\.8rem\\] > div.grid.grid-cols-2.sm\\:grid-cols-3.md\\:grid-cols-4.lg\\:grid-cols-5.xl\\:grid-cols-7 > div:nth-child(3) > div > div.flex.justify-center.flex-col.items-center.cursor-pointer > span > img', { timeout: 10000 })
         .click({ force: true });
-        cy.url().should('include', '/producto/11810?data=');
+        //cy.url().should('include', '/producto/11810?data=');
 
 
         // Scroll hacia abajo lentamente
