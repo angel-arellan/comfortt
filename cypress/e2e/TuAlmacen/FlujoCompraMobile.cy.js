@@ -63,7 +63,7 @@ describe('Pruebas en dispositivos Desktop y Mobile en www.tualmacen.com.ar', () 
 
 
         //Hacer clic en la categoría de banner header
-        cy.get('#__next > main > div:nth-child(2) > div.mt-2.mb-5 > div > div > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > div > a > img')
+        cy.get('#__next > main > div:nth-child(2) > div.mt-2.mb-5 > div > div > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > div > a > img', { timeout: 10000 })
         .should('exist')
         .click({force: true})
 

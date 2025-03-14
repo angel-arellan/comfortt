@@ -11,18 +11,17 @@ describe('Pruebas en dispositivos Desktop y Mobile en www.tualmacen.com.ar', () 
             
             cy.wait(2000); // Esperar que cargue la página
 
-             ///click en iniciar sesion///
-             cy.get('.pl-6').click({ force: true });
-
-             cy.wait(2000);
-
-
+            
              //clic en ENTENDIDO en las cookies
              cy.get('.mt-1 > .cursor-pointer')
              .click({force: true})
-
-
              cy.wait(2000);
+
+              ///click en iniciar sesion///
+              cy.get('.pl-6').click({ force: true });
+
+              cy.wait(2000);
+ 
 
             // Ingresar email
         cy.get('.pt-0 > .pb-2 > .relative > #new-password')
@@ -59,8 +58,8 @@ describe('Pruebas en dispositivos Desktop y Mobile en www.tualmacen.com.ar', () 
         cy.scrollTo('top');
 
 // //Hacer clic en la categoria ofertones
-// cy.get('#__next > div.sticky.top-0.z-50 > div.flex.bg-white.flex-wrap.lg\:flex-nowrap.rounded-b-\[3rem\].false.border-solid.border-\[\#E7E7E7\].lg\:border-0.items-center.px-6.pb-4.justify-between.lg\:pr-0.sticky.lg\:pb-0.shadow-md.shadow-black\/25 > div.grow.lg\:grow-0.lg\:order-1 > div > div:nth-child(2)', {timeout: 2000})
-// .should('be.visible')
+// cy.get('.sticky.top-0 > .flex-wrap')
+// .should('exist')
 // .click({force: true})
 
 // cy.wait(2000);
@@ -75,6 +74,7 @@ describe('Pruebas en dispositivos Desktop y Mobile en www.tualmacen.com.ar', () 
 // cy.scrollTo('bottom', { duration: 3000 });
 // cy.wait(2000);
 // cy.scrollTo('top', { duration: 3000 });
+
 
          //Hacer clic en la categoria RECIEN AGREGADOS
          cy.get(':nth-child(3) > .text-xs', {timeout: 2000})
@@ -94,6 +94,7 @@ describe('Pruebas en dispositivos Desktop y Mobile en www.tualmacen.com.ar', () 
          cy.scrollTo('top');
 
         cy.wait(2000);
+
 
 
           //Hacer clic en TUS PRODUCTOS
