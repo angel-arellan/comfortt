@@ -49,7 +49,7 @@ describe('Pruebas en dispositivos Desktop y Mobile en www.tualmacen.com.ar', () 
  cy.wait(2000); 
 
 
-         //Clic Almacen, Ver todos y validacion url
+         //Clic Almacen, Ver todos, validacion url y scroll
         //  cy.contains('Almacén',  {timeout: 2000})
         //  .should('be.visible')
         //  .click({force: true})
@@ -69,6 +69,11 @@ describe('Pruebas en dispositivos Desktop y Mobile en www.tualmacen.com.ar', () 
 
          cy.url().should('include', '/categoria/12/0');
          cy.wait(2000);
+
+
+         cy.scrollTo('bottom', { duration: 3000 }); 
+         cy.wait(1000);
+         cy.scrollTo('top', { duration: 2000 });
 
          //Hacer clic en Categorias
 
@@ -92,6 +97,10 @@ describe('Pruebas en dispositivos Desktop y Mobile en www.tualmacen.com.ar', () 
  
           cy.url().should('include', '/categoria/260/0');
           cy.wait(2000);
+
+          cy.scrollTo('bottom', { duration: 3000 }); 
+          cy.wait(1000);
+          cy.scrollTo('top', { duration: 2000 });
        
 //Hacer clic en Categorias
 
@@ -114,7 +123,12 @@ cy.wait(2000);
  
           cy.url().should('include', '/categoria/60/0');
           cy.wait(2000);
-
+         
+          cy.scrollTo('bottom', { duration: 3000 }); 
+          cy.wait(1000);
+          cy.scrollTo('top', { duration: 2000 });
+         
+         
 //Hacer clic en Categorias
 
 cy.get('.relative > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
@@ -136,6 +150,10 @@ cy.wait(2000);
   
            cy.url().should('include', '/categoria/51/0');
            cy.wait(2000);
+
+           cy.scrollTo('bottom', { duration: 3000 }); 
+          cy.wait(1000);
+          cy.scrollTo('top', { duration: 2000 });
   
  //Hacer clic en Categorias
 
@@ -159,6 +177,10 @@ cy.wait(2000);
            cy.url().should('include', '/categoria/121/0');
            cy.wait(2000);
 
+           cy.scrollTo('bottom', { duration: 3000 }); 
+          cy.wait(1000);
+          cy.scrollTo('top', { duration: 2000 });
+
 //Hacer clic en Categorias
 
 cy.get('.relative > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
@@ -180,6 +202,10 @@ cy.wait(2000);
    
             cy.url().should('include', '/categoria/146/0');
             cy.wait(2000);
+
+            cy.scrollTo('bottom', { duration: 3000 }); 
+          cy.wait(1000);
+          cy.scrollTo('top', { duration: 2000 });
  
 //Hacer clic en Categorias
 
@@ -202,6 +228,10 @@ cy.wait(2000);
    
             cy.url().should('include', '/categoria/122/0');
             cy.wait(2000);
+
+            cy.scrollTo('bottom', { duration: 3000 }); 
+          cy.wait(1000);
+          cy.scrollTo('top', { duration: 2000 });
            
  //Hacer clic en Categorias
 
@@ -225,6 +255,10 @@ cy.wait(2000);
             cy.url().should('include', '/categoria/95/0');
             cy.wait(2000);
 
+            cy.scrollTo('bottom', { duration: 3000 }); 
+          cy.wait(1000);
+          cy.scrollTo('top', { duration: 2000 });
+
 //Hacer clic en Categorias
 
 cy.get('.relative > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
@@ -247,6 +281,10 @@ cy.wait(2000);
              cy.url().should('include', '/categoria/104/0');
              cy.wait(2000);
 
+             cy.scrollTo('bottom', { duration: 3000 }); 
+          cy.wait(1000);
+          cy.scrollTo('top', { duration: 2000 });
+
 //Hacer clic en Categorias
 
 cy.get('.relative > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
@@ -268,6 +306,10 @@ cy.wait(2000);
 
              cy.url().should('include', '/categoria/229/0');
              cy.wait(2000);
+
+             cy.scrollTo('bottom', { duration: 3000 }); 
+          cy.wait(1000);
+          cy.scrollTo('top', { duration: 2000 });
           
 //Hacer clic en Categorias
 
@@ -291,6 +333,10 @@ cy.wait(2000);
              cy.url().should('include', '/categoria/83/0');
              cy.wait(2000);
 
+             cy.scrollTo('bottom', { duration: 3000 }); 
+          cy.wait(1000);
+          cy.scrollTo('top', { duration: 2000 });
+
 //Hacer clic en Categorias
 
 cy.get('.relative > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
@@ -313,6 +359,10 @@ cy.wait(2000);
              cy.url().should('include', '/categoria/70/0');
              cy.wait(2000);
 
+             cy.scrollTo('bottom', { duration: 3000 }); 
+          cy.wait(1000);
+          cy.scrollTo('top', { duration: 2000 });
+
 //Hacer clic en Categorias
 
 cy.get('.relative > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
@@ -334,6 +384,10 @@ cy.wait(2000);
     
              cy.url().should('include', '/categoria/257/0');
              cy.wait(2000);
+
+             cy.scrollTo('bottom', { duration: 3000 }); 
+          cy.wait(1000);
+          cy.scrollTo('top', { duration: 2000 });
         });
       });
       });
