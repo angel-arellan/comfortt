@@ -4,9 +4,7 @@ name: Ejecutar Cypress cada 4 hrs
 
 on:
   schedule:
-    # - cron: "*/59 * * * *"
     - cron: "0 */4 * * *"
-
   workflow_dispatch:
 
 jobs:
@@ -25,8 +23,7 @@ jobs:
       - name: Instalar dependencias
         run: npm install
 
-      # Paso para almacenar en caché el binario de Cypress
-      - name: Cache Cypress binary
+      - name: Cachear el binario de Cypress
         uses: actions/cache@v4
         with:
           path: ~/.cache/Cypress
@@ -34,36 +31,20 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-cypress-
 
-      # Instalar Cypress si no está instalado
       - name: Instalar Cypress
         run: npx cypress install
 
-      # Ejecutar las pruebas de Cypress
-      - name: Ejecutar pruebas Cypress 
+      - name: Ejecutar pruebas de Cypress
         run: npx cypress run
 
-      # Guardar reportes de Cypress en GitHub Actions
       - name: Guardar reportes de pruebas
         uses: actions/upload-artifact@v4
         with:
           name: reporte-cypress
           path: mochawesome-report
-          
 
-
-
-       # Guardar videos de Cypress en GitHub Actions
-      - name: Guardar videos de pruebas
-        uses: actions/upload-artifact@v4
-        if: always()  # Asegura que los videos se guarden incluso si las pruebas fallan
-        with:
-          name: cypress-videos
-          path: videos
-          retention-days: 30  # Borra los videos después de 30 días
-
-
-      # Enviar notificación por correo
       - name: Enviar notificación por correo
+        if: always()  # Este paso se ejecutará siempre, independientemente del resultado de las pruebas
         uses: dawidd6/action-send-mail@v4
         with:
           server_address: ${{ secrets.SMTP_HOST }}
@@ -73,7 +54,9 @@ jobs:
           from: "Cypress Tests <${{ secrets.SMTP_USER }}>"
           to: "angel.arellan@latechfactory.com"
           subject: "Resultados de Cypress"
-          body: "Las pruebas de Cypress han finalizado. Se adjunta el reporte de las pruebas."
+          body: |
+            Las pruebas de Cypress han finalizado. Se adjunta el reporte de las pruebas.
           attachments: mochawesome-report/*.html
+
 
           #////
