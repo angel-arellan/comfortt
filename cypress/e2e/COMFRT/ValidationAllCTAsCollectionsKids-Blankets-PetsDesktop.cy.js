@@ -404,8 +404,11 @@ describe('Pruebas en dispositivos de escritorio en www.comfrt.com', () => {
     
             // Verifica que la página se haya cargado correctamente
             cy.url().should('include', 'https://comfrt.com/');
+
+
+            cy.wait(2000);
         }); 
 
-        cy.wait(2000);
+     
         
     }); 
