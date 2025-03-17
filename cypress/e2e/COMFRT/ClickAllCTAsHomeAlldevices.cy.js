@@ -19,7 +19,7 @@ describe("Flujo de navegación en la Home", () => {
         cy.go("back"); // Volver a la Home
         cy.url().should('include', 'https://comfrt.com/');
         
-       
+ 
 
       });
 
@@ -28,7 +28,7 @@ describe("Flujo de navegación en la Home", () => {
         cy.contains('Shop Best Sellers', { timeout: 10000 }) // Busca el texto en la página
       .scrollIntoView() // Hace scroll hasta ese texto
       .should('be.visible'); // Verifica que es visible
-      cy.wait(2000)
+      cy.wait(3000)
         
         
         //"Debe hacer clic en 'View All' en la sección de Shop Best Seller y volver a la Home", () => {
@@ -44,19 +44,20 @@ describe("Flujo de navegación en la Home", () => {
         cy.contains('View Our Hoodies', { timeout: 10000 }) // Busca el texto en la página
         .scrollIntoView() // Hace scroll hasta ese texto
         .should('be.visible'); // Verifica que es visible
-        cy.wait(2000)
+        cy.wait(3000)
         
         
         //"Debe scrollear hasta 'Shop All Items', hacer clic y validar la navegación",
     
         cy.get('#full_with_image_section-view-our-hoodies-1_7 > div > div > a > button').click({ force: true });
         cy.url().should('include', '/all-products');
-
+        cy.wait(3000)
+        
         // Vuelve a la página anterior
         cy.go('back'); 
         cy.url().should('include', 'https://comfrt.com/'); // Verifica que regresó correctamente
 
-        cy.wait(2000)
+        
         
       });
     });

@@ -406,6 +406,6 @@ describe('Pruebas en dispositivos de escritorio en www.comfrt.com', () => {
             cy.url().should('include', 'https://comfrt.com/');
         }); 
 
-
+        cy.wait(2000);
         
     }); 
