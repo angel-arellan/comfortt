@@ -43,14 +43,44 @@ describe('Pruebas en dispositivos Desktop y Mobile en www.tualmacen.com.ar', () 
         .should('be.visible')
         .click({ force: true });
 
-
+        cy.wait(2000);
 
        // click en Popup de Bienvenida de TUalmacen//
         // Esperar y validar que el popup desapareció
         cy.get('#__next > main > div:nth-child(2) > div.my-9 > div > div > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > div > a > img')
         .click({ force: true });
 
+        cy.wait(2000);
 
+        
+
+         // Hacer clic en la barra de búsqueda y escribir el primer producto.
+         cy.get('form > :nth-child(1) > .flex > .w-full', {timeout: 2000}) 
+    .should('be.visible')
+    .click({ force: true })
+    .type('Huevo'); 
+    cy.wait(2000);
+
+  // Esperar a que se muestren los resultados 
+  cy.get('.shadow-md > .grid', {timeout: 2000}) // Selector de la lista de resultados.
+    .should('be.visible');
+
+
+  // Espera un momento para la carga del producto 
+  cy.wait(2000);
+
+  // Regresar a la barra de búsqueda (o limpiar la búsqueda)
+  // Suponiendo que la barra sigue en la misma página:
+  cy.get('form > :nth-child(1) > .flex > .w-full', {timeout: 2000})
+    .clear()
+    .type('pechuga de pollo'); // Segundo producto
+
+  //Esperar a que se muestren los resultados para el segundo producto y hacer clic en el primer producto de la lista
+  cy.get('.grid > .flex-wrap', {timeout: 2000})
+    .should('be.visible');
+  cy.get('[title="Nugget Crocante De Pechuga De Pollo Grupolar"]', {timeout: 2000})
+    .first()
+    .click({ force: true });
 
         });
     });

@@ -73,7 +73,7 @@ jobs:
           from: "Cypress Tests <${{ secrets.SMTP_USER }}>"
           to: "angel.arellan@latechfactory.com"
           subject: "Resultados de Cypress"
-          body: "Las pruebas de Cypress han finalizado y se han realizado con éxito. Para revisar los detalles de los resultados, revisa los artefactos en GitHub Actions."
+          body: "Las pruebas de Cypress han finalizado. Se adjunta el reporte de las pruebas."
+          attachments: mochawesome-report/*.html
 
-
-          #
+          #////
