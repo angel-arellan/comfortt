@@ -84,7 +84,7 @@ describe('Prueba de scroll en vista móvil y desktop - Comfrt', () => {
           cy.url().should('include', '/content/kids');
 
           //Verificar que todos los elementos sean visibles
-  cy.get('#home_hero-kids-hero-draft_0 > div > img')
+  cy.get('#home_hero-kids-hero-test-draft_0 > div > img')
   .should('be.visible')
   cy.wait(2000);
 
@@ -92,12 +92,12 @@ describe('Prueba de scroll en vista móvil y desktop - Comfrt', () => {
   .should('be.visible')
   cy.wait(2000);
 
-  cy.get('#featured_products_section-shop-kids-sweatpants_3 > div')
-  .should('be.visible')
+  cy.get('#featured_products_section-shop-kids-sweatpants_3 > div > div.zZYXATlU > div')
+  .should('be.visible') 
   cy.wait(2000);
 
   cy.get('#image_centered_text-kids-sub-section-draft_4 > section > img')
-  .should('be.visible')
+  .should('be.visible') 
   cy.wait(2000);
 
   cy.get('#home_featured_section-kids-featured-draft_6 > section > div:nth-child(1) > div.dlYCmTsm > img')
@@ -219,6 +219,9 @@ cy.wait(2000);
  cy.scrollTo('bottom');
  cy.wait(2000);
  cy.scrollTo('top');
+
+ cy.wait(2000)
+
         });
   
         /*// Verifica que el enlace de 'Ambassador Program' sea visible y hace clic en él
@@ -226,6 +229,10 @@ cy.wait(2000);
             cy.get('[href="/pages/ambassador"]').should('be.visible').click();
           cy.url().should('include', '/pages/ambassador');
         });*/
+
+      
+
+
       });
     });
   });

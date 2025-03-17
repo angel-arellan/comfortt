@@ -23,7 +23,7 @@ describe('Pruebas en dispositivos de escritorio en www.comfrt.com', () => {
             cy.wait(2000);
 
             // Haz clic en el CTA "Shop Now"
-            cy.get('#home_hero-kids-hero-draft_0 > div > div > a > button', { timeout: 10000 })
+            cy.get('#home_hero-kids-hero-test-draft_0 > div > div > a > button', { timeout: 10000 })
                 .should('be.visible')
                 .click({ force: true });
 

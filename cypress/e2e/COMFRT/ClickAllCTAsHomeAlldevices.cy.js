@@ -55,6 +55,9 @@ describe("Flujo de navegación en la Home", () => {
         // Vuelve a la página anterior
         cy.go('back'); 
         cy.url().should('include', 'https://comfrt.com/'); // Verifica que regresó correctamente
+
+        cy.wait(2000)
+        
       });
     });
   });
