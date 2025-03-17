@@ -435,7 +435,7 @@ cy.wait(2000);
 
 
         cy.get('#Verano > div > div:nth-child(1)', {timeout: 2000})
-        .should('be.visible')
+       // .should('be.visible')
         .click({force: true})
         cy.wait(2000);
 

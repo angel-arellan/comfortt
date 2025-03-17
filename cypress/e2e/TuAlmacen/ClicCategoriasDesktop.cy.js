@@ -41,12 +41,19 @@ describe('Pruebas en dispositivos Desktop y Mobile en www.tualmacen.com.ar', () 
           cy.url().should('include', '/categoria/271/272');
          cy.wait(2000);
 
+
+         cy.scrollTo('bottom', { duration: 3000 }); 
+         cy.wait(3000);
+         cy.scrollTo('top', { duration: 2000 });
+
  //Hacer clic en Categorias
 
  cy.get('.relative > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
  .should('be.visible')
  .click({force: true})
  cy.wait(2000); 
+
+
 
 
          //Clic Almacen, Ver todos, validacion url y scroll
@@ -68,11 +75,11 @@ describe('Pruebas en dispositivos Desktop y Mobile en www.tualmacen.com.ar', () 
 
 
          cy.url().should('include', '/categoria/12/0');
-         cy.wait(2000);
+         cy.wait(3000);
 
 
          cy.scrollTo('bottom', { duration: 3000 }); 
-         cy.wait(1000);
+         cy.wait(3000);
          cy.scrollTo('top', { duration: 2000 });
 
          //Hacer clic en Categorias
@@ -99,7 +106,7 @@ describe('Pruebas en dispositivos Desktop y Mobile en www.tualmacen.com.ar', () 
           cy.wait(2000);
 
           cy.scrollTo('bottom', { duration: 3000 }); 
-          cy.wait(1000);
+          cy.wait(3000);
           cy.scrollTo('top', { duration: 2000 });
        
 //Hacer clic en Categorias
@@ -125,7 +132,7 @@ cy.wait(2000);
           cy.wait(2000);
          
           cy.scrollTo('bottom', { duration: 3000 }); 
-          cy.wait(1000);
+          cy.wait(3000);
           cy.scrollTo('top', { duration: 2000 });
          
          
@@ -152,7 +159,7 @@ cy.wait(2000);
            cy.wait(2000);
 
            cy.scrollTo('bottom', { duration: 3000 }); 
-          cy.wait(1000);
+          cy.wait(3000);
           cy.scrollTo('top', { duration: 2000 });
   
  //Hacer clic en Categorias
@@ -178,7 +185,7 @@ cy.wait(2000);
            cy.wait(2000);
 
            cy.scrollTo('bottom', { duration: 3000 }); 
-          cy.wait(1000);
+          cy.wait(3000);
           cy.scrollTo('top', { duration: 2000 });
 
 //Hacer clic en Categorias
@@ -204,7 +211,7 @@ cy.wait(2000);
             cy.wait(2000);
 
             cy.scrollTo('bottom', { duration: 3000 }); 
-          cy.wait(1000);
+          cy.wait(3000);
           cy.scrollTo('top', { duration: 2000 });
  
 //Hacer clic en Categorias
@@ -230,7 +237,7 @@ cy.wait(2000);
             cy.wait(2000);
 
             cy.scrollTo('bottom', { duration: 3000 }); 
-          cy.wait(1000);
+          cy.wait(3000);
           cy.scrollTo('top', { duration: 2000 });
            
  //Hacer clic en Categorias
@@ -256,7 +263,7 @@ cy.wait(2000);
             cy.wait(2000);
 
             cy.scrollTo('bottom', { duration: 3000 }); 
-          cy.wait(1000);
+          cy.wait(3000);
           cy.scrollTo('top', { duration: 2000 });
 
 //Hacer clic en Categorias
@@ -282,7 +289,7 @@ cy.wait(2000);
              cy.wait(2000);
 
              cy.scrollTo('bottom', { duration: 3000 }); 
-          cy.wait(1000);
+          cy.wait(3000);
           cy.scrollTo('top', { duration: 2000 });
 
 //Hacer clic en Categorias
@@ -308,7 +315,7 @@ cy.wait(2000);
              cy.wait(2000);
 
              cy.scrollTo('bottom', { duration: 3000 }); 
-          cy.wait(1000);
+          cy.wait(3000);
           cy.scrollTo('top', { duration: 2000 });
           
 //Hacer clic en Categorias
@@ -334,7 +341,7 @@ cy.wait(2000);
              cy.wait(2000);
 
              cy.scrollTo('bottom', { duration: 3000 }); 
-          cy.wait(1000);
+          cy.wait(3000);
           cy.scrollTo('top', { duration: 2000 });
 
 //Hacer clic en Categorias
@@ -360,7 +367,7 @@ cy.wait(2000);
              cy.wait(2000);
 
              cy.scrollTo('bottom', { duration: 3000 }); 
-          cy.wait(1000);
+          cy.wait(3000);
           cy.scrollTo('top', { duration: 2000 });
 
 //Hacer clic en Categorias
@@ -386,7 +393,7 @@ cy.wait(2000);
              cy.wait(2000);
 
              cy.scrollTo('bottom', { duration: 3000 }); 
-          cy.wait(1000);
+          cy.wait(3000);
           cy.scrollTo('top', { duration: 2000 });
         });
       });
