@@ -1,31 +1,41 @@
 const { defineConfig } = require('cypress');
+const mochawesomeMerge = require('mochawesome-merge');
+const mochawesomeReportGenerator = require('mochawesome-report-generator');
 
 module.exports = defineConfig({
-  projectId: 'yaesxf', // Reemplaza con tu Project ID del Dashboard
+  projectId: 'yaesxf',
   e2e: {
     setupNodeEvents(on, config) {
-      // Implementa eventos aquí si es necesario
-    },
-    baseUrl: 'https://www.comfrt.com', // URL base de tu proyecto
-    supportFile: 'cypress/support/e2e.js', // Ruta al archivo de soporte
-    specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}', // Ruta de los archivos de prueba
+      // Registra el plugin de Mochawesome
+      require('cypress-mochawesome-reporter/plugin')(on);
 
-    reporter: "mochawesome",  // Reporter de mochawesome
+      // Fusión de los resultados JSON después de ejecutar las pruebas
+      on('after:run', (results) => {
+        const mergedJson = mochawesomeMerge(results.runs);
+        mochawesomeReportGenerator.create(mergedJson, {
+          reportDir: 'mochawesome-report', // Carpeta de salida
+          reportFilename: 'mochawesome-report.html', // Nombre del archivo HTML
+          overwrite: false, // No sobrescribir los archivos existentes
+          html: true, // Asegurarse de que se genere el archivo HTML
+          json: true, // Asegurarse de que se genere el archivo JSON
+        });
+      });
+    },
+    baseUrl: 'https://www.comfrt.com',
+    supportFile: 'cypress/support/e2e.js',
+    specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
+    reporter: 'cypress-mochawesome-reporter',
     reporterOptions: {
-      reportDir: 'mochawesome-report',  // Carpeta donde se guardan los reportes
-      overwrite: true,
-      html: true,
-      json: true
+      reportDir: 'mochawesome-report', // Carpeta de salida de los reportes
+      overwrite: false, // No sobrescribir archivos
+      html: true, // Habilitar la generación del archivo HTML
+      json: true, // Habilitar la generación del archivo JSON
     },
 
     experimentalSessionAndOrigin: true,
-
-    chromeWebSecurity: false // Deshabilita la seguridad web en Chrome
+    chromeWebSecurity: false,
   },
 
-  // Configuración de grabación de video
-  video: true, // Asegura que la grabación de video esté habilitada
-  videosFolder: "cypress/videos" // Ruta donde se guardan los videos
+  video: true,
+  videosFolder: 'cypress/videos',
 });
-
-
