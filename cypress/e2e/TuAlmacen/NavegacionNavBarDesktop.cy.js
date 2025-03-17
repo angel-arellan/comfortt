@@ -109,10 +109,10 @@ describe('Pruebas en dispositivos Desktop y Mobile en www.tualmacen.com.ar', () 
         cy.url().should('include', '/tus-productos');
         cy.wait(2000);
 
-        // Desplázate y espera
-        cy.scrollTo('bottom');
-        cy.wait(2000);
-        cy.scrollTo('top');
+        // // Desplázate y espera
+        // cy.scrollTo('bottom');
+        // cy.wait(2000);
+        // cy.scrollTo('top');
 
      //Hacer clic en Perfil
         cy.get(':nth-child(5) > .text-xs')

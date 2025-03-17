@@ -33,14 +33,35 @@ describe('Pruebas en dispositivos Desktop y Mobile en www.tualmacen.com.ar', () 
           cy.wait(2000);
         
 
+          cy.get('[id="Last Chance"] > div > div > div > div > div.mt-9.grid.grid-cols-2 > div > div > div.cursor-pointer.hover\\:text-\\[\\#d3e7f9\\]', { timeout: 4000 })
+  .should('exist')
+  .and('be.visible')
+  .click({ force: true });
+
+          cy.url().should('include', '/categoria/271/272');
+         cy.wait(2000);
+
+ //Hacer clic en Categorias
+
+ cy.get('.relative > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
+ .should('be.visible')
+ .click({force: true})
+ cy.wait(2000); 
+
+
          //Clic Almacen, Ver todos y validacion url
-         cy.contains('Almacén',  {timeout: 2000})
+        //  cy.contains('Almacén',  {timeout: 2000})
+        //  .should('be.visible')
+        //  .click({force: true})
+        //  cy.wait(2000);
+
+
+         cy.get('#Almacén > li > div > p', {timeout: 2000})
          .should('be.visible')
          .click({force: true})
          cy.wait(2000);
 
-
-         cy.get('#Almacén > :nth-child(2) > .bg-primary > .px-11 > :nth-child(1) > .justify-between > .text-right', {timeout: 2000})
+         cy.get('#Almacén > div > div > div > div > div.flex.justify-between > div.text-right.text-white.underline.underline-offset-4.cursor-pointer', {timeout: 2000})
          .should('be.visible')
          .click({force: true})
          cy.wait(2000);

@@ -46,7 +46,12 @@ describe('Pruebas en dispositivos Desktop y Mobile en www.tualmacen.com.ar', () 
    cy.wait(2000);
 
          //Clic Almacen, Ver todos y validacion url
-         cy.contains('Almacén',  {timeout: 2000})
+        //  cy.contains('Almacén',  {timeout: 2000})
+        //  .should('be.visible')
+        //  .click({force: true})
+        //  cy.wait(2000);
+
+         cy.get('#Almacén > li > div', {timeout: 2000})
          .should('be.visible')
          .click({force: true})
          cy.wait(2000);
@@ -67,7 +72,7 @@ describe('Pruebas en dispositivos Desktop y Mobile en www.tualmacen.com.ar', () 
  .click({force: true})
  cy.wait(2000);
 
- cy.contains('Almacén',  {timeout: 2000}) //Hace clic aquí para cerrar el desplegable y que pueda avanzar a la otra categoria
+ cy.get('#Almacén > li > div', {timeout: 2000})  //Hace clic acá para cerrar el desplegable y que pueda avanzar
  .should('be.visible')
  .click({force: true})
  cy.wait(2000);
