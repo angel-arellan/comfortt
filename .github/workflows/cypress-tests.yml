@@ -32,8 +32,8 @@ jobs:
       - name: Instalar Cypress
         run: npx cypress install
 
-      - name: Ejecutar pruebas de Cypress con grabación de video
-        run: npx cypress run --video
+      - name: Ejecutar pruebas de Cypress
+        run: npx cypress run
 
       - name: Guardar reportes de pruebas
         uses: actions/upload-artifact@v4
