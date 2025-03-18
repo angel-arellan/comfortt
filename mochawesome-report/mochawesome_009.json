@@ -5,8 +5,8 @@
     "passes": 0,
     "pending": 0,
     "failures": 0,
-    "start": "2025-03-18T00:18:20.849Z",
-    "end": "2025-03-18T00:18:20.849Z",
+    "start": "2025-03-18T00:19:32.036Z",
+    "end": "2025-03-18T00:19:32.036Z",
     "duration": 0,
     "testsRegistered": 0,
     "passPercent": null,
@@ -27,7 +27,7 @@
       "options": {
         "quiet": false,
         "reportFilename": "mochawesome",
-        "saveHtml": false,
+        "saveHtml": true,
         "saveJson": true,
         "consoleReporter": "spec",
         "useInlineDiffs": false,
@@ -37,9 +37,9 @@
     },
     "marge": {
       "options": {
-        "reportDir": "mochawesome-report/.jsons",
+        "reportDir": "mochawesome-report",
         "overwrite": false,
-        "html": false,
+        "html": true,
         "json": true
       },
       "version": "6.2.0"

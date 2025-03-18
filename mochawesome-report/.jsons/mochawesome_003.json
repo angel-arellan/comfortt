@@ -1,0 +1,281 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 9,
+    "passes": 8,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-03-18T00:18:25.620Z",
+    "end": "2025-03-18T00:20:11.437Z",
+    "duration": 105817,
+    "testsRegistered": 9,
+    "passPercent": 88.88888888888889,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f40806b9-b6d0-42e6-ac3b-bc4ad4b09b1a",
+      "title": "",
+      "fullFile": "cypress/e2e/COMFRT/NavegationAllCallectionss+ElementVisiblesDesktop.cy.js",
+      "file": "cypress/e2e/COMFRT/NavegationAllCallectionss+ElementVisiblesDesktop.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "39284168-8882-4052-b057-1418d9ed0a44",
+          "title": "Prueba de scroll en vista móvil y desktop - Comfrt",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "8aafad34-155e-4469-880d-b4c7d61130e0",
+              "title": "Pruebas en MacBook Pro 16\"",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Debería mostrarse el header",
+                  "fullTitle": "Prueba de scroll en vista móvil y desktop - Comfrt Pruebas en MacBook Pro 16\" Debería mostrarse el header",
+                  "timedOut": null,
+                  "duration": 5943,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/COMFRT/NavegationAllCallectionss+ElementVisiblesDesktop.cy.js\"\n}",
+                  "code": "cy.get('.IXjqotrK').should('be.visible');",
+                  "err": {},
+                  "uuid": "b82608ee-3d87-4333-b3b9-45b8a50998cc",
+                  "parentUUID": "8aafad34-155e-4469-880d-b4c7d61130e0",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Debería hacer clic en el enlace de All Shop en el header",
+                  "fullTitle": "Prueba de scroll en vista móvil y desktop - Comfrt Pruebas en MacBook Pro 16\" Debería hacer clic en el enlace de All Shop en el header",
+                  "timedOut": null,
+                  "duration": 13593,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/COMFRT/NavegationAllCallectionss+ElementVisiblesDesktop.cy.js\"\n}",
+                  "code": "cy.get('.vBg37Hhp > [href=\"/collections/all-products\"]').should('be.visible').click();\ncy.url().should('include', '/collections/all-products');\n//Verificar que todos los elementos sean visibles\ncy.get('#collections_with_pagination-default-collections-with-pagination_0 > div.zZYXATlU > div').should('be.visible');\ncy.wait(2000);\n// Desplázate y espera\ncy.scrollTo('bottom');\ncy.wait(2000);\ncy.scrollTo('top');",
+                  "err": {},
+                  "uuid": "5c94ad40-1cbf-4907-82fd-2eba5fcd3edd",
+                  "parentUUID": "8aafad34-155e-4469-880d-b4c7d61130e0",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Debería hacer clic en el enlace de Hoodies en el header",
+                  "fullTitle": "Prueba de scroll en vista móvil y desktop - Comfrt Pruebas en MacBook Pro 16\" Debería hacer clic en el enlace de Hoodies en el header",
+                  "timedOut": null,
+                  "duration": 10758,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/COMFRT/NavegationAllCallectionss+ElementVisiblesDesktop.cy.js\"\n}",
+                  "code": "cy.get('.vBg37Hhp > [href=\"/collections/hoodies\"]').should('be.visible').click();\ncy.url().should('include', '/collections/hoodies');\n//Verificar que todos los elementos sean visibles\ncy.get('#collections_with_pagination-default-collections-with-pagination_0').should('be.visible');\ncy.wait(2000);\n// Desplázate y espera\ncy.scrollTo('bottom');\ncy.wait(2000);\ncy.scrollTo('top');",
+                  "err": {},
+                  "uuid": "9ff3daa8-4640-4514-a4f4-edde293a82b0",
+                  "parentUUID": "8aafad34-155e-4469-880d-b4c7d61130e0",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Debería hacer clic en el enlace de Sweatpants en el header",
+                  "fullTitle": "Prueba de scroll en vista móvil y desktop - Comfrt Pruebas en MacBook Pro 16\" Debería hacer clic en el enlace de Sweatpants en el header",
+                  "timedOut": null,
+                  "duration": 10203,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/COMFRT/NavegationAllCallectionss+ElementVisiblesDesktop.cy.js\"\n}",
+                  "code": "cy.get('.vBg37Hhp > [href=\"/collections/sweatpants\"]').should('be.visible').click();\ncy.url().should('include', '/collections/sweatpants');\n//Verificar que todos los elementos sean visibles\ncy.get('#collections_with_pagination-default-collections-with-pagination_0').should('be.visible');\ncy.wait(2000);\n// Desplázate y espera\ncy.scrollTo('bottom');\ncy.wait(2000);\ncy.scrollTo('top');",
+                  "err": {},
+                  "uuid": "6e1fa20f-d88e-4a47-8975-78e62daa3fba",
+                  "parentUUID": "8aafad34-155e-4469-880d-b4c7d61130e0",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Debería hacer clic en el enlace de Kids en el header",
+                  "fullTitle": "Prueba de scroll en vista móvil y desktop - Comfrt Pruebas en MacBook Pro 16\" Debería hacer clic en el enlace de Kids en el header",
+                  "timedOut": null,
+                  "duration": 9066,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress/e2e/COMFRT/NavegationAllCallectionss+ElementVisiblesDesktop.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"/COMFRT/NavegationAllCallectionss+ElementVisiblesDesktop.cy.js/Prueba de scroll en vista móvil y desktop - Comfrt -- Pruebas en MacBook Pro 16 -- Debería hacer clic en el enlace de Kids en el header (failed) (1).png\"\n      ]\n    ]\n  }\n]",
+                  "code": "cy.get('.vBg37Hhp > [href=\"/content/kids\"]').should('be.visible').click();\ncy.url().should('include', '/content/kids');\n//Verificar que todos los elementos sean visibles\ncy.get('#home_hero-kids-hero-test-draft_0 > div > img').should('be.visible');\ncy.wait(2000);\ncy.get('#featured_products_section-shop-kids-section-draft_2 > div > div.zZYXATlU > div').should('be.visible');\ncy.wait(2000);\ncy.get('#featured_products_section-shop-kids-sweatpants_3 > div > div.zZYXATlU > div').should('be.visible');\ncy.wait(2000);\ncy.get('#image_centered_text-kids-sub-section-draft_4 > section > img').should('be.visible');\ncy.wait(2000);\ncy.get('#home_featured_section-kids-featured-draft_6 > section > div:nth-child(1) > div.dlYCmTsm > img').should('be.visible');\ncy.wait(2000);\ncy.get('#home_featured_section-kids-featured-draft_6 > section > div:nth-child(2) > div.dlYCmTsm > img').should('be.visible');\ncy.wait(2000);\n// Desplázate y espera\ncy.scrollTo('bottom');\ncy.wait(2000);\ncy.scrollTo('top');",
+                  "err": {
+                    "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#home_hero-kids-hero-test-draft_0 > div > img`, but never found it.",
+                    "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#home_hero-kids-hero-test-draft_0 > div > img`, but never found it.\n    at Context.eval (webpack://documents/./cypress/e2e/COMFRT/NavegationAllCallectionss+ElementVisiblesDesktop.cy.js:88:3)",
+                    "diff": null
+                  },
+                  "uuid": "7d4103b3-4c01-420a-9a93-209f8240e8d3",
+                  "parentUUID": "8aafad34-155e-4469-880d-b4c7d61130e0",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Debería hacer clic en el enlace de Loungewear en el header",
+                  "fullTitle": "Prueba de scroll en vista móvil y desktop - Comfrt Pruebas en MacBook Pro 16\" Debería hacer clic en el enlace de Loungewear en el header",
+                  "timedOut": null,
+                  "duration": 10640,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/COMFRT/NavegationAllCallectionss+ElementVisiblesDesktop.cy.js\"\n}",
+                  "code": "cy.get('.vBg37Hhp > [href=\"/collections/loungewear\"]').should('be.visible').click();\ncy.url().should('include', '/collections/loungewear');\n//Verificar que todos los elementos sean visibles\ncy.get('#collections_with_pagination-default-collections-with-pagination_0').should('be.visible');\ncy.wait(2000);\n// Desplázate y espera\ncy.scrollTo('bottom');\ncy.wait(2000);\ncy.scrollTo('top');",
+                  "err": {},
+                  "uuid": "8444c534-cfe6-4d99-8bcf-1efd91041cf3",
+                  "parentUUID": "8aafad34-155e-4469-880d-b4c7d61130e0",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Debería hacer clic en el enlace de Blankets en el header",
+                  "fullTitle": "Prueba de scroll en vista móvil y desktop - Comfrt Pruebas en MacBook Pro 16\" Debería hacer clic en el enlace de Blankets en el header",
+                  "timedOut": null,
+                  "duration": 16986,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/COMFRT/NavegationAllCallectionss+ElementVisiblesDesktop.cy.js\"\n}",
+                  "code": "cy.get('.vBg37Hhp > [href=\"/content/blankets\"]').should('be.visible').click();\ncy.url().should('include', '/content/blankets');\n//Verificar que todos los elementos sean visibles\ncy.get('#home_hero-weighted-blanket-landing-page-hero_0 > div > img').should('be.visible');\ncy.wait(2000);\ncy.get('#featured_products_section-shop-blankets_2 > div > div.zZYXATlU > div').should('be.visible');\ncy.wait(2000);\ncy.get('#image_centered_text-banner-blankets-draft_3 > section > img').should('be.visible');\ncy.wait(2000);\ncy.get('#home_featured_section-blankets-featured-section-draft_5 > section > div:nth-child(1) > div.dlYCmTsm > img').should('be.visible');\ncy.wait(2000);\ncy.get('#home_featured_section-blankets-featured-section-draft_5 > section > div:nth-child(2) > div.dlYCmTsm > img').should('be.visible');\ncy.wait(2000);\n// Desplázate y espera\ncy.scrollTo('bottom');\ncy.wait(2000);\ncy.scrollTo('top');",
+                  "err": {},
+                  "uuid": "59ba4fcf-8508-43c6-8b81-7e8d3d5d9036",
+                  "parentUUID": "8aafad34-155e-4469-880d-b4c7d61130e0",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Debería hacer clic en el enlace de Accessories en el header",
+                  "fullTitle": "Prueba de scroll en vista móvil y desktop - Comfrt Pruebas en MacBook Pro 16\" Debería hacer clic en el enlace de Accessories en el header",
+                  "timedOut": null,
+                  "duration": 8527,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/COMFRT/NavegationAllCallectionss+ElementVisiblesDesktop.cy.js\"\n}",
+                  "code": "cy.get('.vBg37Hhp > [href=\"/collections/accessories\"]').should('be.visible').click();\ncy.url().should('include', '/collections/accessories');\n//Verificar que todos los elementos sean visibles\ncy.get('#collections_with_pagination-default-collections-with-pagination_0 > div > div').should('be.visible');\ncy.wait(2000);\n// Desplázate y espera\ncy.scrollTo('bottom');\ncy.wait(2000);\ncy.scrollTo('top');",
+                  "err": {},
+                  "uuid": "c474a32e-2b04-4082-85e4-d40ec1038cd9",
+                  "parentUUID": "8aafad34-155e-4469-880d-b4c7d61130e0",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Debería hacer clic en el enlace de Pets en el header",
+                  "fullTitle": "Prueba de scroll en vista móvil y desktop - Comfrt Pruebas en MacBook Pro 16\" Debería hacer clic en el enlace de Pets en el header",
+                  "timedOut": null,
+                  "duration": 17585,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/COMFRT/NavegationAllCallectionss+ElementVisiblesDesktop.cy.js\"\n}",
+                  "code": "cy.get('.vBg37Hhp > [href=\"/content/pets\"]').should('be.visible').click();\ncy.url().should('include', '/content/pets');\n//Verificar que todos los elementos sean visibles\ncy.get('#home_hero-pets-hero-draft_0 > div > img').should('be.visible');\ncy.wait(2000);\ncy.get('#featured_products_section-shop-pets-draft_2 > div').should('be.visible');\ncy.wait(2000);\ncy.get('#image_centered_text-pets-banner-draft_3 > section > img').should('be.visible');\ncy.wait(2000);\ncy.get('#home_featured_section-pets-featured-section-draft_5 > section > div:nth-child(1) > div.dlYCmTsm > img').should('be.visible');\ncy.wait(2000);\ncy.get('#home_featured_section-pets-featured-section-draft_5 > section > div:nth-child(2) > div.dlYCmTsm > img').should('be.visible');\ncy.wait(2000);\n// Desplázate y espera\ncy.scrollTo('bottom');\ncy.wait(2000);\ncy.scrollTo('top');\ncy.wait(2000);",
+                  "err": {},
+                  "uuid": "91870e92-0c58-4467-8ff5-62d4162c519c",
+                  "parentUUID": "8aafad34-155e-4469-880d-b4c7d61130e0",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "b82608ee-3d87-4333-b3b9-45b8a50998cc",
+                "5c94ad40-1cbf-4907-82fd-2eba5fcd3edd",
+                "9ff3daa8-4640-4514-a4f4-edde293a82b0",
+                "6e1fa20f-d88e-4a47-8975-78e62daa3fba",
+                "8444c534-cfe6-4d99-8bcf-1efd91041cf3",
+                "59ba4fcf-8508-43c6-8b81-7e8d3d5d9036",
+                "c474a32e-2b04-4082-85e4-d40ec1038cd9",
+                "91870e92-0c58-4467-8ff5-62d4162c519c"
+              ],
+              "failures": [
+                "7d4103b3-4c01-420a-9a93-209f8240e8d3"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 103301,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report/.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

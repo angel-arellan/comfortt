@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-03-18T00:16:46.458Z",
-    "end": "2025-03-18T00:18:18.893Z",
-    "duration": 92435,
+    "start": "2025-03-18T00:56:00.955Z",
+    "end": "2025-03-18T00:57:11.264Z",
+    "duration": 70309,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "d86a1dec-f446-447a-9e3b-72ef961efae8",
+      "uuid": "605e3263-a5c0-404d-9569-a919ad764733",
       "title": "",
       "fullFile": "cypress/e2e/TuAlmacen/NavegacionNavBarMobile.cy.js",
       "file": "cypress/e2e/TuAlmacen/NavegacionNavBarMobile.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "c81206d2-ce83-4362-8aa4-091b939433c5",
+          "uuid": "ec134312-d84f-48f3-8a63-85099dff485d",
           "title": "Pruebas en dispositivos Desktop y Mobile en www.tualmacen.com.ar",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Visita y scrollea en iPhone 15 Pro Max",
               "fullTitle": "Pruebas en dispositivos Desktop y Mobile en www.tualmacen.com.ar Visita y scrollea en iPhone 15 Pro Max",
               "timedOut": null,
-              "duration": 90479,
+              "duration": 68501,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/TuAlmacen/NavegacionNavBarMobile.cy.js\"\n}",
               "code": "cy.viewport(device.width, device.height); // Configurar el tamaño del dispositivo\ncy.visit('https://www.tualmacen.com.ar'); // Visitar la web\ncy.wait(2000); // Esperar que cargue la página\n//clic en ENTENDIDO en las cookies\ncy.get('.mt-1 > .cursor-pointer').click({\n  force: true\n});\ncy.wait(2000); ///click en iniciar sesion///\ncy.get('.justify-between > :nth-child(5)').click({\n  force: true\n});\ncy.wait(2000);\n// Ingresar email\ncy.get('.pt-0 > .pb-2 > .relative > #new-password').should('be.visible').type('angel.arellan@latechfactory.com', {\n  force: true\n});\ncy.wait(2000);\n// Ingresar contraseña\ncy.get('.pt-4 > :nth-child(1) > .pb-2 > .relative > #new-password').should('be.visible').type('ang3l.DAN1EL', {\n  force: true\n});\ncy.wait(2000);\n// Hacer clic en \"Iniciar Sesión\"\ncy.get('.mt-5 > .shadow-xl').should('be.visible').click({\n  force: true\n});\ncy.wait(4000);\n//Hacer clic en la categoria ofertones\ncy.get('#__next > main > div:nth-child(2) > div.mt-2.mb-5 > div > div > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > div > a > img', {\n  timeout: 10000\n}).should('exist').click({\n  force: true\n});\ncy.wait(2000);\n//Validar que la url es la correcta\ncy.url().should('include', '/ofertas');\ncy.wait(2000);\n// Desplázate y espera\ncy.scrollTo('bottom', {\n  duration: 3000\n});\ncy.wait(2000);\ncy.scrollTo('top', {\n  duration: 3000\n});\n//Hacer clic en la categoria NUEVOS\ncy.get(':nth-child(3) > .text-xs', {\n  timeout: 10000\n}).should('exist').click({\n  force: true\n});\ncy.wait(2000);\n//Validar que la url es la correcta\ncy.url().should('include', '/recien-agregados');\ncy.wait(2000);\n// Desplázate y espera\ncy.scrollTo('bottom', {\n  duration: 3000\n});\ncy.wait(2000);\ncy.scrollTo('top', {\n  duration: 3000\n});\n//Hacer clic en la categoria TUS PRODUCTOS\ncy.get(':nth-child(4) > .text-xs', {\n  timeout: 10000\n}).should('exist').click({\n  force: true\n});\ncy.wait(2000);\n//Validar que la url es la correcta\ncy.url().should('include', '/tus-productos');\ncy.wait(2000);\n// Desplázate y espera\ncy.scrollTo('bottom', {\n  duration: 3000\n});\ncy.wait(2000);\ncy.scrollTo('top', {\n  duration: 3000\n});\n//Hacer clic en la categoria Cuenta\ncy.get(':nth-child(5) > .text-xs').should('exist').click({\n  force: true\n});\ncy.wait(2000);\n//Validar que la url es la correcta\ncy.url().should('include', '/perfil');\ncy.wait(2000);\n// Desplázate y espera\ncy.scrollTo('bottom', {\n  duration: 3000\n});\ncy.wait(2000);\ncy.scrollTo('top', {\n  duration: 3000\n});",
               "err": {},
-              "uuid": "dfa0e470-3f59-4c1b-9ed2-07ff8eb9f5d9",
-              "parentUUID": "c81206d2-ce83-4362-8aa4-091b939433c5",
+              "uuid": "40697223-8321-4c85-9b11-d6f37a3f2121",
+              "parentUUID": "ec134312-d84f-48f3-8a63-85099dff485d",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "dfa0e470-3f59-4c1b-9ed2-07ff8eb9f5d9"
+            "40697223-8321-4c85-9b11-d6f37a3f2121"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 90479,
+          "duration": 68501,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -84,7 +84,7 @@
       "options": {
         "quiet": false,
         "reportFilename": "mochawesome",
-        "saveHtml": false,
+        "saveHtml": true,
         "saveJson": true,
         "consoleReporter": "spec",
         "useInlineDiffs": false,
@@ -94,9 +94,9 @@
     },
     "marge": {
       "options": {
-        "reportDir": "mochawesome-report/.jsons",
-        "overwrite": false,
-        "html": false,
+        "reportDir": "mochawesome-report",
+        "overwrite": true,
+        "html": true,
         "json": true
       },
       "version": "6.2.0"
