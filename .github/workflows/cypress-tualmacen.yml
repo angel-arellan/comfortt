@@ -3,12 +3,8 @@ name: Ejecutar Cypress TuAlmacen cada 4 hrs
 on:
   schedule:
     - cron: "0 */4 * * *"
-    # - cron: "*/30 * * * *" cada 30 min
-    
-    # - cron: "0 * * * *" cada 60 min
-      
-
-
+    # - cron: "*/30 * * * *" # cada 30 min
+    # - cron: "0 * * * *" # cada 60 min
   workflow_dispatch:
 
 jobs:
@@ -66,9 +62,9 @@ jobs:
           body: |
             Las pruebas de TuAlmacen han finalizado. Se adjunta el reporte.
 
-            Puedes descargar los videos en los siguientes enlaces:
-            - [Descargar Reporte](https://github.com/tu-repo/actions/runs/${{ github.run_id }}/artifacts/reporte-tualmacen)
-            - [Descargar Videos](https://github.com/tu-repo/actions/runs/${{ github.run_id }}/artifacts/videos-tualmacen)
-          attachments: |
-            mochawesome-report/*.html
-            cypress/videos/*.mp4
+            📌 **Enlaces de descarga:**
+            - 📄 [Descargar Reporte](https://github.com/tu-repo/actions/runs/${{ github.run_id }}/artifacts/reporte-tualmacen)
+            - 🎥 [Descargar Videos](https://github.com/tu-repo/actions/runs/${{ github.run_id }}/artifacts/videos-tualmacen)
+
+            Puedes revisar los reportes en los enlaces de GitHub Actions.
+          attachments: mochawesome-report/*.html
