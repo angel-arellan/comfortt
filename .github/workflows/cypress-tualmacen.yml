@@ -1,72 +1,17 @@
-name: Ejecutar Cypress cada 4 hrs 
+name: Ejecutar Cypress TuAlmacen cada 4 hrs
 
 on:
   schedule:
     - cron: "0 */4 * * *"
+    # - cron: "*/30 * * * *" cada 30 min
+    
+    # - cron: "0 * * * *" cada 60 min
+      
+
+
   workflow_dispatch:
 
 jobs:
-  cypress-comfrt:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Clonar el repositorio
-        uses: actions/checkout@v4
-
-      - name: Instalar Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-
-      - name: Instalar dependencias
-        run: npm install
-
-      - name: Cachear el binario de Cypress
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/Cypress
-          key: ${{ runner.os }}-cypress-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-cypress-
-
-      - name: Instalar Cypress
-        run: npx cypress install
-
-      - name: Ejecutar pruebas de COMFRT
-        run: npx cypress run --spec "cypress/e2e/COMFRT/**/*"
-
-      - name: Guardar reportes de COMFRT
-        uses: actions/upload-artifact@v4
-        with:
-          name: reporte-comfrt
-          path: mochawesome-report
-
-      - name: Guardar videos de COMFRT
-        uses: actions/upload-artifact@v4
-        with:
-          name: videos-comfrt
-          path: cypress/videos
-
-      - name: Enviar notificación de COMFRT
-        if: always()
-        uses: dawidd6/action-send-mail@v4
-        with:
-          server_address: ${{ secrets.SMTP_HOST }}
-          server_port: ${{ secrets.SMTP_PORT }}
-          username: ${{ secrets.SMTP_USER }}
-          password: ${{ secrets.SMTP_PASS }}
-          from: "Cypress Tests <${{ secrets.SMTP_USER }}>"
-          to: "angel.arellan@latechfactory.com"
-          subject: "Resultados de Cypress - COMFRT"
-          body: |
-            Las pruebas de COMFRT han finalizado. Se adjunta el reporte.
-
-            Puedes descargar los videos en los siguientes enlaces:
-            - [Descargar Reporte](https://github.com/tu-repo/actions/runs/${{ github.run_id }}/artifacts/reporte-comfrt)
-            - [Descargar Videos](https://github.com/tu-repo/actions/runs/${{ github.run_id }}/artifacts/videos-comfrt)
-          attachments: |
-            mochawesome-report/*.html
-            cypress/videos/*.mp4
-
   cypress-tualmacen:
     runs-on: ubuntu-latest
     steps:
