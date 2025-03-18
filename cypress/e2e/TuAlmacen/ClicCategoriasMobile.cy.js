@@ -445,6 +445,8 @@ cy.wait(2000);
         cy.scrollTo('bottom', { duration: 3000 }); 
         cy.wait(1000);
         cy.scrollTo('top', { duration: 2000 });
+
+        cy.wait(2000);
         });
     });
     });
