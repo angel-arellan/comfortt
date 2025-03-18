@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-03-18T01:12:33.808Z",
+    "end": "2025-03-18T01:13:08.552Z",
+    "duration": 34744,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "db53aa22-10b6-4165-bcc4-46e131633a09",
+      "title": "",
+      "fullFile": "cypress/e2e/TuAlmacen/NavegacionHomeBusqueda.cy.js",
+      "file": "cypress/e2e/TuAlmacen/NavegacionHomeBusqueda.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fe72cedf-9b79-43a1-9176-0befb1758ed8",
+          "title": "Pruebas en dispositivos Desktop y Mobile en www.tualmacen.com.ar",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Visita y scrollea en Desktop 1920x1080",
+              "fullTitle": "Pruebas en dispositivos Desktop y Mobile en www.tualmacen.com.ar Visita y scrollea en Desktop 1920x1080",
+              "timedOut": null,
+              "duration": 32124,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/TuAlmacen/NavegacionHomeBusqueda.cy.js\"\n}",
+              "code": "cy.viewport(device.width, device.height); // Configurar el tamaño del dispositivo\ncy.visit('https://www.tualmacen.com.ar'); // Visitar la web\ncy.wait(2000); // Esperar que cargue la página\ncy.get('.mt-1 > .cursor-pointer').click({\n  force: true\n});\n// Scroll hacia abajo lentamente\ncy.scrollTo('bottom', {\n  duration: 3000\n});\ncy.wait(1000);\n// Scroll hacia arriba\ncy.scrollTo('top', {\n  duration: 2000\n});\n///clieck en iniciar sesion///\ncy.get('.pl-6').click({\n  force: true\n});\n// Ingresar email\ncy.get('.pt-0 > .pb-2 > .relative > #new-password').should('be.visible').type('angel.arellan@latechfactory.com', {\n  force: true\n});\n// Ingresar contraseña\ncy.get('.pt-4 > :nth-child(1) > .pb-2 > .relative > #new-password').should('be.visible').type('ang3l.DAN1EL', {\n  force: true\n});\n// Hacer clic en \"Iniciar Sesión\"\ncy.get('.mt-5 > .shadow-xl').should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\n// click en Popup de Bienvenida de TUalmacen//\n// Esperar y validar que el popup desapareció\ncy.get('#__next > main > div:nth-child(2) > div.my-9 > div > div > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > div > a > img').click({\n  force: true\n});\ncy.wait(2000);\n// Hacer clic en la barra de búsqueda y escribir el primer producto.\ncy.get('form > :nth-child(1) > .flex > .w-full', {\n  timeout: 2000\n}).should('be.visible').click({\n  force: true\n}).type('Huevo');\ncy.wait(2000);\n// Esperar a que se muestren los resultados \ncy.get('.shadow-md > .grid', {\n  timeout: 2000\n}) // Selector de la lista de resultados.\n.should('be.visible');\n// Espera un momento para la carga del producto \ncy.wait(2000);\n// Regresar a la barra de búsqueda (o limpiar la búsqueda)\n// Suponiendo que la barra sigue en la misma página:\ncy.get('form > :nth-child(1) > .flex > .w-full', {\n  timeout: 2000\n}).clear().type('pechuga de pollo'); // Segundo producto\n//Esperar a que se muestren los resultados para el segundo producto y hacer clic en el primer producto de la lista\ncy.get('.grid > .flex-wrap', {\n  timeout: 2000\n}).should('be.visible');\ncy.get('[title=\"Nugget Crocante De Pechuga De Pollo Grupolar\"]', {\n  timeout: 2000\n}).first().click({\n  force: true\n});",
+              "err": {},
+              "uuid": "e1e6ad0e-b03f-4fec-a999-128eb7062dcb",
+              "parentUUID": "fe72cedf-9b79-43a1-9176-0befb1758ed8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e1e6ad0e-b03f-4fec-a999-128eb7062dcb"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 32124,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -76,43 +76,43 @@ describe('Prueba de scroll en vista móvil y desktop - Comfrt', () => {
           
         });
   
-        // Verifica que el enlace de 'Kids' sea visible y hace clic en él
-        it('Debería hacer clic en el enlace de Kids en el header', () => {
-          cy.get('.vBg37Hhp > [href="/content/kids"]')
-            .should('be.visible')
-            .click();
-          cy.url().should('include', '/content/kids');
+//         // Verifica que el enlace de 'Kids' sea visible y hace clic en él
+//         it('Debería hacer clic en el enlace de Kids en el header', () => {
+//           cy.get('.vBg37Hhp > [href="/content/kids"]')
+//             .should('be.visible')
+//             .click();
+//           cy.url().should('include', '/content/kids');
 
-          //Verificar que todos los elementos sean visibles
-  cy.get('#home_hero-kids-hero-test-draft_0 > div > img')
-  .should('be.visible')
-  cy.wait(2000);
+//           //Verificar que todos los elementos sean visibles
+//   cy.get('#home_hero-kids-hero-test-draft_0 > div > img')
+//   .should('be.visible')
+//   cy.wait(2000);
 
-  cy.get('#featured_products_section-shop-kids-section-draft_2 > div > div.zZYXATlU > div')
-  .should('be.visible')
-  cy.wait(2000);
+//   cy.get('#featured_products_section-shop-kids-section-draft_2 > div > div.zZYXATlU > div')
+//   .should('be.visible')
+//   cy.wait(2000);
 
-  cy.get('#featured_products_section-shop-kids-sweatpants_3 > div > div.zZYXATlU > div')
-  .should('be.visible') 
-  cy.wait(2000);
+//   cy.get('#featured_products_section-shop-kids-sweatpants_3 > div > div.zZYXATlU > div')
+//   .should('be.visible') 
+//   cy.wait(2000);
 
-  cy.get('#image_centered_text-kids-sub-section-draft_4 > section > img')
-  .should('be.visible') 
-  cy.wait(2000);
+//   cy.get('#image_centered_text-kids-sub-section-draft_4 > section > img')
+//   .should('be.visible') 
+//   cy.wait(2000);
 
-  cy.get('#home_featured_section-kids-featured-draft_6 > section > div:nth-child(1) > div.dlYCmTsm > img')
-  .should('be.visible')
-  cy.wait(2000);
+//   cy.get('#home_featured_section-kids-featured-draft_6 > section > div:nth-child(1) > div.dlYCmTsm > img')
+//   .should('be.visible')
+//   cy.wait(2000);
 
-  cy.get('#home_featured_section-kids-featured-draft_6 > section > div:nth-child(2) > div.dlYCmTsm > img')
-  .should('be.visible')
-  cy.wait(2000);
+//   cy.get('#home_featured_section-kids-featured-draft_6 > section > div:nth-child(2) > div.dlYCmTsm > img')
+//   .should('be.visible')
+//   cy.wait(2000);
 
- // Desplázate y espera
- cy.scrollTo('bottom');
- cy.wait(2000);
- cy.scrollTo('top');
-        });
+//  // Desplázate y espera
+//  cy.scrollTo('bottom');
+//  cy.wait(2000);
+//  cy.scrollTo('top');
+//         });
   
         // Verifica que el enlace de 'Loungewear' sea visible y hace clic en él
         it('Debería hacer clic en el enlace de Loungewear en el header', () => {

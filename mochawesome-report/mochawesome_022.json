@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-03-18T01:00:37.728Z",
+    "end": "2025-03-18T01:00:55.779Z",
+    "duration": 18051,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "827d7832-9f92-457f-a4c5-b05f0c231d2b",
+      "title": "",
+      "fullFile": "cypress/e2e/COMFRT/PC-Accesories-GIftCards-Products.cy.js",
+      "file": "cypress/e2e/COMFRT/PC-Accesories-GIftCards-Products.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5753878e-a55b-422c-9db0-ca2023039fff",
+          "title": "Pruebas en dispositivos de escritorio y móviles en www.comfrt.com",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Prueba en el dispositivo Desktop 1920x1080",
+              "fullTitle": "Pruebas en dispositivos de escritorio y móviles en www.comfrt.com Prueba en el dispositivo Desktop 1920x1080",
+              "timedOut": null,
+              "duration": 16481,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/COMFRT/PC-Accesories-GIftCards-Products.cy.js\"\n}",
+              "code": "// Se corrigió la interpolación de texto en `it(...)`\ncy.intercept('GET', '**/private_access_tokens*', {\n  statusCode: 200,\n  body: {\n    token: 'fake-token'\n  }\n}).as('mockPrivateAccessToken');\ncy.viewport(device.width, device.height);\ncy.visit('https://comfrt.com/products/comfrt-e-gift-card');\n// Verificación de window.gtag para evitar el error\ncy.window().then(win => {\n  try {\n    if (typeof win.gtag === 'function') {\n      win.gtag('event', 'page_view', {\n        page_location: win.location.href\n      });\n    } else {\n      console.warn('gtag no es una función o no está definida.');\n    }\n  } catch (error) {\n    console.error('Error al ejecutar gtag:', error);\n  }\n});\n// Intercepta solicitudes y captura errores posibles\ncy.intercept('POST', '**/checkouts/**').as('checkoutRequest');\ncy.on('uncaught:exception', err => {\n  if (err.message.includes('gtag is not a function')) {\n    return false;\n  }\n  return true;\n});\n// Interactúa con los diferentes valores de Giftcards\ncy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset > div.v26a1W51 > label:nth-child(2) > a > span', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\ncy.get(':nth-child(3) > .N1cHTXJ7 > .XSvSsyWQ', {\n  timeout: 10000\n}).should('be.visible').click({\n  force: true\n});\ncy.wait(2000);\n// cy.get(':nth-child(4) > .N1cHTXJ7 > .XSvSsyWQ', { timeout: 10000 })\n//   .should('be.visible')\n//   .click({ force: true });\n// cy.wait(2000);\n// cy.get(':nth-child(1) > .N1cHTXJ7 > .XSvSsyWQ', { timeout: 10000 })\n//   .should('be.visible')\n//   .click({ force: true });\n//cy.wait(2000);\n// Selecciona el botón de add to cart \ncy.get('#product_hero_add_to_cart_button-default-product-hero-add-to-cart-button_5_rc > form > button').click({\n  force: true\n});\n// // Verificar que el carrito se ha desplegado\n// cy.get('#cart', { timeout: 10000 }).should('be.visible');\n// // Obtener el input de cantidad en el carrito\n// cy.get('.JaPNtHML').as('cantidad'); \n// cy.get('.RyV2qSnH').as('botonesCantidad');\n// cy.get('@cantidad')\n//   .invoke('val')\n//   .then((valorInicial) => {\n//     const cantidadInicial = parseInt(valorInicial);\n//     // Hacer clic en el botón de aumentar cantidad\n//     cy.get('@botonesCantidad').eq(1)\n//       .click({ force: true });\n//     cy.get('@cantidad')\n//       .invoke('val')\n//       .should('eq', String(cantidadInicial + 1)); // Corrección en la comparación\n// });\n// // Cerrar el carrito\n// cy.get('#cart > div > div.zUHyhS7e > div.mhTDcJGU > label > svg', { timeout: 10000 })\n//     .should('be.visible')\n//     .click();\n// cy.wait(2000);\n// // Verificar que el carrito se ha desplegado\n// cy.get('#cart', { timeout: 10000 }).should('be.visible');\n// // Cerrar y abrir el carrito\n// cy.get('#cart > div > div.zUHyhS7e > div.mhTDcJGU > label > svg', { timeout: 10000 })\n//     .should('be.visible')\n//     .click();\n// cy.wait(2000);\n// cy.get('#cart-icon-bubble > svg', { timeout: 10000 })\n//     .should('be.visible')\n//     .click();\n// cy.wait(2000);\n// Hacer clic en checkout\ncy.get('#checkout_button-checkout_button_2 > form > .e1yuB0Es', {\n  timeout: 10000\n}).should('be.visible').should('not.be.disabled').click({\n  force: true\n});\ncy.wait(2000);\ncy.url().should('include', '/checkout');\n// Manejo de redirección fallida o error en el checkout\ncy.wait('@checkoutRequest').then(interception => {\n  if (interception.response.statusCode !== 200) {\n    cy.log('Redirección o solicitud de checkout falló. Redirigiendo al carrito.');\n    cy.go('back');\n  }\n  //   cy.get('#app > div:nth-child(1) > div > div.cm5pp._5ZebG.FeQiM._1fragemnf._1fragemnb._1fragemt5 > div.nMPKH.iYA3J > button > span > span._4ptW6 > span.a8x1wu2.a8x1wu1._1fragemok._1fragem1t._1fragemkk._1fragemka.a8x1wug.a8x1wuk.a8x1wui._1fragem2i._1fragemsy.a8x1wum.a8x1wul.a8x1wuy > svg', { timeout: 10000 })  \n  //  // .should('be.visible')  \n  //   .click({ force: true });\n});",
+              "err": {},
+              "uuid": "3b6a0415-ae0d-4361-bc2c-5f219a00bcd5",
+              "parentUUID": "5753878e-a55b-422c-9db0-ca2023039fff",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3b6a0415-ae0d-4361-bc2c-5f219a00bcd5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 16481,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
