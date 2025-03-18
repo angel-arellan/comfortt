@@ -1,5 +1,3 @@
-
-
 name: Ejecutar Cypress cada 4 hrs 
 
 on:
@@ -34,14 +32,20 @@ jobs:
       - name: Instalar Cypress
         run: npx cypress install
 
-      - name: Ejecutar pruebas de Cypress
-        run: npx cypress run
+      - name: Ejecutar pruebas de Cypress con grabación de video
+        run: npx cypress run --video
 
       - name: Guardar reportes de pruebas
         uses: actions/upload-artifact@v4
         with:
           name: reporte-cypress
           path: mochawesome-report
+
+      - name: Guardar videos de pruebas
+        uses: actions/upload-artifact@v4
+        with:
+          name: videos-cypress
+          path: cypress/videos
 
       - name: Enviar notificación por correo
         if: always()  # Este paso se ejecutará siempre, independientemente del resultado de las pruebas
@@ -56,7 +60,12 @@ jobs:
           subject: "Resultados de Cypress"
           body: |
             Las pruebas de Cypress han finalizado. Se adjunta el reporte de las pruebas.
-          attachments: mochawesome-report/*.html
+
+            Puedes descargar los videos de las pruebas en los siguientes enlaces:
+            - [Descargar Reporte](https://github.com/tu-repo/actions/runs/${{ github.run_id }}/artifacts/reporte-cypress)
+            - [Descargar Videos](https://github.com/tu-repo/actions/runs/${{ github.run_id }}/artifacts/videos-cypress)
+          attachments: |
+            mochawesome-report/*.html
+            cypress/videos/*.mp4
 
 
-          #////
