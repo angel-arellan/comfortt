@@ -1,3 +1,5 @@
+const { defineConfig } = require('cypress');
+
 module.exports = defineConfig({
   video: true, // Habilita la grabación de video
   videosFolder: 'cypress/videos', // Carpeta donde se guardan los videos
