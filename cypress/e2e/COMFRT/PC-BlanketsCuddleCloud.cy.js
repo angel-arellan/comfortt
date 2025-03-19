@@ -46,7 +46,7 @@ describe('Pruebas en dispositivos de escritorio y móviles en www.comfrt.com', (
         cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset > div.v26a1W51 > label:nth-child(1) > a', { timeout: 10000 })
          .should('be.visible')
           .click({ force: true });
-        cy.wait(2000);
+        // cy.wait(2000);
 
         // cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset > div.v26a1W51 > label:nth-child(3) > a', { timeout: 10000 })
         //   .should('be.visible')
