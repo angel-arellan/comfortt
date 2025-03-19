@@ -294,4 +294,34 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   });
   
   
+  //otro para popup
+  Cypress.Commands.add('monitorearPopup', () => {
+    cy.window().then((win) => {
+      // Configurar un intervalo para verificar el pop-up cada 1 segundo
+      const intervalId = setInterval(() => {
+        const iframe = win.document.querySelector('iframe[src*="customer-app.alia-cloudflare.com/popup"]');
+  
+        if (iframe) {
+          const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+          const popup = iframeDocument.querySelector('#alia-2vllydgye8f6f1df'); // Se mantiene un solo selector válido
+          
+          if (popup) {
+            const botonCerrar = iframeDocument.querySelector('#alia-eraqt2a5vgcxqcu2 > div > svg');
+            if (botonCerrar) {
+              botonCerrar.click({ force: true });
+              console.log('✅ Pop-up cerrado correctamente.');
+              clearInterval(intervalId); // Detener el monitoreo una vez cerrado
+            } else {
+              console.log('❌ Botón de cerrar no encontrado.');
+            }
+          }
+        }
+      }, 500); // Verifica cada 0,5 segundo
+  
+      // Guardar el ID del intervalo en la ventana para detenerlo si es necesario
+      win.popupMonitorInterval = intervalId;
+    });
+});
+
+  
   

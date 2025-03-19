@@ -1,3 +1,4 @@
+
 describe('Pruebas en dispositivos de escritorio y móviles en www.comfrt.com', () => {
     const devices = [
       { name: 'Desktop 1920x1080', width: 1920, height: 1080 },
@@ -14,7 +15,7 @@ describe('Pruebas en dispositivos de escritorio y móviles en www.comfrt.com', (
         cy.viewport(device.width, device.height);
         cy.visit('https://comfrt.com/products/cuddlecloud-weighted-blanket');  
     
-
+        
 
         // Verificación de window.gtag para evitar el error
         cy.window().then((win) => {
@@ -46,12 +47,12 @@ describe('Pruebas en dispositivos de escritorio y móviles en www.comfrt.com', (
         cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset > div.v26a1W51 > label:nth-child(1) > a', { timeout: 10000 })
          .should('be.visible')
           .click({ force: true });
-        // cy.wait(2000);
+        //cy.wait(2000);
 
         // cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset > div.v26a1W51 > label:nth-child(3) > a', { timeout: 10000 })
         //   .should('be.visible')
         //    .click({ force: true });
-        //  cy.wait(2000);
+         //cy.wait(2000);
  
          // Selecciona el botón de add to cart o pre-order según disponibilidad
          cy.get('#product_hero_add_to_cart_button-default-product-hero-add-to-cart-button_5_rc > form:nth-child(1) > button').then(($btn) => {
@@ -75,24 +76,24 @@ describe('Pruebas en dispositivos de escritorio y móviles en www.comfrt.com', (
         // Cerrar el carrito
         cy.get('#cart > div > div.zUHyhS7e > div.mhTDcJGU > label > svg', { timeout: 10000 })
             .should('be.visible')
-            .click();
+            .click({force: true});
        // cy.wait(2000);
 
 
         // Abrir nuevamente el carrito
         cy.get('#cart-icon-bubble > svg', { timeout: 10000 })
             //.should('be.visible')
-            .click();
-        cy.wait(2000);
+            .click({force: true});
+        //cy.wait(2000);
   
         // Hacer clic en checkout
         cy.get('#checkout_button-checkout_button_1 > form > button', { timeout: 10000 })
             //.should('be.visible')
-            .should('not.be.disabled')
+          .should('not.be.disabled')
             .click({ force: true });
   
         // Esperar redirección y validar que está en la página de checkout
-        cy.wait(2000);
+       //cy.wait(2000);
         cy.url().should('include', '/checkout');
   
         // Manejo de redirección fallida o error en el checkout
