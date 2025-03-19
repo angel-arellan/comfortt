@@ -44,15 +44,15 @@ describe('Pruebas en dispositivos de escritorio y móviles en www.comfrt.com', (
   
 
         //Interactúa con los colores
-        cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset > div.v26a1W51 > label:nth-child(1) > a', { timeout: 10000 })
-         .should('be.visible')
-          .click({ force: true });
-        //cy.wait(2000);
+        // cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset > div.v26a1W51 > label:nth-child(1) > a', { timeout: 10000 })
+        //  .should('be.visible')
+        //   .click({ force: true });
+        // //cy.wait(2000);
 
         // cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset > div.v26a1W51 > label:nth-child(3) > a', { timeout: 10000 })
         //   .should('be.visible')
         //    .click({ force: true });
-         //cy.wait(2000);
+        //  //cy.wait(2000);
  
          // Selecciona el botón de add to cart o pre-order según disponibilidad
          cy.get('#product_hero_add_to_cart_button-default-product-hero-add-to-cart-button_5_rc > form:nth-child(1) > button').then(($btn) => {
@@ -83,11 +83,11 @@ describe('Pruebas en dispositivos de escritorio y móviles en www.comfrt.com', (
         // Abrir nuevamente el carrito
         cy.get('#cart-icon-bubble > svg', { timeout: 10000 })
             //.should('be.visible')
-            .click({force: true});
+            .click({ force: true });
         //cy.wait(2000);
   
         // Hacer clic en checkout
-        cy.get('#checkout_button-checkout_button_1 > form > button', { timeout: 10000 })
+        cy.get('#checkout_button-checkout_button_2 > form > .e1yuB0Es', { timeout: 10000 })
             //.should('be.visible')
           .should('not.be.disabled')
             .click({ force: true });
