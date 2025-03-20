@@ -3,8 +3,6 @@ name: Ejecutar Cypress TuAlmacen cada 4 hrs
 on:
   schedule:
     - cron: "0 */4 * * *"
-    # - cron: "*/30 * * * *" # cada 30 min
-    # - cron: "0 * * * *" # cada 60 min
   workflow_dispatch:
 
 jobs:
@@ -36,6 +34,9 @@ jobs:
       - name: Ejecutar pruebas de TuAlmacen
         run: npx cypress run --spec "cypress/e2e/TuAlmacen/**/*"
 
+      - name: Generar reporte XLSX desde Mochawesome
+        run: node convert.js
+
       - name: Guardar reportes de TuAlmacen
         uses: actions/upload-artifact@v4
         with:
@@ -60,11 +61,7 @@ jobs:
           to: "angel.arellan@latechfactory.com"
           subject: "Resultados de Cypress - TuAlmacen"
           body: |
-            Las pruebas de TuAlmacen han finalizado. Se adjunta el reporte.
+            Las pruebas de TuAlmacen han finalizado. 
 
-            📌 **Enlaces de descarga:**
-            - 📄 [Descargar Reporte](https://github.com/tu-repo/actions/runs/${{ github.run_id }}/artifacts/reporte-tualmacen)
-            - 🎥 [Descargar Videos](https://github.com/tu-repo/actions/runs/${{ github.run_id }}/artifacts/videos-tualmacen)
-
-            Puedes revisar los reportes en los enlaces de GitHub Actions.
-          attachments: mochawesome-report/*.html
+            Se adjuntan los reportes de las pruebas:
+          attachments: mochawesome-report/*.html, mochawesome-report/*.xlsx

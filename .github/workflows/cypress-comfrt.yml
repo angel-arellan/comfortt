@@ -3,9 +3,6 @@ name: Ejecutar Cypress COMFRT cada 4 hrs
 on:
   schedule:
     - cron: "0 */4 * * *"
-    # - cron: "*/30 * * * *" # cada 30 min
-    # - cron: "0 * * * *" # cada 60 min
-
   workflow_dispatch:
 
 jobs:
@@ -37,6 +34,9 @@ jobs:
       - name: Ejecutar pruebas de COMFRT
         run: npx cypress run --spec "cypress/e2e/COMFRT/**/*"
 
+      - name: Generar reporte XLSX desde Mochawesome
+        run: node convert.js
+
       - name: Guardar reportes de COMFRT
         uses: actions/upload-artifact@v4
         with:
@@ -61,11 +61,8 @@ jobs:
           to: "angel.arellan@latechfactory.com"
           subject: "Resultados de Cypress - COMFRT"
           body: |
-            Las pruebas de COMFRT han finalizado. Se adjunta el reporte.
+            Las pruebas de COMFRT han finalizado. 
 
-            📌 **Enlaces de descarga:**
-            - 📄 [Descargar Reporte](https://github.com/tu-repo/actions/runs/${{ github.run_id }}/artifacts/reporte-comfrt)
-            - 🎥 [Descargar Videos](https://github.com/tu-repo/actions/runs/${{ github.run_id }}/artifacts/videos-comfrt)
 
-            Puedes revisar los reportes en los enlaces de GitHub Actions.
-          attachments: mochawesome-report/*.html
+            Se adjuntan los reportes de las pruebas:
+          attachments: mochawesome-report/*.html, mochawesome-report/*.xlsx

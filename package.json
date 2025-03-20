@@ -8,7 +8,8 @@
     "cypress:browserstack": "browserstack-cypress run --sync --spec 'cypress/e2e/MiracleBrand Blue/ShopTestCTAB4.cy.js'",
     "start": "node index.js",
     "test:dashboard": "npx cypress run --record --key 064dad81-0d9e-4cff-9dab-93e98841d2b0",
-    "test:report": "npx cypress run --reporter mochawesome && echo 'Las pruebas han finalizado. Se adjunta el reporte.' | mutt -s 'Reporte de Pruebas Cypress' -a ~/Documents/cypress/mochawesome-report/mochawesome.html -- angel.arellan@latechfactory.com"
+    "test:report": "npx cypress run --reporter mochawesome && npm run generate:xlsx && echo 'Las pruebas han finalizado. Se adjunta el reporte.' | mutt -s 'Reporte de Pruebas Cypress' -a ~/Documents/cypress/mochawesome-report/mochawesome.html -a ~/Documents/cypress/mochawesome-report/*.xlsx -- angel.arellan@latechfactory.com",
+    "generate:xlsx": "node convert.js"
   },
   "author": "Angel",
   "license": "ISC",
@@ -24,5 +25,8 @@
     "mochawesome-merge": "^5.0.0",
     "mochawesome-report-generator": "^6.2.0"
   },
-  "keywords": []
+  "keywords": [],
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  }
 }
