@@ -32,7 +32,7 @@ describe("Flujo de navegación en la Home", () => {
         
         
         //"Debe hacer clic en 'View All' en la sección de Shop Best Seller y volver a la Home", () => {
-        cy.get('#featured_products_section-alternative-home-featured-products_2 > div > div.vMPtAMR0 > a > button').click({ force: true });
+        cy.get('#featured_products_section-shop-best-sellers_2 > div > div.vMPtAMR0 > a > button').click({ force: true });
         cy.url().should('include', '/collections');
         cy.go("back"); // Volver a la Home
         cy.url().should('include', 'https://comfrt.com/');
