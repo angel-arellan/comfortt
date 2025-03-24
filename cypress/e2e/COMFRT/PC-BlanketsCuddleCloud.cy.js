@@ -15,7 +15,24 @@ describe('Pruebas en dispositivos de escritorio y móviles en www.comfrt.com', (
         cy.viewport(device.width, device.height);
         cy.visit('https://comfrt.com/products/cuddlecloud-weighted-blanket');  
     
-        
+       
+       //POPUP QUERYSELECTOR
+        // cy.document().then((doc) => {
+        //     const observer = new MutationObserver((mutationsList) => {
+        //       mutationsList.forEach((mutation) => {
+        //         if (mutation.type === 'childList') {
+        //           const popup = doc.querySelector('#alia-0wpzlmlujiopg85a');
+        //           if (popup) {
+        //             // Si el popup aparece, cerrarlo
+        //             cy.wrap(popup).within(() => {
+        //               cy.get('svg').contains('path', 'M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z').click();
+        //               cy.log('✅ Pop-up cerrado correctamente');
+        //             });
+        //             observer.disconnect(); // Detener la observación después de cerrar el pop-up
+        //           }
+        //         }
+        //       });
+        //     });
 
         // Verificación de window.gtag para evitar el error
         cy.window().then((win) => {
@@ -47,12 +64,12 @@ describe('Pruebas en dispositivos de escritorio y móviles en www.comfrt.com', (
         // cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset > div.v26a1W51 > label:nth-child(1) > a', { timeout: 10000 })
         //  .should('be.visible')
         //   .click({ force: true });
-        // //cy.wait(2000);
+        // cy.wait(4000);
 
         // cy.get('#product_hero_options-default-product-hero-options_3_rc > div > fieldset > div.v26a1W51 > label:nth-child(3) > a', { timeout: 10000 })
         //   .should('be.visible')
         //    .click({ force: true });
-        //  //cy.wait(2000);
+        //  cy.wait(4000);
  
          // Selecciona el botón de add to cart o pre-order según disponibilidad
          cy.get('#product_hero_add_to_cart_button-default-product-hero-add-to-cart-button_5_rc > form:nth-child(1) > button').then(($btn) => {
@@ -108,7 +125,7 @@ describe('Pruebas en dispositivos de escritorio y móviles en www.comfrt.com', (
       });
     });
   });
-  
+
 
 
 //revisar el git
