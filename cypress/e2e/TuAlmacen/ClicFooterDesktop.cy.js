@@ -45,7 +45,7 @@ describe('Pruebas en dispositivos Desktop y Mobile en www.tualmacen.com.ar', () 
       cy.wait(3000)
             
 
-            cy.get('#__next > footer > div.grid.grid-cols-1.gap-4.justify-items-center.my-8.lg\:mt-\[5rem\] > div:nth-child(2)', {timeout: 2000})
+      cy.get('.bottom-0 > .gap-4 > :nth-child(2)', {timeout: 2000})
             .should('be.visible')
             .click({force: true})
             cy.wait(2000);
@@ -57,6 +57,7 @@ describe('Pruebas en dispositivos Desktop y Mobile en www.tualmacen.com.ar', () 
             cy.scrollTo('top', { duration: 2000 });
 
             cy.go('back');
+            cy.wait(2000);
 
             //Hacer clic en Preguntas Frecuentes
 
@@ -65,7 +66,7 @@ describe('Pruebas en dispositivos Desktop y Mobile en www.tualmacen.com.ar', () 
             .should('be.visible'); // Verifica que es visible
             cy.wait(3000)
 
-            cy.get('#__next > footer > div.grid.grid-cols-1.gap-4.justify-items-center.my-8.lg\:mt-\[5rem\] > div:nth-child(3)', {timeout: 2000})
+            cy.get('.gap-4 > :nth-child(3)', {timeout: 2000})
             .should('be.visible')
             .click({force: true})
             cy.wait(2000);
@@ -86,7 +87,7 @@ describe('Pruebas en dispositivos Desktop y Mobile en www.tualmacen.com.ar', () 
             .should('be.visible'); // Verifica que es visible
             cy.wait(3000)
 
-            cy.get('#__next > footer > div.grid.grid-cols-1.gap-4.justify-items-center.my-8.lg\:mt-\[5rem\] > div:nth-child(4)', {timeout: 2000})
+            cy.get('.gap-4 > :nth-child(4)', {timeout: 2000})
             .should('be.visible')
             .click({force: true})
             cy.wait(2000);
@@ -106,7 +107,7 @@ describe('Pruebas en dispositivos Desktop y Mobile en www.tualmacen.com.ar', () 
             .should('be.visible'); // Verifica que es visible
             cy.wait(3000)
 
-            cy.get('#__next > footer > div.grid.grid-cols-1.gap-4.justify-items-center.my-8.lg\:mt-\[5rem\] > div:nth-child(5)', {timeout: 2000})
+            cy.get('.gap-4 > :nth-child(5)', {timeout: 2000})
             .should('be.visible')
             .click({force: true})
             cy.wait(2000);
