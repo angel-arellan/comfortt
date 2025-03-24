@@ -34,16 +34,16 @@ jobs:
         run: npx cypress install
 
       - name: Ejecutar pruebas de TuAlmacen
-        run: npx cypress run --spec "cypress/e2e/TuAlmacen/**/*"
+        run: npx cypress run --spec "cypress/e2e/TuAlmacen/**/*" --reporter mochawesome --reporter-options reportDir=mochawesome-report,overwrite=false,html=false,json=true
 
-      - name: Generar reporte XLSX desde Mochawesome
+      - name: Generar reportes XLSX desde Mochawesome
         run: node convert.js
 
       - name: Guardar reportes de TuAlmacen
         uses: actions/upload-artifact@v4
         with:
           name: reporte-tualmacen
-          path: mochawesome-report
+          path: mochawesome-report/*.xlsx  # Se asegura que suba todos los archivos XLSX
 
       - name: Guardar videos de TuAlmacen
         uses: actions/upload-artifact@v4
@@ -66,4 +66,4 @@ jobs:
             Las pruebas de TuAlmacen han finalizado. 
 
             Se adjuntan los reportes de las pruebas:
-          attachments: mochawesome-report/*.xlsx
+          attachments: mochawesome-report/*.xlsx  # Asegura que todos los reportes XLSX sean enviados

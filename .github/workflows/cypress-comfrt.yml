@@ -6,7 +6,6 @@ on:
     # - cron: "0 */30 * * *"  # Se ejecuta cada 30 minutos
     # - cron: "0 * * * *"  # Se ejecuta cada hora
 
-
   workflow_dispatch:
 
 jobs:
@@ -36,16 +35,16 @@ jobs:
         run: npx cypress install
 
       - name: Ejecutar pruebas de COMFRT
-        run: npx cypress run --spec "cypress/e2e/COMFRT/**/*"
+        run: npx cypress run --spec "cypress/e2e/COMFRT/**/*" --reporter mochawesome --reporter-options reportDir=mochawesome-report,overwrite=false,html=false,json=true
 
-      - name: Generar reporte XLSX desde Mochawesome
+      - name: Generar reportes XLSX desde Mochawesome
         run: node convert.js
 
       - name: Guardar reportes de COMFRT
         uses: actions/upload-artifact@v4
         with:
           name: reporte-comfrt
-          path: mochawesome-report
+          path: mochawesome-report/*.xlsx  # Asegura que se guarden todos los reportes
 
       - name: Guardar videos de COMFRT
         uses: actions/upload-artifact@v4
@@ -67,7 +66,7 @@ jobs:
           body: |
             Las pruebas de COMFRT han finalizado. 
 
-
             Se adjuntan los reportes de las pruebas:
-          attachments: mochawesome-report/*.xlsx
+          attachments: mochawesome-report/*.xlsx  # Asegura que se envíen todos los reportes XLSX generados
+
 # attachments: mochawesome-report/*.html # Esta línea está comentada para no adjuntar el archivo HTML
