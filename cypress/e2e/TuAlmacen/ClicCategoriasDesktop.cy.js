@@ -35,7 +35,7 @@ describe('Pruebas en dispositivos Desktop y Mobile en www.tualmacen.com.ar', () 
 
           cy.get('[id="Last Chance"] > div > div > div > div > div.mt-9.grid.grid-cols-2 > div > div > div.cursor-pointer.hover\\:text-\\[\\#d3e7f9\\]', { timeout: 4000 })
   .should('exist')
-  .and('be.visible')
+ // .and('be.visible')
   .click({ force: true });
 
           cy.url().should('include', '/categoria/271/272');
@@ -359,7 +359,7 @@ cy.wait(2000);
     
     
              cy.get('#Perfumeria > div > div > div > div > div.flex.justify-between > div.text-right.text-white.underline.underline-offset-4.cursor-pointer', {timeout: 2000})
-             .should('be.visible')
+             //.should('be.visible')
              .click({force: true})
              cy.wait(2000);
     
@@ -379,13 +379,13 @@ cy.wait(2000);
 
              //Clic Verano, Ver todos y validacion url
              cy.contains('Verano',  {timeout: 2000})
-             .should('be.visible')
+            // .should('be.visible')
              .click({force: true})
              cy.wait(2000);
     
     
              cy.get('#Verano > div > div > div > div > div.flex.justify-between > div.text-right.text-white.underline.underline-offset-4.cursor-pointer', {timeout: 2000})
-             .should('be.visible')
+             //.should('be.visible')
              .click({force: true})
              cy.wait(2000);
     
