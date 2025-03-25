@@ -1,4 +1,4 @@
-// describe('Pruebas en dispositivos de escritorio en www.comfrt.com', () => {
+// describe('Prueba de validación de todos los CTA de las colecciones KIDS-BLANKETS-PETS-Desktop', () => {
 //     const device = { name: 'Desktop 1920x1080', width: 1920, height: 1080 };
   
 //     beforeEach(() => {

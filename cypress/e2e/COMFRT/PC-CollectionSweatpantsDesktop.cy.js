@@ -1,6 +1,6 @@
 // //FALTA VALIDAR QUE PRESIONE CHECKOUT 
 
-// describe('Pruebas en dispositivos de escritorio en www.comfrt.com', () => {
+// describe('Prueba de proceso de compra en la collection SWEATPANTS-Desktop', () => {
 //   const device = { name: 'Desktop 1920x1080', width: 1920, height: 1080 };
 
 //   beforeEach(() => {

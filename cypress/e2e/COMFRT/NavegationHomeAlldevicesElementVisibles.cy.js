@@ -1,5 +1,5 @@
 // Script para dispositivos Android, iOS, y Desktop
-describe('Prueba de scroll en vista móvil y desktop - Comfrt', () => {
+describe('Prueba de navegacion en la home y elementos visibles-All devices', () => {
     const viewports = [
       // Android más recientes
       //{ device: 'Samsung Galaxy S23 Ultra', width: 412, height: 919 },

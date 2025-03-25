@@ -1,5 +1,5 @@
 
-describe('Pruebas en dispositivos de escritorio y móviles en www.comfrt.com', () => {
+describe('Prueba de proceso de compra de Blankets Cuddle Cloud', () => {
     const devices = [
       { name: 'Desktop 1920x1080', width: 1920, height: 1080 },
       //{ name: 'iPhone 15 Pro Max', width: 430, height: 932 }
@@ -36,7 +36,7 @@ describe('Pruebas en dispositivos de escritorio y móviles en www.comfrt.com', (
 
 
 
-        
+
 
   ////// O llamamos este script que está en support> commands.js con el siguente linea de abajo
 

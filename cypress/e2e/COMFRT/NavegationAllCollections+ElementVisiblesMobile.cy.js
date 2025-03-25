@@ -1,4 +1,4 @@
-describe('Interacción con el Menú Hamburguesa en dispositivos móviles', () => {
+describe('Prueba de navegacion all collections y elementos visibles-Mobile', () => {
     const devices = [
         { name: 'iPhone 15 Pro Max', width: 430, height: 932 },
         //{ name: 'Samsung Galaxy S24', width: 412, height: 915 }

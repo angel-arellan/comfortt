@@ -1,4 +1,4 @@
-// describe('Prueba en dispositivos móviles en www.comfrt.com', () => {
+// describe('Prueba de proceso de compra en la collection KIDS-Mobile', () => {
 //     const devices = [
 //       { name: 'iPhone 15 Pro Max', width: 430, height: 932 },
 //       /*{ name: 'Samsung Galaxy S24', width: 412, height: 915 }*/

@@ -1,4 +1,4 @@
-// describe('Prueba en dispositivos móviles y desktop en www.comfrt.com', () => {
+// describe('Prueba de proceso de compra haciendo clic en CTA banner home y PDP-All devices', () => {
 //     const devices = [
 //         //{ name: 'iPhone 15 Pro Max', width: 430, height: 932 },
 //         //{ name: 'Samsung Galaxy S24', width: 412, height: 915 },

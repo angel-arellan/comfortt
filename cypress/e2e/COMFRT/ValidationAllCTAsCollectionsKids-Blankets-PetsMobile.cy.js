@@ -1,5 +1,5 @@
 
-// describe('Prueba en dispositivos móviles en www.comfrt.com', () => {
+// describe('Prueba de validación de todos los CTA de las colecciones KIDS-BLANKETS-PETS-Mobile', () => {
 //     const devices = [
 //       { name: 'iPhone 15 Pro Max', width: 430, height: 932 },
 //       /*{ name: 'Samsung Galaxy S24', width: 412, height: 915 }*/

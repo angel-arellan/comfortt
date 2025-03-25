@@ -1,5 +1,5 @@
 // Script para dispositivos Android, iOS y Desktop
-describe('Prueba de scroll en vista móvil y desktop - Comfrt', () => {
+describe('Prueba de navegacion all collections y elementos visibles-Desktop', () => {
     const viewports = [
       // Desktop - macOS y Windows
       { device: 'MacBook Pro 16"', width: 1536, height: 960 },
