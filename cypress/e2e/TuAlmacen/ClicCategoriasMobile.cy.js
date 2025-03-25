@@ -1,4 +1,4 @@
-describe('Pruebas en dispositivos Desktop y Mobile en www.tualmacen.com.ar', () => {
+describe('Prueba haciendo clic en todas las CATEGORIAS-Mobile', () => {
     const devices = [
         { name: 'iPhone 15 Pro Max', width: 430, height: 932 },
        // { name: 'Samsung S22', width: 360, height: 780 } // Tamaño típico del S22 en viewport
