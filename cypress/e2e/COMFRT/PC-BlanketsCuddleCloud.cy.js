@@ -34,6 +34,18 @@ describe('Pruebas en dispositivos de escritorio y móviles en www.comfrt.com', (
         //       });
         //     });
 
+
+
+        
+
+  ////// O llamamos este script que está en support> commands.js con el siguente linea de abajo
+
+  // Llamar al comando personalizado para cerrar el pop-up
+  ///cy.hideDialog();
+
+
+
+
         // Verificación de window.gtag para evitar el error
         cy.window().then((win) => {
             try {

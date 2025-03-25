@@ -324,6 +324,9 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 // });
 
 
+
+
+
 // Cypress.Commands.add('hideDialog', () => {
 //     // Obtenemos el documento principal para configurarlo
 //     cy.document().then(document => {
