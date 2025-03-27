@@ -370,31 +370,31 @@ cy.wait(2000);
           cy.wait(3000);
           cy.scrollTo('top', { duration: 2000 });
 
-//Hacer clic en Categorias
+// //Hacer clic en Categorias //Categoría verano eliminada
 
-cy.get('.relative > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
-.should('be.visible')
-.click({force: true})
-cy.wait(2000);
+// cy.get('.relative > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
+// .should('be.visible')
+// .click({force: true})
+// cy.wait(2000);
 
-             //Clic Verano, Ver todos y validacion url
-             cy.contains('Verano',  {timeout: 2000})
-            // .should('be.visible')
-             .click({force: true})
-             cy.wait(2000);
+//              //Clic Verano, Ver todos y validacion url     
+//              cy.contains('Verano',  {timeout: 2000})
+//             // .should('be.visible')
+//              .click({force: true})
+//              cy.wait(2000);
     
     
-             cy.get('#Verano > div > div > div > div > div.flex.justify-between > div.text-right.text-white.underline.underline-offset-4.cursor-pointer', {timeout: 2000})
-             //.should('be.visible')
-             .click({force: true})
-             cy.wait(2000);
+//              cy.get('#Verano > div > div > div > div > div.flex.justify-between > div.text-right.text-white.underline.underline-offset-4.cursor-pointer', {timeout: 2000})
+//              //.should('be.visible')
+//              .click({force: true})
+//              cy.wait(2000);
     
-             cy.url().should('include', '/categoria/257/0');
-             cy.wait(2000);
+//              cy.url().should('include', '/categoria/257/0');
+//              cy.wait(2000);
 
-             cy.scrollTo('bottom', { duration: 3000 }); 
-          cy.wait(3000);
-          cy.scrollTo('top', { duration: 2000 });
+//              cy.scrollTo('bottom', { duration: 3000 }); 
+//           cy.wait(3000);
+//           cy.scrollTo('top', { duration: 2000 });
         });
       });
       });
