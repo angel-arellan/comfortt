@@ -64,6 +64,7 @@ jobs:
           subject: "Resultados de Cypress - TuAlmacen"
           body: |
             Las pruebas de TuAlmacen han finalizado. 
+            Los videos están disponibles en el siguiente enlace: https://github.com/angel-arellan/comfortt/actions/workflows/cypress-tualmacen.yml
 
             Se adjuntan los reportes de las pruebas:
           attachments: mochawesome-report/*.xlsx  # Asegura que todos los reportes XLSX sean enviados

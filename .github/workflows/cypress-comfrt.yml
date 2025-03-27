@@ -65,7 +65,7 @@ jobs:
           subject: "Resultados de Cypress - COMFRT"
           body: |
             Las pruebas de COMFRT han finalizado. 
-
+            Los videos están disponibles en el siguiente enlace: https://github.com/angel-arellan/comfortt/actions/workflows/cypress-comfrt.yml
             Se adjuntan los reportes de las pruebas:
           attachments: mochawesome-report/*.xlsx  # Asegura que se envíen todos los reportes XLSX generados
 
