@@ -38,7 +38,7 @@ describe('Prueba haciendo clic en cada uno de los links del nav bar-Mobile', () 
        cy.wait(4000);
 
             //Hacer clic en la categoria ofertones
-        cy.get('#__next > main > div:nth-child(2) > div.mt-2.mb-5 > div > div > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > div > a > img', { timeout: 10000 })
+        cy.get('.sm\\:pr-4 > :nth-child(2) > .text-xs', { timeout: 10000 })
         .should('exist')
         .click({force: true})
         cy.wait(2000);

@@ -32,15 +32,16 @@ describe('Prueba flujo de compra-Desktop', () => {
       cy.get('.mt-5 > .shadow-xl')
         .should('be.visible')
         .click({ force: true });
+        cy.wait(4000);
 
-        // click en Popup de Bienvenida de TUalmacen//
-        // Esperar y validar que el popup desapareció
-        cy.get('#__next > main > div:nth-child(2) > div.my-9 > div > div > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > div > a > img')
-        .click({ force: true });
-
+        // // click en Popup de Bienvenida de TUalmacen//
+        // // Esperar y validar que el popup desapareció
+        // cy.get('#__next > main > div:nth-child(2) > div.my-9 > div > div > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > div > a > img')
+        // .click({ force: true });
+        // cy.wait(2000);
 
         //Hacer clic en la categoría OFERTONES
-        cy.get('.sticky.top-0 > .flex-wrap')
+        cy.get('.sm\\:pr-4 > :nth-child(2) > .text-xs', { timeout: 10000 })
         .should('exist')
         .click({force: true})
 
