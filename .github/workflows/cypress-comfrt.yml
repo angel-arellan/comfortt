@@ -1,25 +1,22 @@
 name: Ejecutar Cypress COMFRT cada 8 hrs
-
 on:
   schedule:
-    - cron: "0 */8 * * *"  # Se ejecuta cada 8 horas
+    - cron: "0 */8 * * *"
+    # - cron: "0 */30 * * *"  # Se ejecuta cada 30 minutos
+    # - cron: "0 * * * *"  # Se ejecuta cada hora
   workflow_dispatch:
-
 jobs:
   cypress-comfrt:
     runs-on: ubuntu-latest
     steps:
       - name: Clonar el repositorio
         uses: actions/checkout@v4
-
       - name: Instalar Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
-
       - name: Instalar dependencias
         run: npm install
-
       - name: Cachear el binario de Cypress
         uses: actions/cache@v4
         with:
@@ -27,31 +24,22 @@ jobs:
           key: ${{ runner.os }}-cypress-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-cypress-
-
       - name: Instalar Cypress
         run: npx cypress install
-
-      - name: Ejecutar pruebas de COMFRT con datos de navegador y dispositivo
+      - name: Ejecutar pruebas de COMFRT
         run: npx cypress run --spec "cypress/e2e/COMFRT/**/*" --reporter mochawesome --reporter-options reportDir=mochawesome-report,overwrite=false,html=false,json=true
-        env:
-          CYPRESS_BROWSER: chrome  # Puedes cambiarlo según el navegador deseado
-          CYPRESS_DEVICE: "iPhone 15 Pro Max"  # Cambia esto según el dispositivo que estés probando
-
       - name: Generar reportes XLSX desde Mochawesome
-        run: node convert.js  # Asegúrate de que este archivo existe en la raíz del repo o especifica la ruta correcta
-
+        run: node convert.js
       - name: Guardar reportes de COMFRT
         uses: actions/upload-artifact@v4
         with:
           name: reporte-comfrt
           path: mochawesome-report/*.xlsx  # Asegura que se guarden todos los reportes
-
       - name: Guardar videos de COMFRT
         uses: actions/upload-artifact@v4
         with:
           name: videos-comfrt
           path: cypress/videos
-
       - name: Enviar notificación de COMFRT
         if: always()
         uses: dawidd6/action-send-mail@v4
@@ -64,7 +52,8 @@ jobs:
           to: "angel.arellan@latechfactory.com"
           subject: "Resultados de Cypress - COMFRT"
           body: |
-            Las pruebas de COMFRT han finalizado. 
+            Las pruebas de COMFRT han finalizado.
             Los videos están disponibles en el siguiente enlace: https://github.com/angel-arellan/comfortt/actions/workflows/cypress-comfrt.yml
             Se adjuntan los reportes de las pruebas:
           attachments: mochawesome-report/*.xlsx  # Asegura que se envíen todos los reportes XLSX generados
+# attachments: mochawesome-report/*.html # Esta línea está comentada para no adjuntar el archivo HTML

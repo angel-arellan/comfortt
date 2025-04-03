@@ -35,10 +35,8 @@ jobs:
 
       - name: Ejecutar pruebas de TuAlmacen
         run: npx cypress run --spec "cypress/e2e/TuAlmacen/**/*" --reporter mochawesome --reporter-options reportDir=mochawesome-report,overwrite=false,html=false,json=true
-        env:
-          CYPRESS_BROWSER: chrome  # Puedes cambiarlo según el navegador deseado
-          CYPRESS_DEVICE: "iPhone 15 Pro Max"  # Cambia esto según el dispositivo que estés probando
-          
+      
+
       - name: Generar reportes XLSX desde Mochawesome
         run: node convert.js
 
