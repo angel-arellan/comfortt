@@ -62,7 +62,7 @@ jobs:
           username: ${{ secrets.SMTP_USER }}
           password: ${{ secrets.SMTP_PASS }}
           from: "Cypress Tests <${{ secrets.SMTP_USER }}>"
-          to: "angel.arellan@latechfactory.com"
+          to: "angel.arellan@latechfactory.com, tomas@latechfactory.com"
           subject: "Resultados de Cypress - TuAlmacen"
           body: |
             Las pruebas de TuAlmacen han finalizado. 
