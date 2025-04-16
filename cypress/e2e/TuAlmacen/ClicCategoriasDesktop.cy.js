@@ -5,7 +5,7 @@ describe('Prueba haciendo clic en todas las CATEGORIAS-Desktop', () => {
   ];
 
   devices.forEach((device) => {
-      it(`Visita y scrollea en ${device.name}`, () => {
+      it(`Prueba haciendo clic en todas las CATEGORIAS-Desktop ${device.name}`, () => {
           cy.viewport(device.width, device.height); // Configurar el tamaño del dispositivo
           cy.visit('https://www.tualmacen.com.ar'); // Visitar la web
           

@@ -5,7 +5,7 @@ describe('Prueba haciendo clic en todas cada uno de los links del FOOTER', () =>
     ];
   
     devices.forEach((device) => {
-        it(`Visita y scrollea en ${device.name}`, () => {
+        it(`Prueba haciendo clic en todas cada uno de los links del FOOTER ${device.name}`, () => {
             cy.viewport(device.width, device.height); // Configurar el tamaño del dispositivo
             cy.visit('https://www.tualmacen.com.ar'); // Visitar la web
             

@@ -5,7 +5,7 @@ describe('Prueba navegando en la home y haciendo busqueda en la barra de busqued
     ];
 
     devices.forEach((device) => {
-        it(`Visita y scrollea en ${device.name}`, () => {
+        it(`Prueba navegando en la home y haciendo busqueda en la barra de busqueda ${device.name}`, () => {
             cy.viewport(device.width, device.height); // Configurar el tamaño del dispositivo
             cy.visit('https://www.tualmacen.com.ar'); // Visitar la web
             
