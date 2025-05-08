@@ -78,7 +78,7 @@ describe('Prueba de navegacion all collections y elementos visibles-Desktop', ()
   
         // Verifica que el enlace de 'Kids' sea visible y hace clic en él
         it('Debería hacer clic en el enlace de Kids en el header', () => {
-          cy.get('#default_header-default-header_0 > header > div.vBg37Hhp > a:nth-child(4)')
+          cy.get('#default_header-default-header_0 > header > nav > a:nth-child(4)')
             .should('be.visible')
             .click();
           cy.url().should('include', '/content/kids');
@@ -134,13 +134,13 @@ describe('Prueba de navegacion all collections y elementos visibles-Desktop', ()
   
         // Verifica que el enlace de 'Blankets' sea visible y hace clic en él
         it('Debería hacer clic en el enlace de Blankets en el header', () => {
-          cy.get('.vBg37Hhp > [href="/content/blankets"]')
+          cy.get('#default_header-default-header_0 > header > nav > a:nth-child(6)')
             .should('be.visible')
             .click();
           cy.url().should('include', '/content/blankets');
 
           //Verificar que todos los elementos sean visibles
-          cy.get('#home_hero-weighted-blanket-landing-page-hero_0 > div > img')
+          cy.get('.WcmUoMRO')
   .should('be.visible')
   cy.wait(2000);
 
