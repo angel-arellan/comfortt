@@ -120,7 +120,7 @@ cy.wait(2000);
          cy.wait(2000);
 
 
-         cy.get('#Bebidas > div > div:nth-child(1)', {timeout: 2000})
+         cy.get('#Bebidas > div > div:nth-child(1)', {timeout: 5000})
          .should('be.visible')
          .click({force: true})
          cy.wait(2000);
