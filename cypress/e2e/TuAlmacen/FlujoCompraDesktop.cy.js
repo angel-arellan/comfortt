@@ -84,10 +84,11 @@ describe('Prueba flujo de compra-Desktop', () => {
         ///desplegar carrito
 
         cy.get('.lg\\:bg-success > .flex svg').click({ force: true });
+        cy.wait(1000);
 
         /// click en finalizar compra-pedido/
 
-        cy.get('.shadow-xl').click({ force: true });
+        cy.get('.shadow-xl', { timeout: 10000 }).click({ force: true });
 
         cy.wait(3000);
         /// boton continuar de tipo de envio a domicilio o retiro en tienda//
@@ -115,8 +116,6 @@ describe('Prueba flujo de compra-Desktop', () => {
        .should('be.visible')
        .click({ force: true })
        //.click({ force: true });
-
-
 
          cy.wait(3000);
        
