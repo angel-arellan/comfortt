@@ -23,7 +23,7 @@ describe('Prueba de navegacion en la home y elementos visibles-All devices', () 
         });
   
         it('Debería mostrarse el header', () => {
-          cy.get('.IXjqotrK').should('be.visible');
+          cy.get('#default_header-default-header_0 > header', { timeout: 10000 }).should('be.visible');
         });
   
         it('Debería mostrarse el banner principal', () => {
@@ -43,7 +43,7 @@ describe('Prueba de navegacion en la home y elementos visibles-All devices', () 
         });
   
         it('Debería mostrarse la imagen de "Partnered Charities"', () => {
-          cy.get('.HZLaZ_QX').should('be.visible');
+          cy.get('#partner_charities-redesign-draft_5 > section > div > div.keen-slider.E0rWcxMN.false > div:nth-child(2) > div.MRFz4EfD').should('be.visible');
         });
   
         it('Deberían mostrarse las 4 imágenes de las secciones (Hoodie, Sweetpants, Loungewear y Accessories)', () => {
