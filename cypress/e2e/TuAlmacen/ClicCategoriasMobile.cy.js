@@ -397,13 +397,13 @@ cy.contains('Limpieza',  {timeout: 2000})
 cy.wait(2000);
 
          //Clic Perfumeria, Ver todos y validacion url
-         cy.contains('Perfumeria',  {timeout: 2000})
+         cy.contains('Perfumería',  {timeout: 2000})
          .should('be.visible')
          .click({force: true})
          cy.wait(2000);
 
 
-         cy.get('#Perfumeria > div > div:nth-child(1)', {timeout: 2000})
+         cy.get('#Perfumería > div > div:nth-child(1)', {timeout: 2000})
          .should('be.visible')
          .click({force: true})
          cy.wait(2000);
