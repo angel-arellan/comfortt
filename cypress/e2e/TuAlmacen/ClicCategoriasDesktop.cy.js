@@ -352,13 +352,13 @@ cy.get('.relative > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
 cy.wait(2000);
 
              //Clic Perfumeria, Ver todos y validacion url
-             cy.contains('Perfumeria',  {timeout: 2000})
+             cy.contains('Perfumería',  {timeout: 2000})
              .should('be.visible')
              .click({force: true})
              cy.wait(2000);
     
     
-             cy.get('#Perfumeria > div > div > div > div > div.flex.justify-between > div.text-right.text-white.underline.underline-offset-4.cursor-pointer', {timeout: 2000})
+             cy.get('#Perfumería > div > div > div > div > div.flex.justify-between > div.text-right.text-white.underline.underline-offset-4.cursor-pointer', {timeout: 2000})
              //.should('be.visible')
              .click({force: true})
              cy.wait(2000);
