@@ -39,7 +39,7 @@ describe('Prueba de navegacion all collections y elementos visibles-Desktop', ()
   
         // Verifica que el enlace de 'Hoodies' sea visible y hace clic en él
         it('Debería hacer clic en el enlace de Hoodies en el header', () => {
-          cy.get('.vBg37Hhp > [href="/collections/hoodies"]')
+          cy.get('.vBg37Hhp > [href="/collections/hoodies"]', { timeout: 10000 })
             .should('be.visible')
             .click();
           cy.url().should('include', '/collections/hoodies');
@@ -58,7 +58,7 @@ describe('Prueba de navegacion all collections y elementos visibles-Desktop', ()
   
         // Verifica que el enlace de 'Sweatpants' sea visible y hace clic en él
         it('Debería hacer clic en el enlace de Sweatpants en el header', () => {
-          cy.get('.vBg37Hhp > [href="/collections/sweatpants"]')
+          cy.get('.vBg37Hhp > [href="/collections/sweatpants"]', { timeout: 10000 })
             .should('be.visible')
             .click();
           cy.url().should('include', '/collections/sweatpants');
@@ -78,7 +78,7 @@ describe('Prueba de navegacion all collections y elementos visibles-Desktop', ()
   
         // Verifica que el enlace de 'Kids' sea visible y hace clic en él
         it('Debería hacer clic en el enlace de Kids en el header', () => {
-          cy.get('[href="/content/kids"]')
+          cy.get('[href="/content/kids"]', { timeout: 10000 })
             .should('be.visible')
             .click();
           cy.url().should('include', '/content/kids');
@@ -88,10 +88,14 @@ describe('Prueba de navegacion all collections y elementos visibles-Desktop', ()
   //.should('be.visible')
   cy.wait(2000);
 
-  cy.get('#featured_products_section-shop-kids-section-draft_2 > div > div.zZYXATlU > div')
+  cy.get('#home_hero-kids-hero-draft_0 > div > img')
   .should('be.visible')
   cy.wait(2000);
 
+  cy.get('#featured_products_section-shop-kids-section-draft_2 > div > div.zZYXATlU > div')
+  .should('be.visible')
+  cy.wait(2000);
+  
   cy.get('#featured_products_section-shop-kids-sweatpants_3 > div > div.zZYXATlU > div')
   .should('be.visible') 
   cy.wait(2000);

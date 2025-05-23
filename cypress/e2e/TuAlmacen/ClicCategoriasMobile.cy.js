@@ -301,13 +301,13 @@ cy.contains('Dietética',  {timeout: 2000})
 cy.wait(2000);
 
          //Clic Verduleria, Ver todos y validacion url
-         cy.contains('Verduleria',  {timeout: 2000})
+         cy.contains('Verdulería',  {timeout: 2000})
          .should('be.visible')
          .click({force: true})
          cy.wait(2000);
 
 
-         cy.get('#Verduleria > div > div:nth-child(1)', {timeout: 2000})
+         cy.get('#Verdulería > div > div:nth-child(1)', {timeout: 2000})
          .should('be.visible')
          .click({force: true})
          cy.wait(2000);
@@ -326,7 +326,7 @@ cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', {ti
 .click({force: true})
 cy.wait(2000); 
 
-cy.contains('Verduleria',  {timeout: 2000})
+cy.contains('Verdulería',  {timeout: 2000})
 .should('be.visible')
 .click({force: true})
 cy.wait(2000);
