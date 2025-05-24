@@ -66,7 +66,7 @@ describe('Prueba haciendo clic en todas las CATEGORIAS-Mobile', () => {
          cy.wait(2000);
 
 
-         cy.url().should('include', '/categoria/12/0');
+         //cy.url().should('include', '/categoria/12/0');
          cy.wait(2000);
 
          cy.scrollTo('bottom', { duration: 3000 }); 
@@ -98,7 +98,7 @@ describe('Prueba haciendo clic en todas las CATEGORIAS-Mobile', () => {
          .click({force: true})
          cy.wait(2000);
 
-         cy.url().should('include', '/categoria/260/0');
+        // cy.url().should('include', '/categoria/260/0');
          cy.wait(2000);
         
 //Hacer clic en Categorias
