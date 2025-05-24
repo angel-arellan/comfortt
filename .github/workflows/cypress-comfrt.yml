@@ -27,8 +27,13 @@ jobs:
             ${{ runner.os }}-cypress-
       - name: Instalar Cypress
         run: npx cypress install
+     
       - name: Ejecutar pruebas de COMFRT
-        run: npx cypress run --spec "cypress/e2e/COMFRT/**/*" --reporter mochawesome --reporter-options reportDir=mochawesome-report,overwrite=false,html=false,json=true
+        run: npx cypress run --browser chrome --spec "cypress/e2e/COMFRT/**/*" --reporter mochawesome --reporter-options reportDir=mochawesome-report,overwrite=false,html=false,json=true
+
+     # - name: Ejecutar pruebas de COMFRT
+      #  run: npx cypress run --spec "cypress/e2e/COMFRT/**/*" --reporter mochawesome --reporter-options reportDir=mochawesome-report,overwrite=false,html=false,json=true
+      
       - name: Generar reportes XLSX desde Mochawesome
         run: node convert.js
       - name: Guardar reportes de COMFRT
