@@ -7,9 +7,9 @@ describe('Prueba haciendo clic en todas las CATEGORIAS-Mobile', () => {
     devices.forEach((device) => {
         it(`Prueba haciendo clic en todas las CATEGORIAS-Mobile ${device.name}`, () => {
             cy.viewport(device.width, device.height); // Configurar el tamaño del dispositivo
-            cy.visit('https://www.tualmacen.com.ar'); // Visitar la web
+            cy.visit('https://tualmacen.com.ar'); // Visitar la web
             
-            cy.wait(2000); // Esperar que cargue la página
+            cy.wait(3000); // Esperar que cargue la página
 
             //clic en ENTENDIDO en las cookies
             cy.get('.mt-1 > .cursor-pointer')
