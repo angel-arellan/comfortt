@@ -78,7 +78,8 @@ describe('Prueba navegando en la home y haciendo busqueda en la barra de busqued
   //Esperar a que se muestren los resultados para el segundo producto y hacer clic en el primer producto de la lista
   cy.get('.grid > .flex-wrap', {timeout: 2000})
     .should('be.visible');
-  cy.get('[title="Nugget Crocante De Pechuga De Pollo Grupolar"]', {timeout: 2000})
+    cy.wait(2000);
+    cy.get('[title="Nuggets Crocante De Pechuga De Pollo Grupolar"]', {timeout: 2000})
     .first()
     .click({ force: true });
 
