@@ -47,16 +47,15 @@ describe('Prueba navegando en la home y haciendo busqueda en la barra de busqued
 
        // click en Popup de Bienvenida de TUalmacen//
         // Esperar y validar que el popup desapareció
-        cy.get('#__next > main > div:nth-child(2) > div.my-9 > div > div > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > div > a > img')
-        .click({ force: true });
+       // cy.get('#__next > main > div:nth-child(2) > div.my-9 > div > div > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > div > a > img')
+        //.click({ force: true });
 
         cy.wait(2000);
 
-        
 
          // Hacer clic en la barra de búsqueda y escribir el primer producto.
          cy.get('form > :nth-child(1) > .flex > .w-full', {timeout: 2000}) 
-    .should('be.visible')
+          .should('be.visible')
     .click({ force: true })
     .type('Huevo'); 
     cy.wait(2000);
@@ -82,6 +81,8 @@ describe('Prueba navegando en la home y haciendo busqueda en la barra de busqued
     cy.get('[title="Nuggets Crocante De Pechuga De Pollo Grupolar"]', {timeout: 2000})
     .first()
     .click({ force: true });
+
+
 
         });
     });
