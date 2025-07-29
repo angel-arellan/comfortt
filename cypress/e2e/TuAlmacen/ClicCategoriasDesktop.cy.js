@@ -46,6 +46,12 @@ describe('Prueba haciendo clic en todas las CATEGORIAS-Desktop', () => {
          cy.wait(3000);
          cy.scrollTo('top', { duration: 2000 });
 
+         //Hacer clic en pop up de suspcipción
+        cy.get('#onesignal-slidedown-cancel-button')
+        .should('be.visible')
+        .click({force: true})
+        cy.wait(2000);
+
  //Hacer clic en Categorias
 
  cy.get('.relative > :nth-child(1) > .flex > .text-xs', {timeout: 2000})

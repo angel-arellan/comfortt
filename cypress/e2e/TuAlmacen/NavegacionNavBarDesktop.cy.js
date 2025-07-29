@@ -114,7 +114,13 @@ describe('Prueba haciendo clic en cada uno de los links del nav bar-Desktop', ()
         // cy.wait(2000);
         // cy.scrollTo('top');
 
-     //Hacer clic en Perfil
+      //Hacer clic en pop up de suspcipción
+        cy.get('#onesignal-slidedown-cancel-button')
+        .should('be.visible')
+        .click({force: true})
+        cy.wait(2000);
+        
+     //Hacer clic en Cuenta
         cy.get(':nth-child(5) > .text-xs')
         .should('be.visible')
         .click({force: true})

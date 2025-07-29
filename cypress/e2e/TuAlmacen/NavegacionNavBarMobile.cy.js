@@ -52,6 +52,12 @@ describe('Prueba haciendo clic en cada uno de los links del nav bar-Mobile', () 
         cy.wait(2000);
         cy.scrollTo('top', { duration: 3000 });
 
+        //Hacer clic en pop up de suspcipción
+        cy.get('#onesignal-slidedown-cancel-button')
+        .should('be.visible')
+        .click({force: true})
+        cy.wait(2000);
+
          //Hacer clic en la categoria NUEVOS
          cy.get(':nth-child(3) > .text-xs', { timeout: 10000 })
          .should('exist')
@@ -81,6 +87,7 @@ describe('Prueba haciendo clic en cada uno de los links del nav bar-Mobile', () 
          cy.scrollTo('bottom', { duration: 3000 });
          cy.wait(2000);
          cy.scrollTo('top', { duration: 3000 });
+
 
         //Hacer clic en la categoria Cuenta
          cy.get(':nth-child(5) > .text-xs')

@@ -42,6 +42,12 @@ describe('Prueba haciendo clic en todas las CATEGORIAS-Mobile', () => {
           cy.wait(1000);
           cy.scrollTo('top', { duration: 2000 });
     
+          //Hacer clic en pop up de suspcipción
+        cy.get('#onesignal-slidedown-cancel-button')
+        .should('be.visible')
+        .click({force: true})
+        cy.wait(2000);
+        
    //Hacer clic en Categorias
 
    cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
