@@ -337,14 +337,14 @@ cy.contains('Verdulería',  {timeout: 2000})
 .click({force: true})
 cy.wait(2000);
 
-        //Clic Hogar y Bazar, Ver todos y validacion url
-        cy.contains('Hogar y Bazar',  {timeout: 2000})
+        //Clic Hogar y Mascotas, Ver todos y validacion url
+        cy.contains('Hogar y Mascotas',  {timeout: 2000})
         .should('be.visible')
         .click({force: true})
         cy.wait(2000);
 
 
-        cy.get('[id="Hogar y Bazar"] > div > div:nth-child(1)', { timeout: 4000 })
+        cy.get('[id="Hogar y Mascotas"] > div > div:nth-child(1)', { timeout: 4000 })
        .should('be.visible')
        .click({ force: true });
        cy.wait(2000);
@@ -364,7 +364,7 @@ cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', {ti
 .click({force: true})
 cy.wait(2000); 
 
-cy.contains('Hogar y Bazar',  {timeout: 2000})
+cy.contains('Hogar y Mascotas',  {timeout: 2000})
 .should('be.visible')
 .click({force: true})
 cy.wait(2000);
