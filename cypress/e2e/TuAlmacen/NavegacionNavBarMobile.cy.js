@@ -15,7 +15,8 @@ describe('Prueba haciendo clic en cada uno de los links del nav bar-Mobile', () 
             cy.get('.mt-1 > .cursor-pointer')
             .click({force: true})
             cy.wait(2000);  ///click en iniciar sesion///
-            cy.get('.justify-between > :nth-child(5)').click({ force: true });
+            
+            cy.get(':nth-child(5) > .text-xs').click({ force: true });
             cy.wait(2000);
 
 

@@ -21,7 +21,8 @@ describe('Prueba flujo de compra-Mobile', () => {
 
 
              ///click en iniciar sesion///
-             cy.get('.justify-between > :nth-child(5)').click({ force: true });
+             cy.get(':nth-child(5) > .text-xs').click({ force: true });
+             
 
           cy.wait(2000);
 

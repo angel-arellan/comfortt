@@ -132,7 +132,7 @@ describe('Prueba de navegacion all collections y elementos visibles-Desktop', ()
 
  // Desplázate y espera
  cy.scrollTo('bottom');
- cy.wait(2000);
+ cy.wait(3000);
  cy.scrollTo('top');
         });
   

@@ -16,7 +16,7 @@ describe('Prueba haciendo clic en todas cada uno de los links del FOOTER', () =>
             .click({force: true})
   
   
-            cy.wait(2000);
+            cy.wait(3000);
   
   
             //Hacer clic en CÓMO TRABAJAMOS EN TUALMACEN
