@@ -59,8 +59,93 @@ describe('Prueba haciendo clic en todas las CATEGORIAS-Desktop', () => {
  .click({force: true})
  cy.wait(2000); 
 
+//Hacer clic en Categorias //Categoría verano eliminada
+
+cy.get('.relative > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
+.should('be.visible')
+.click({force: true})
+cy.wait(2000);
+
+//Clic Verano, Ver todos y validacion url     
+ cy.contains('Verano',  {timeout: 2000})
+.should('be.visible')
+.click({force: true})
+cy.wait(2000);
+    
+    
+cy.get('#Verano > div > div > div > div > div.flex.justify-between > div.text-right.text-white.underline.underline-offset-4.cursor-pointer', {timeout: 2000})
+.should('be.visible')
+.click({force: true})
+cy.wait(2000);
+    
+cy.url().should('include', '/categoria/257/0');
+ cy.wait(2000);
+
+ cy.scrollTo('bottom', { duration: 3000 }); 
+ cy.wait(3000);
+cy.scrollTo('top', { duration: 2000 });
 
 
+//Hacer clic en Categorias
+
+cy.get('.relative > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
+.should('be.visible')
+.click({force: true})
+cy.wait(2000); 
+
+//Clic Navidad, Ver todos, validacion url y scroll
+       cy.contains('Navidad',  {timeout: 2000})
+       .should('be.visible')
+       .click({force: true})
+        cy.wait(2000);
+
+        cy.get('#Navidad > div > div > div > div > div.flex.justify-between > div.text-right.text-white.underline.underline-offset-4.cursor-pointer', {timeout: 2000})
+         .should('be.visible')
+         .click({force: true})
+         cy.wait(2000);
+
+         cy.url().should('include', '/categoria/230/0');
+         cy.wait(3000);
+
+
+         cy.scrollTo('bottom', { duration: 3000 }); 
+         cy.wait(3000);
+         cy.scrollTo('top', { duration: 2000 });
+  
+//Hacer clic en Categorias
+
+cy.get('.relative > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
+.should('be.visible')
+.click({force: true})
+cy.wait(2000);
+
+
+ //Clic Kiosko, Ver todos y validacion url
+ cy.contains('Kiosko',  {timeout: 2000})
+ .should('be.visible')
+ .click({force: true})
+ cy.wait(2000);
+
+
+ cy.get('#Kiosko > div > div > div > div > div.flex.justify-between > div.text-right.text-white.underline.underline-offset-4.cursor-pointer', {timeout: 2000})
+ .should('be.visible')
+ .click({force: true})
+ cy.wait(2000);
+
+ cy.url().should('include', '/categoria/260/0');
+ cy.wait(2000);
+
+ cy.scrollTo('bottom', { duration: 3000 }); 
+ cy.wait(3000);
+ cy.scrollTo('top', { duration: 2000 });
+
+
+ //Hacer clic en Categorias
+
+cy.get('.relative > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
+.should('be.visible')
+.click({force: true})
+cy.wait(2000);
 
          //Clic Almacen, Ver todos, validacion url y scroll
         //  cy.contains('Almacén',  {timeout: 2000})
@@ -88,32 +173,7 @@ describe('Prueba haciendo clic en todas las CATEGORIAS-Desktop', () => {
          cy.wait(3000);
          cy.scrollTo('top', { duration: 2000 });
 
-         //Hacer clic en Categorias
-
-         cy.get('.relative > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
-         .should('be.visible')
-         .click({force: true})
-         cy.wait(2000);
-
-
-          //Clic Kiosko, Ver todos y validacion url
-          cy.contains('Kiosko',  {timeout: 2000})
-          .should('be.visible')
-          .click({force: true})
-          cy.wait(2000);
- 
- 
-          cy.get('#Kiosko > div > div > div > div > div.flex.justify-between > div.text-right.text-white.underline.underline-offset-4.cursor-pointer', {timeout: 2000})
-          .should('be.visible')
-          .click({force: true})
-          cy.wait(2000);
- 
-          cy.url().should('include', '/categoria/260/0');
-          cy.wait(2000);
-
-          cy.scrollTo('bottom', { duration: 3000 }); 
-          cy.wait(3000);
-          cy.scrollTo('top', { duration: 2000 });
+         
        
 //Hacer clic en Categorias
 
@@ -123,10 +183,15 @@ cy.get('.relative > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
 cy.wait(2000);
 
           //Clic Bebidas, Ver todos y validacion url
-          cy.contains('Bebidas',  {timeout: 2000})
+          cy.get('#Bebidas > li > div', {timeout: 2000})
           .should('be.visible')
           .click({force: true})
           cy.wait(2000);
+          
+          // cy.contains('Bebidas',  {timeout: 2000})
+          // .should('be.visible')
+          // .click({force: true})
+          // cy.wait(2000);
  
  
           cy.get('#Bebidas > div > div > div > div > div.flex.justify-between > div.text-right.text-white.underline.underline-offset-4.cursor-pointer', {timeout: 2000})
@@ -167,6 +232,58 @@ cy.wait(2000);
            cy.scrollTo('bottom', { duration: 3000 }); 
           cy.wait(3000);
           cy.scrollTo('top', { duration: 2000 });
+    
+  //Hacer clic en Categorias
+
+cy.get('.relative > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
+.should('be.visible')
+.click({force: true})
+cy.wait(2000);
+
+             //Clic Verduleria, Ver todos y validacion url
+             cy.contains('Verdulería',  {timeout: 2000})
+             .should('be.visible')
+             .click({force: true})
+             cy.wait(2000);
+    
+    
+             cy.get('#Verdulería > div > div > div > div > div.flex.justify-between > div.text-right.text-white.underline.underline-offset-4.cursor-pointer', {timeout: 2000})
+             .should('be.visible')
+             .click({force: true})
+             cy.wait(2000);
+    
+             cy.url().should('include', '/categoria/104/0');
+             cy.wait(2000);
+
+             cy.scrollTo('bottom', { duration: 3000 }); 
+          cy.wait(3000);
+          cy.scrollTo('top', { duration: 2000 });
+    
+  //Hacer clic en Categorias
+
+cy.get('.relative > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
+.should('be.visible')
+.click({force: true})
+cy.wait(2000);
+
+            //Clic Carnicería, Ver todos y validacion url
+            cy.contains('Carnicería',  {timeout: 2000})
+            .should('be.visible')
+            .click({force: true})
+            cy.wait(2000);
+   
+   
+            cy.get('#Carnicería > div > div > div > div > div.flex.justify-between > div.text-right.text-white.underline.underline-offset-4.cursor-pointer', {timeout: 2000})
+            .should('be.visible')
+            .click({force: true})
+            cy.wait(2000);
+   
+            cy.url().should('include', '/categoria/146/0');
+            cy.wait(2000);
+
+            cy.scrollTo('bottom', { duration: 3000 }); 
+          cy.wait(3000);
+          cy.scrollTo('top', { duration: 2000 });
   
  //Hacer clic en Categorias
 
@@ -194,31 +311,7 @@ cy.wait(2000);
           cy.wait(3000);
           cy.scrollTo('top', { duration: 2000 });
 
-//Hacer clic en Categorias
 
-cy.get('.relative > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
-.should('be.visible')
-.click({force: true})
-cy.wait(2000);
-
-            //Clic Carnicería, Ver todos y validacion url
-            cy.contains('Carnicería',  {timeout: 2000})
-            .should('be.visible')
-            .click({force: true})
-            cy.wait(2000);
-   
-   
-            cy.get('#Carnicería > div > div > div > div > div.flex.justify-between > div.text-right.text-white.underline.underline-offset-4.cursor-pointer', {timeout: 2000})
-            .should('be.visible')
-            .click({force: true})
-            cy.wait(2000);
-   
-            cy.url().should('include', '/categoria/146/0');
-            cy.wait(2000);
-
-            cy.scrollTo('bottom', { duration: 3000 }); 
-          cy.wait(3000);
-          cy.scrollTo('top', { duration: 2000 });
  
 //Hacer clic en Categorias
 
@@ -271,32 +364,86 @@ cy.wait(2000);
             cy.scrollTo('bottom', { duration: 3000 }); 
           cy.wait(3000);
           cy.scrollTo('top', { duration: 2000 });
-
-//Hacer clic en Categorias
+    
+  //Hacer clic en Categorias
 
 cy.get('.relative > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
 .should('be.visible')
 .click({force: true})
 cy.wait(2000);
 
-             //Clic Verduleria, Ver todos y validacion url
-             cy.contains('Verdulería',  {timeout: 2000})
+             //Clic Limpieza, Ver todos y validacion url
+             cy.contains('Limpieza',  {timeout: 2000})
              .should('be.visible')
              .click({force: true})
              cy.wait(2000);
     
     
-             cy.get('#Verdulería > div > div > div > div > div.flex.justify-between > div.text-right.text-white.underline.underline-offset-4.cursor-pointer', {timeout: 2000})
+             cy.get('#Limpieza > div > div > div > div > div.flex.justify-between > div.text-right.text-white.underline.underline-offset-4.cursor-pointer', {timeout: 2000})
              .should('be.visible')
              .click({force: true})
              cy.wait(2000);
     
-             cy.url().should('include', '/categoria/104/0');
+             cy.url().should('include', '/categoria/83/0');
              cy.wait(2000);
 
              cy.scrollTo('bottom', { duration: 3000 }); 
           cy.wait(3000);
           cy.scrollTo('top', { duration: 2000 });
+      
+  //Hacer clic en Categorias
+
+cy.get('.relative > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
+.should('be.visible')
+.click({force: true})
+cy.wait(3000);
+
+             //Clic Perfumeria, Ver todos y validacion url
+             cy.contains('Perfumería',  {timeout: 2000})
+             .should('be.visible')
+             .click({force: true})
+             cy.wait(2000);
+    
+    
+             cy.get('#Perfumería > div > div > div > div > div.flex.justify-between > div.text-right.text-white.underline.underline-offset-4.cursor-pointer', {timeout: 2000})
+             //.should('be.visible')
+             .click({force: true})
+             cy.wait(2000);
+    
+             cy.url().should('include', '/categoria/70/0');
+             cy.wait(2000);
+
+             cy.scrollTo('bottom', { duration: 3000 }); 
+          cy.wait(3000);
+          cy.scrollTo('top', { duration: 2000 });
+
+//Hacer clic en Categorias
+
+cy.get('.relative > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
+.should('be.visible')
+.click({force: true})
+cy.wait(4000);
+
+             //Clic Bazar y deco Ver todos y validacion url
+      //cy.get('#Bazar\ y\ Deco > li > div > p', { timeout: 4000 })
+             cy.contains('Bazar y Deco',  {timeout: 2000})
+             .should('be.visible')
+             .click({force: true})
+             cy.wait(2000);
+
+             cy.get('[id="Bazar y Deco"] > div > div > div > div > div.flex.justify-between > div.text-right.text-white.underline.underline-offset-4.cursor-pointer', { timeout: 4000 })
+
+             .should('be.visible')
+            .click({ force: true });
+            cy.wait(2000);
+
+             cy.url().should('include', '/categoria/303/0');
+             cy.wait(2000);
+
+             cy.scrollTo('bottom', { duration: 3000 }); 
+          cy.wait(3000);
+          cy.scrollTo('top', { duration: 2000 });
+
 
 //Hacer clic en Categorias
 
@@ -324,7 +471,8 @@ cy.wait(2000);
              cy.scrollTo('bottom', { duration: 3000 }); 
           cy.wait(3000);
           cy.scrollTo('top', { duration: 2000 });
-          
+  
+  
 //Hacer clic en Categorias
 
 cy.get('.relative > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
@@ -332,76 +480,29 @@ cy.get('.relative > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
 .click({force: true})
 cy.wait(2000);
 
-             //Clic Limpieza, Ver todos y validacion url
-             cy.contains('Limpieza',  {timeout: 2000})
+             //Clic Suplementos, Ver todos y validacion url
+             cy.contains('Suplementos',  {timeout: 2000})
              .should('be.visible')
              .click({force: true})
              cy.wait(2000);
-    
-    
-             cy.get('#Limpieza > div > div > div > div > div.flex.justify-between > div.text-right.text-white.underline.underline-offset-4.cursor-pointer', {timeout: 2000})
+
+             cy.get('#Suplementos > div > div > div > div > div.flex.justify-between > div.text-right.text-white.underline.underline-offset-4.cursor-pointer', { timeout: 4000 })
+
              .should('be.visible')
-             .click({force: true})
-             cy.wait(2000);
-    
-             cy.url().should('include', '/categoria/83/0');
+            .click({ force: true });
+            cy.wait(2000);
+
+             cy.url().should('include', '/categoria/296/0');
              cy.wait(2000);
 
              cy.scrollTo('bottom', { duration: 3000 }); 
           cy.wait(3000);
           cy.scrollTo('top', { duration: 2000 });
+  
 
-//Hacer clic en Categorias
 
-cy.get('.relative > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
-.should('be.visible')
-.click({force: true})
-cy.wait(3000);
 
-             //Clic Perfumeria, Ver todos y validacion url
-             cy.contains('Perfumería',  {timeout: 2000})
-             .should('be.visible')
-             .click({force: true})
-             cy.wait(2000);
-    
-    
-             cy.get('#Perfumería > div > div > div > div > div.flex.justify-between > div.text-right.text-white.underline.underline-offset-4.cursor-pointer', {timeout: 2000})
-             //.should('be.visible')
-             .click({force: true})
-             cy.wait(2000);
-    
-             cy.url().should('include', '/categoria/70/0');
-             cy.wait(2000);
-
-             cy.scrollTo('bottom', { duration: 3000 }); 
-          cy.wait(3000);
-          cy.scrollTo('top', { duration: 2000 });
-
-// //Hacer clic en Categorias //Categoría verano eliminada
-
-// cy.get('.relative > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
-// .should('be.visible')
-// .click({force: true})
-// cy.wait(2000);
-
-//              //Clic Verano, Ver todos y validacion url     
-//              cy.contains('Verano',  {timeout: 2000})
-//             // .should('be.visible')
-//              .click({force: true})
-//              cy.wait(2000);
-    
-    
-//              cy.get('#Verano > div > div > div > div > div.flex.justify-between > div.text-right.text-white.underline.underline-offset-4.cursor-pointer', {timeout: 2000})
-//              //.should('be.visible')
-//              .click({force: true})
-//              cy.wait(2000);
-    
-//              cy.url().should('include', '/categoria/257/0');
-//              cy.wait(2000);
-
-//              cy.scrollTo('bottom', { duration: 3000 }); 
-//           cy.wait(3000);
-//           cy.scrollTo('top', { duration: 2000 });
+// 
         });
       });
       });

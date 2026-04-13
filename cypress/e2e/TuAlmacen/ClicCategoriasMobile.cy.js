@@ -1,458 +1,463 @@
 describe('Prueba haciendo clic en todas las CATEGORIAS-Mobile', () => {
-    const devices = [
-        { name: 'iPhone 15 Pro Max', width: 430, height: 932 },
-       // { name: 'Samsung S22', width: 360, height: 780 } // Tamaño típico del S22 en viewport
-    ];
-
-    devices.forEach((device) => {
-        it(`Prueba haciendo clic en todas las CATEGORIAS-Mobile ${device.name}`, () => {
-            cy.viewport(device.width, device.height); // Configurar el tamaño del dispositivo
-            cy.visit('https://tualmacen.com.ar'); // Visitar la web
-            
-            cy.wait(3000); // Esperar que cargue la página
-
-            //clic en ENTENDIDO en las cookies
-            cy.get('.mt-1 > .cursor-pointer')
-            .click({force: true})
-            
-
-
-            //Hacer clic en Categorias
-
-          cy.get(':nth-child(1) > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
-          .should('be.visible')
-          .click({force: true})
-          cy.wait(2000);
-
-          //Clic en Last Chance, clic en last chance de nuevo y validación de url
-          cy.contains('Last Chance')
-          .should('be.visible')
-          .click({force: true})
-          cy.wait(2000);
-
-          cy.get('[id="Last Chance"] > div > div', {timeout: 2000})
-          .should('be.visible')
-          .click({force: true})
-          cy.wait(2000);
-
-          cy.url().should('include', '/categoria/271/272');
-         cy.wait(2000);
-
-         cy.scrollTo('bottom', { duration: 3000 }); 
-          cy.wait(1000);
-          cy.scrollTo('top', { duration: 2000 });
+        const devices = [
+            { name: 'iPhone 15 Pro Max', width: 430, height: 932 },
+            // { name: 'Samsung S22', width: 360, height: 780 } // Tamaño típico del S22 en viewport
+        ];
     
-          //Hacer clic en pop up de suspcipción
-        cy.get('#onesignal-slidedown-cancel-button')
-        .should('be.visible')
-        .click({force: true})
-        cy.wait(2000);
-        
-   //Hacer clic en Categorias
+        devices.forEach((device) => {
+            it(`Prueba haciendo clic en todas las CATEGORIAS-Mobile ${device.name}`, () => {
+                cy.viewport(device.width, device.height); 
+                cy.visit('https://tualmacen.com.ar');
+                cy.wait(3000);
+    
+                // clic en ENTENDIDO en las cookies
+                cy.get('.mt-1 > .cursor-pointer')
+                    .click({ force: true });
+    
+                // Hacer clic en Categorias
+                cy.get(':nth-child(1) > :nth-child(1) > .flex > .text-xs', { timeout: 2000 })
+                    .should('be.visible')
+                    .click({ force: true });
+                cy.wait(2000);
+    
+                // Clic en Last Chance
+                cy.contains('Last Chance')
+                    .should('be.visible')
+                    .click({ force: true });
+                cy.wait(2000);
+    
+                cy.get('[id="Last Chance"] > div > div', { timeout: 2000 })
+                    .should('be.visible')
+                    .click({ force: true });
+                cy.wait(2000);
+    
+                cy.url().should('include', '/categoria/271/272');
+                cy.wait(2000);
+    
+                cy.scrollTo('bottom', { duration: 3000 });
+                cy.wait(1000);
+                cy.scrollTo('top', { duration: 2000 });
+    
+                // Hacer clic en pop up de suscripción
+                cy.get('#onesignal-slidedown-cancel-button')
+                    .should('be.visible')
+                    .click({ force: true });
+                cy.wait(2000);
+    
+                // Hacer clic en Categorias
+                cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', { timeout: 2000 })
+                    .should('be.visible')
+                    .click({ force: true });
+                cy.wait(2000);
+    
+                // Clic Bazar y Deco
+                // Ver todos, validar URL y hacer scroll
+                cy.contains('Bazar y Deco', { timeout: 2000 })
+                    .should('be.visible')
+                    .click({ force: true });
+                cy.wait(2000);
 
-   cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
-   .should('be.visible')
-   .click({force: true})
-   cy.wait(2000);
-
-         //Clic Almacen, Ver todos, validacion url y scroll
-        //  cy.contains('Almacén',  {timeout: 2000})
-        //  .should('be.visible')
-        //  .click({force: true})
-        //  cy.wait(2000);
-
-         cy.get('#Almacén > li > div', {timeout: 2000})
+         cy.contains('Ver todas', { timeout: 2000 })
          .should('be.visible')
-         .click({force: true})
-         cy.wait(2000);
+         .click({ force: true });
+                //cy.get('#Bazar\ y\ Deco > .px-\[3\.5rem\] > :nth-child(1)', { timeout: 2000 })
+                cy.url().should('include', '/categoria/303/0');
+                cy.wait(2000);
+    
+                cy.scrollTo('bottom', { duration: 3000 });
+                cy.wait(1000);
+                cy.scrollTo('top', { duration: 2000 });
+    
+                // Hacer clic en Categorias
+                cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', { timeout: 2000 })
+                    .should('be.visible')
+                    .click({ force: true });
+                cy.wait(2000);
 
-         cy.get('#Almacén > div > div:nth-child(1)', {timeout: 2000})
-         .should('be.visible')
-         .click({force: true})
-         cy.wait(2000);
+                cy.contains('Bazar y Deco', { timeout: 2000 }) // Cierra desplegable
+                    .should('be.visible')
+                    .click({ force: true });
+                cy.wait(2000);
+    
+                // Clic Almacén
+                // Ver todos, validar URL y scroll
+                // cy.contains('Almacén', {timeout: 2000})
+                //     .should('be.visible')
+                //     .click({force: true})
+                // cy.wait(2000);
+    
+                cy.get('#Almacén > li > div', { timeout: 2000 })
+                    .should('be.visible')
+                    .click({ force: true });
+                cy.wait(2000);
+    
+                cy.get('#Almacén > div > div:nth-child(1)', { timeout: 2000 })
+                    .should('be.visible')
+                    .click({ force: true });
+                cy.wait(2000);
+    
+                // cy.url().should('include', '/categoria/12/0');
+                cy.wait(2000);
+    
+                cy.scrollTo('bottom', { duration: 3000 });
+                cy.wait(1000);
+                cy.scrollTo('top', { duration: 2000 });
+    
+                // Hacer clic en Categorias
+                cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', { timeout: 2000 })
+                    .should('be.visible')
+                    .click({ force: true });
+                cy.wait(2000);
+    
+                cy.get('#Almacén > li > div', { timeout: 2000 }) // Cierra desplegable
+                    .should('be.visible')
+                    .click({ force: true });
+                cy.wait(2000);
+    
+                // Clic Kiosko
+                cy.contains('Kiosko', { timeout: 2000 })
+                    .should('be.visible')
+                    .click({ force: true });
+                cy.wait(2000);
+    
+                cy.get('#Kiosko > div > div:nth-child(1)', { timeout: 2000 })
+                    .should('be.visible')
+                    .click({ force: true });
+                cy.wait(2000);
+    
+                // cy.url().should('include', '/categoria/260/0');
+                cy.wait(2000);
+    
+                // Hacer clic en Categorias
+                cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', { timeout: 2000 })
+                    .should('be.visible')
+                    .click({ force: true });
+                cy.wait(2000);
+    
+                cy.contains('Kiosko', { timeout: 2000 })
+                    .should('be.visible')
+                    .click({ force: true });
+                cy.wait(2000);
+    
+                // Clic Bebidas
+                cy.contains('Bebidas', { timeout: 2000 })
+                    .should('be.visible')
+                    .click({ force: true });
+                cy.wait(2000);
+    
+                cy.get('#Bebidas > div > div:nth-child(1)', { timeout: 5000 })
+                    .should('be.visible')
+                    .click({ force: true });
+                cy.wait(2000);
+    
+                cy.url().should('include', '/categoria/60/0');
+                cy.wait(2000);
+    
+                cy.scrollTo('bottom', { duration: 3000 });
+                cy.wait(1000);
+                cy.scrollTo('top', { duration: 2000 });
+    
+                // Hacer clic en Categorias
+                cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', { timeout: 2000 })
+                    .should('be.visible')
+                    .click({ force: true });
+                cy.wait(2000);
+    
+                cy.contains('Bebidas', { timeout: 2000 })
+                    .should('be.visible')
+                    .click({ force: true });
+                cy.wait(2000);
+    
+                // Clic Frescos
+                cy.contains('Frescos', { timeout: 2000 })
+                    .should('be.visible')
+                    .click({ force: true });
+                cy.wait(2000);
+    
+                cy.get('#Frescos > div > div:nth-child(1)', { timeout: 2000 })
+                    .should('be.visible')
+                    .click({ force: true });
+                cy.wait(2000);
+    
+                cy.url().should('include', '/categoria/51/0');
+                cy.wait(2000);
+    
+                cy.scrollTo('bottom', { duration: 3000 });
+                cy.wait(1000);
+                cy.scrollTo('top', { duration: 2000 });
+ // Hacer clic en Categorias
+ cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', { timeout: 2000 })
+ .should('be.visible')
+ .click({ force: true });
+cy.wait(2000);
 
+cy.contains('Frescos', { timeout: 2000 })
+ .should('be.visible')
+ .click({ force: true });
+cy.wait(2000);
 
-         //cy.url().should('include', '/categoria/12/0');
-         cy.wait(2000);
+// Clic Verdulería
+cy.contains('Verdulería', { timeout: 2000 })
+.should('be.visible')
+.click({ force: true });
+cy.wait(2000);
 
-         cy.scrollTo('bottom', { duration: 3000 }); 
-          cy.wait(1000);
-          cy.scrollTo('top', { duration: 2000 });
+cy.get('#Verdulería > div > div:nth-child(1)', { timeout: 2000 })
+.should('be.visible')
+.click({ force: true });
+cy.wait(2000);
+
+cy.url().should('include', '/categoria/104/0');
+cy.wait(2000);
+
+cy.scrollTo('bottom', { duration: 3000 });
+cy.wait(1000);
+cy.scrollTo('top', { duration: 2000 });
+
+// Hacer clic en Categorias
+cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', { timeout: 2000 })
+.should('be.visible')
+.click({ force: true });
+cy.wait(2000);
+
+cy.contains('Verdulería', { timeout: 2000 })
+.should('be.visible')
+.click({ force: true });
+cy.wait(2000);
+
+// Clic Carnicería
+cy.contains('Carnicería', { timeout: 2000 })
+.should('be.visible')
+.click({ force: true });
+cy.wait(2000);
+
+cy.get('#Carnicería > div > div:nth-child(1)', { timeout: 2000 })
+.should('be.visible')
+.click({ force: true });
+cy.wait(2000);
+
+cy.url().should('include', '/categoria/146/0');
+    
+                // Hacer clic en Categorias
+                cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', { timeout: 2000 })
+                    .should('be.visible')
+                    .click({ force: true });
+                cy.wait(2000);
+    
+                cy.contains('Carnicería', { timeout: 2000 })
+                    .should('be.visible')
+                    .click({ force: true });
+                cy.wait(2000);
+    
+                // Clic Fiambrería
+                cy.contains('Fiambrería', { timeout: 2000 })
+                    .should('be.visible')
+                    .click({ force: true });
+                cy.wait(2000);
+    
+                cy.get('#Fiambrería > div > div:nth-child(1)', { timeout: 2000 })
+                    .should('be.visible')
+                    .click({ force: true });
+                cy.wait(2000);
+    
+                cy.url().should('include', '/categoria/121/0');
+                cy.wait(2000);
+    
+                cy.scrollTo('bottom', { duration: 3000 });
+                cy.wait(1000);
+                cy.scrollTo('top', { duration: 2000 });
+
+//Hacer clic en Categorias 
+cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', {timeout: 2000}) 
+.should('be.visible') 
+.click({force: true}) 
+cy.wait(2000); 
+
+cy.contains('Fiambrería', {timeout: 2000}) 
+.should('be.visible') 
+.click({force: true}) 
+cy.wait(2000); 
+
+//Clic Congelados, Ver todos y validacion url 
+cy.get('#Congelados > li > div > p', {timeout: 3000}) 
+.should('be.visible') 
+.click({force: true})
+ cy.wait(2000); 
+ 
+ cy.get('#Congelados > div > div:nth-child(1)', {timeout: 2000}) 
+ .should('be.visible') 
+ .click({force: true}) 
+ cy.wait(2000); 
+ cy.url().should('include', '/categoria/122/0'); 
+ cy.wait(2000); 
+ cy.scrollTo('bottom', { duration: 3000 }); 
+ cy.wait(1000); 
+ cy.scrollTo('top', { duration: 2000 });
 
  //Hacer clic en Categorias
+  cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', {timeout: 2000}) 
+  .should('be.visible') 
+  .click({force: true}) 
+  cy.wait(2000); 
+  
+  cy.get('#Congelados > li > div > p', {timeout: 3000}) 
+  .should('be.visible') 
+  .click({force: true}) 
+  cy.wait(2000);
+  
+  //Clic Dietética, Ver todos y validacion url 
+  cy.contains('Dietética', {timeout: 2000}) 
+  .should('be.visible') 
+  .click({force: true}) 
+  cy.wait(2000); 
+  cy.get('#Dietética > div > div:nth-child(1)', {timeout: 2000}) 
+  .should('be.visible') 
+  .click({force: true}) 
+  cy.wait(2000); 
+  cy.url().should('include', '/categoria/95/0'); 
+  cy.wait(2000); 
+  cy.scrollTo('bottom', { duration: 3000 }); 
+  cy.wait(1000); 
+  cy.scrollTo('top', { duration: 2000 });
 
- cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
- .should('be.visible')
- .click({force: true})
- cy.wait(2000);
+  //Hacer clic en Categorias 
+  cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', {timeout: 2000}) 
+  .should('be.visible') 
+  .click({force: true}) 
+  cy.wait(2000); 
+  cy.contains('Dietética', {timeout: 2000}) 
+  .should('be.visible') 
+  .click({force: true}) 
+  cy.wait(2000); 
+  
+  //Clic Limpieza, Ver todos y validacion url 
+  cy.contains('Limpieza', {timeout: 2000}) 
+  .should('be.visible') 
+  .click({force: true}) 
+  cy.wait(2000); 
 
- cy.get('#Almacén > li > div', {timeout: 2000})  //Hace clic acá para cerrar el desplegable y que pueda avanzar
- .should('be.visible')
- .click({force: true})
- cy.wait(2000);
+  cy.get('#Limpieza > div > div:nth-child(1)', {timeout: 2000}) 
+  .should('be.visible') 
+  .click({force: true}) 
+  cy.wait(2000);
 
+   cy.url().should('include', '/categoria/83/0'); 
+   cy.wait(2000); 
+   cy.scrollTo('bottom', { duration: 3000 }); 
+   cy.wait(1000); 
+   cy.scrollTo('top', { duration: 2000 });
 
-         //Clic Kiosko, Ver todos y validacion url
-         cy.contains('Kiosko',  {timeout: 2000})
-         .should('be.visible')
-         .click({force: true})
-         cy.wait(2000);
+   //Hacer clic en Categorias 
+   cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', {timeout: 2000}) 
+   .should('be.visible') 
+   .click({force: true}) 
+   cy.wait(2000); 
 
+   cy.contains('Limpieza', {timeout: 2000}) 
+   .should('be.visible') 
+   .click({force: true}) 
+   cy.wait(2000); 
+   
+   //Clic Perfumeria, Ver todos y validacion url 
+   cy.contains('Perfumería', {timeout: 2000}) 
+   .should('be.visible') 
+   .click({force: true}) 
+   cy.wait(2000); 
 
-         cy.get('#Kiosko > div > div:nth-child(1)', {timeout: 2000})
-         .should('be.visible')
-         .click({force: true})
-         cy.wait(2000);
+   cy.get('#Perfumería > div > div:nth-child(1)', {timeout: 2000}) 
+   .should('be.visible') 
+   .click({force: true})
+    cy.wait(2000); 
+    cy.url().should('include', '/categoria/70/0'); 
 
-        // cy.url().should('include', '/categoria/260/0');
-         cy.wait(2000);
+    cy.wait(2000); 
+    cy.scrollTo('bottom', { duration: 3000 }); 
+    cy.wait(1000); 
+    cy.scrollTo('top', { duration: 3000 });
+
+    //Hacer clic en Categorias 
+    cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', {timeout: 2000}) 
+    .should('be.visible') 
+    .click({force: true})
+     cy.wait(2000); 
+     
+     cy.contains('Perfumería', {timeout: 2000}) 
+     .should('be.visible') 
+     .click({force: true}) 
+     cy.wait(2000); 
+     
+     //Clic Hogar y Mascotas, Ver todos y validacion url 
+     cy.contains('Hogar y Mascotas', {timeout: 2000}) 
+     .should('be.visible')
+     .click({force: true})
+    cy.wait(2000); cy.get('[id="Hogar y Mascotas"] > div > div:nth-child(1)', { timeout: 4000 }) 
+    .should('be.visible') 
+    .click({ force: true }); 
+    cy.wait(2000); 
+    cy.url().should('include', '/categoria/229/0');
+
+    cy.wait(2000);
+     cy.scrollTo('bottom', { duration: 3000 }); 
+     cy.wait(1000); 
+     cy.scrollTo('top', { duration: 2000 });
+
         
-//Hacer clic en Categorias
-
-cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
-.should('be.visible')
-.click({force: true})
-cy.wait(2000);
-
-cy.contains('Kiosko',  {timeout: 2000})
-.should('be.visible')
-.click({force: true})
-cy.wait(2000);
-
-         //Clic Bebidas, Ver todos y validacion url
-         cy.contains('Bebidas',  {timeout: 2000})
-         .should('be.visible')
-         .click({force: true})
-         cy.wait(2000);
-
-
-         cy.get('#Bebidas > div > div:nth-child(1)', {timeout: 5000})
-         .should('be.visible')
-         .click({force: true})
-         cy.wait(2000);
-
-         cy.url().should('include', '/categoria/60/0');
-         cy.wait(2000);
-        
-         cy.scrollTo('bottom', { duration: 3000 }); 
-          cy.wait(1000);
-          cy.scrollTo('top', { duration: 2000 });
-
-//Hacer clic en Categorias
-
-cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
-.should('be.visible')
-.click({force: true})
-cy.wait(2000);
-
-cy.contains('Bebidas',  {timeout: 2000})
-.should('be.visible')
-.click({force: true})
-cy.wait(2000);
-
-        //Clic Frescos, Ver todos y validacion url
-        cy.contains('Frescos',  {timeout: 2000})
-        .should('be.visible')
-        .click({force: true})
-        cy.wait(2000);
-
-
-        cy.get('#Frescos > div > div:nth-child(1)', {timeout: 2000})
-        .should('be.visible')
-        .click({force: true})
-        cy.wait(2000);
-
-        cy.url().should('include', '/categoria/51/0');
-        cy.wait(2000);
-
-        cy.scrollTo('bottom', { duration: 3000 }); 
-          cy.wait(1000);
-          cy.scrollTo('top', { duration: 2000 });
-
-//Hacer clic en Categorias
-
-cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
-.should('be.visible')
-.click({force: true})
-cy.wait(2000);        
-
-cy.contains('Frescos',  {timeout: 2000})
-.should('be.visible')
-.click({force: true})
-cy.wait(2000);
-
-        //Clic Fiambrería, Ver todos y validacion url
-        cy.contains('Fiambrería',  {timeout: 2000})
-        .should('be.visible')
-        .click({force: true})
-        cy.wait(2000);
-
-
-        cy.get('#Fiambrería > div > div:nth-child(1)', {timeout: 2000})
-        .should('be.visible')
-        .click({force: true})
-        cy.wait(2000);
-
-        cy.url().should('include', '/categoria/121/0');
-        cy.wait(2000);
-
-        cy.scrollTo('bottom', { duration: 3000 }); 
-          cy.wait(1000);
-          cy.scrollTo('top', { duration: 2000 });
-
-//Hacer clic en Categorias
-
-cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
-.should('be.visible')
-.click({force: true})
-cy.wait(2000);  
-
-cy.contains('Fiambrería',  {timeout: 2000})
-.should('be.visible')
-.click({force: true})
-cy.wait(2000);
-
-
-        //Clic Carnicería, Ver todos y validacion url
-        cy.contains('Carnicería',  {timeout: 2000})
-        .should('be.visible')
-        .click({force: true})
-        cy.wait(2000);
-
-
-        cy.get('#Carnicería > div > div:nth-child(1)', {timeout: 2000})
-        .should('be.visible')
-        .click({force: true})
-        cy.wait(2000);
-
-        cy.url().should('include', '/categoria/146/0');
-        cy.wait(2000);
-
-        cy.scrollTo('bottom', { duration: 3000 }); 
-          cy.wait(1000);
-          cy.scrollTo('top', { duration: 2000 });
-
-//Hacer clic en Categorias
-
-cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
-.should('be.visible')
-.click({force: true})
-cy.wait(2000); 
-
-cy.contains('Carnicería',  {timeout: 2000})
-.should('be.visible')
-.click({force: true})
-cy.wait(2000);
-
-        //Clic Congelados, Ver todos y validacion url
-        cy.get('#Congelados > li > div > p', {timeout: 3000})
-        .should('be.visible')
-        .click({force: true})
-        cy.wait(2000);
-
-
-        cy.get('#Congelados > div > div:nth-child(1)', {timeout: 2000})
-        .should('be.visible')
-        .click({force: true})
-        cy.wait(2000);
-
-        cy.url().should('include', '/categoria/122/0');
-        cy.wait(2000);
-
-        cy.scrollTo('bottom', { duration: 3000 }); 
-          cy.wait(1000);
-          cy.scrollTo('top', { duration: 2000 });
+                // Hacer clic en Categorias
+                cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', { timeout: 2000 })
+                    .should('be.visible')
+                    .click({ force: true });
+                cy.wait(2000);
     
-//Hacer clic en Categorias
+                cy.contains('Hogar y Mascotas', { timeout: 2000 })
+                    .should('be.visible')
+                    .click({ force: true });
+                cy.wait(2000);
 
-cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
-.should('be.visible')
-.click({force: true})
-cy.wait(2000); 
+                 //Clic Suplementos, Ver todos y validacion url 
+     cy.contains('Suplementos', {timeout: 2000}) 
+     .should('be.visible')
+     .click({force: true})
+    cy.wait(2000); 
 
-cy.get('#Congelados > li > div > p', {timeout: 3000})
-.should('be.visible')
-.click({force: true})
-cy.wait(2000);
+    cy.get('#Suplementos > div > div:nth-child(1)', { timeout: 4000 }) 
+    //.should('be.visible') 
+    .click({ force: true }); 
+    cy.wait(2000); 
+    cy.url().should('include', '/categoria/296/0');
 
-        //Clic Dietética, Ver todos y validacion url
-        cy.contains('Dietética',  {timeout: 2000})
-        .should('be.visible')
-        .click({force: true})
-        cy.wait(2000);
-
-
-        cy.get('#Dietética > div > div:nth-child(1)', {timeout: 2000})
-        .should('be.visible')
-        .click({force: true})
-        cy.wait(2000);
-
-        cy.url().should('include', '/categoria/95/0');
-        cy.wait(2000);
-
-        cy.scrollTo('bottom', { duration: 3000 }); 
-        cy.wait(1000);
-        cy.scrollTo('top', { duration: 2000 });
-
-//Hacer clic en Categorias
-
-cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
-.should('be.visible')
-.click({force: true})
-cy.wait(2000); 
-
-cy.contains('Dietética',  {timeout: 2000})
-.should('be.visible')
-.click({force: true})
-cy.wait(2000);
-
-         //Clic Verduleria, Ver todos y validacion url
-         cy.contains('Verdulería',  {timeout: 2000})
-         .should('be.visible')
-         .click({force: true})
-         cy.wait(2000);
+    cy.wait(2000);
+     cy.scrollTo('bottom', { duration: 3000 }); 
+     cy.wait(1000); 
+     cy.scrollTo('top', { duration: 2000 });
 
 
-         cy.get('#Verdulería > div > div:nth-child(1)', {timeout: 2000})
-         .should('be.visible')
-         .click({force: true})
-         cy.wait(2000);
-
-         cy.url().should('include', '/categoria/104/0');
-         cy.wait(2000);
-
-         cy.scrollTo('bottom', { duration: 3000 }); 
-         cy.wait(1000);
-         cy.scrollTo('top', { duration: 2000 });
-
-//Hacer clic en Categorias
-
-cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
-.should('be.visible')
-.click({force: true})
-cy.wait(2000); 
-
-cy.contains('Verdulería',  {timeout: 2000})
-.should('be.visible')
-.click({force: true})
-cy.wait(2000);
-
-        //Clic Hogar y Mascotas, Ver todos y validacion url
-        cy.contains('Hogar y Mascotas',  {timeout: 2000})
-        .should('be.visible')
-        .click({force: true})
-        cy.wait(2000);
-
-
-        cy.get('[id="Hogar y Mascotas"] > div > div:nth-child(1)', { timeout: 4000 })
-       .should('be.visible')
-       .click({ force: true });
-       cy.wait(2000);
-
-        cy.url().should('include', '/categoria/229/0');
-        cy.wait(2000);
-
-        cy.scrollTo('bottom', { duration: 3000 }); 
-        cy.wait(1000);
-        cy.scrollTo('top', { duration: 2000 });
-
-
-//Hacer clic en Categorias
-
-cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
-.should('be.visible')
-.click({force: true})
-cy.wait(2000); 
-
-cy.contains('Hogar y Mascotas',  {timeout: 2000})
-.should('be.visible')
-.click({force: true})
-cy.wait(2000);
-
-
-        //Clic Limpieza, Ver todos y validacion url
-        cy.contains('Limpieza',  {timeout: 2000})
-        .should('be.visible')
-        .click({force: true})
-        cy.wait(2000);
-
-
-        cy.get('#Limpieza > div > div:nth-child(1)', {timeout: 2000})
-        .should('be.visible')
-        .click({force: true})
-        cy.wait(2000);
-
-        cy.url().should('include', '/categoria/83/0');
-        cy.wait(2000);
-
-        cy.scrollTo('bottom', { duration: 3000 }); 
-        cy.wait(1000);
-        cy.scrollTo('top', { duration: 2000 });
-
-
-//Hacer clic en Categorias
-
-cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
-.should('be.visible')
-.click({force: true})
-cy.wait(2000); 
-
-cy.contains('Limpieza',  {timeout: 2000})
-.should('be.visible')
-.click({force: true})
-cy.wait(2000);
-
-         //Clic Perfumeria, Ver todos y validacion url
-         cy.contains('Perfumería',  {timeout: 2000})
-         .should('be.visible')
-         .click({force: true})
-         cy.wait(2000);
-
-
-         cy.get('#Perfumería > div > div:nth-child(1)', {timeout: 2000})
-         .should('be.visible')
-         .click({force: true})
-         cy.wait(2000);
-
-         cy.url().should('include', '/categoria/70/0');
-         cy.wait(2000);
-
-         cy.scrollTo('bottom', { duration: 3000 }); 
-          cy.wait(1000);
-          cy.scrollTo('top', { duration: 3000 });
-
-// //Hacer clic en Categorias //Categoria verano eliminada
-
-// cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', {timeout: 2000})
-// .should('be.visible')
-// .click({force: true})
-// cy.wait(2000); 
-
-// cy.contains('Perfumeria',  {timeout: 2000})
-// .should('be.visible')
-// .click({force: true})
-// cy.wait(2000);
-
-//         //Clic Verano, Ver todos y validacion url
-//         cy.contains('Verano',  {timeout: 2000})
-//         .should('be.visible')
-//         .click({force: true})
-//         cy.wait(2000);
-
-
-//         cy.get('#Verano > div > div:nth-child(1)', {timeout: 2000})
-//        // .should('be.visible')
-//         .click({force: true})
-//         cy.wait(2000);
-
-//         cy.url().should('include', '/categoria/257/0');
-//         cy.wait(2000);
-
-//         cy.scrollTo('bottom', { duration: 3000 }); 
-//         cy.wait(1000);
-//         cy.scrollTo('top', { duration: 2000 });
-
-//         cy.wait(4000);
+     // //Hacer clic en Categorias 
+     //Categoria verano eliminada 
+     // cy.get('.justify-center > :nth-child(1) > :nth-child(1) > .flex > .text-xs', {timeout: 2000}) 
+     // .should('be.visible') 
+     // .click({force: true}) 
+     // cy.wait(2000); 
+     // cy.contains('Perfumeria', {timeout: 2000}) 
+     // .should('be.visible') 
+     // .click({force: true}) 
+     // cy.wait(2000); // 
+     
+     //Clic Verano, Ver todos y validacion url 
+     // cy.contains('Verano', {timeout: 2000}) 
+     // .should('be.visible') 
+     // .click({force: true}) 
+     // cy.wait(2000); 
+     // cy.get('#Verano > div > div:nth-child(1)', {timeout: 2000}) // 
+     // .should('be.visible') 
+     // .click({force: true}) 
+     // cy.wait(2000); 
+     // cy.url().should('include', '/categoria/257/0'); 
+     // cy.wait(2000); 
+     // cy.scrollTo('bottom', { duration: 3000 }); 
+     // cy.wait(1000); 
+     // cy.scrollTo('top', { duration: 2000 }); 
+     // cy.wait(4000);
+    
         });
     });
     });
